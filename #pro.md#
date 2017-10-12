@@ -1,0 +1,27 @@
+Profolio
+========
+
+This is markdown
+----------------
+
+### Welcome to the reository
+
+Visit my github [here](https://github.com/tapiad)
+
+> ## This is a headline
+>
+> This is a long sentence short *of*
+>
+> this will be a line of **nothing**
+
+### Another header
+* I go for Cruz Azul
++ Test
+- Blue
+
+### Reasons to choose us
+1. Price
+2. Quality
+3. reasonable
+
+This is what ruby code would look like 'puts 'Hello World''!
