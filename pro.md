@@ -1,37 +1,32 @@
 Profolio <!-- Heading -->
 ========
 
-#Heading
-
 Sub-Heading <!-- Sub-Heading -->
 ---
 
-##Sub-Heading
+Sub-Heading 2.0
+---------------
 
-This is markdown
-----------------
-
-### Welcome to the reository
+### Welcome to the reository 
+<!-- ^ No line under sub-heading -->
 
 Visit my github [here](https://github.com/tapiad) <!-- This is a link -->
 
-> ## This is a headline <!-- A header -->
->
-> This is a long sentence short *of* <!-- Italic -->
->
-> this wil be a line of **nothing** <!-- Bold -->
+> ## Headline for Faded <!-- Faded Header -->
+> This is a faded sentence!
+> All of this is faded colored
+<!-- ^ Faded Wording -->
 
-### Another header
-* I go for Cruz Azul <!-- bullit points -->
-+ Test
-- Blue
+*This is Italic* <!-- Italic -->
+
+**This is BOLD** <!-- Bold -->
 
 ### Number List
 1. Price <!-- Number List -->
 2. Quality
 3. reasonable
 
-### THis is a Bullet List
+### This is a Bullet List
 * One <!-- Bullet List -->
 * Two
 * Three
