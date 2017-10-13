@@ -1,12 +1,8 @@
----
-title: Daniel Tapia
-layout: default
----
-
 Daniel Tapia
 ===
 
 Please visit my GitHub page [here](https://github.com/tapiad/tapiad.github.io)!
 ---
 
-### Welcome to my Profolio
+### Welcome to my Portfolio
+
