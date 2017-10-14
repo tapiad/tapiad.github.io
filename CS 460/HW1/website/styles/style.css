@@ -1,0 +1,45 @@
+/*p,li,h1 {
+	color: red;
+	width: 500px;
+	border: 1px solid black;  
+} */
+html {
+  font-size: 20px;/* px means 'pixels': the base font size is now 10 pixels high  */
+  font-family: 'Lato', sans-serif;
+  background-color: #ABABB3;
+  padding: 0 20px 20px 20px; /*values set top,right,bottom,left*/
+}
+
+footer {
+  padding: 0 0 50px 0; /*values set top,right,bottom,left*/
+}
+
+h1 {
+  font-size: 70px;/*font size*/
+	text-align: center;
+	margin: 0;/*space around outside of element*/
+  padding: 20px 0;/*space around content(paragraph)*/    
+  color: #00539F;
+  text-shadow: 2px 2px 1px black;/*1:hor offset, 2:ver offeset, 3:blur radius, 4:base color shadow*/
+}
+
+p {
+  text-align: center;
+  font-size: 20px;    
+  line-height: 2;
+  letter-spacing: 1px;
+  text-decoration: underline;
+}
+
+body {
+  width: all;/*forces the body to always be xxx pixels wide*/
+  margin: 0 auto;/*first value affects element's top & bottom, second value right & left*/
+  background-color: #80A9ED;
+  padding: 0 20px 20px 20px;/*values set top,right,bottom,left*/
+  border: 5px solid black;/*solid line around padding*/
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
