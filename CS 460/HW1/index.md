@@ -47,7 +47,7 @@ As I first started creating my HTML web-page I noticed that I have forgotten som
 </html>
 ```
 
-### Adding the CSS
+### Step 3: Adding the CSS
 
 We are to had a little flavor to our HTML web-site by using CSS. Here is a helpful link: [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS).
 
@@ -79,7 +79,7 @@ body {
 }
 ```
 
-### Step 3: Adding Bootstrap
+### Step 4: Bootstrap
 
 I first had no idea what was bootstrap. I have always thought about it had to do something with a computing booting up. Anyways, here is a link I used to learn some basics of [Bootstrap](https://www.w3schools.com/bootstrap/bootstrap_get_started.asp).
 
@@ -98,7 +98,7 @@ Just like CSS you have to hook up bootstrap. Here is how I linked mine:
 
 You want to make sure you add this into your in the *<head>* part of your HTML.
 
-There are many things that Bootstrap is useful for. I used a Navbar from Bootstrap to add on to my web-page:
+There are many things that Bootstrap is useful for. I used a Navbar which was a requirement to add on to my web-page:
 
 ```html
 <nav class="navbar navbar-inverse">  <!-- Bootstrap Navbar -->
@@ -114,3 +114,5 @@ There are many things that Bootstrap is useful for. I used a Navbar from Bootstr
   		</div>
 	</nav>
 ```
+
+As part of the requirements of this assignment, I had to add a table, a `ol`, `ul`, and `dl` type of lists. All code has to be our own. We are not allowed to use designers such as Dreamweaver.
