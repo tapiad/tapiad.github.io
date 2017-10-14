@@ -39,7 +39,9 @@ If I were to edit the README.md file I will need to `git pull` first and then `a
   </head>
 
   <body>
-  	<p> This is my HTML </p>
+  	<h1>Welcome To Daniel's Webpage</h1> <!-- Piano Image -->
+	<img src="images/Piano-Keys.jpg" alt="Image of a Piano!" width="500" height="350">
+	<p>"What has keys but can't listen to the beaty it unlocks? A piano"</p>
   </body>
 </html>
 ```
