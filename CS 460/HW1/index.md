@@ -30,7 +30,7 @@ If I were to edit the README.md file I will need to `git pull` first and then `a
 
 ### Step 2: HTML
 
-As I first started creating my HTML web-page I noticed that I have forgotten some of the basics. I received plenty of help by reading over this website on about[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML). Helped me get something on my web-page like a simple header, image, and paragraph.
+As I first started creating my HTML web-page I noticed that I have forgotten some of the basics. I received plenty of help by reading over this website on about [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML). Helped me get something on my web-page like a simple header, image, and paragraph.
 
 ```html
 <!DOCTYPE html>
@@ -39,7 +39,6 @@ As I first started creating my HTML web-page I noticed that I have forgotten som
     <title>HW1 Webpage</title>
     <meta charset="utf-8">
   </head>
-
   <body>
   	<h1>Welcome To Daniel's Webpage</h1> <!-- Piano Image -->
 	<img src="images/Piano-Keys.jpg" alt="Image of a Piano!" width="500" height="350">
@@ -59,7 +58,6 @@ html {
   background-color: #ABABB3;
   padding: 0 20px 20px 20px; /*values set top,right,bottom,left*/
 }
-
 h1 {
   text-align: center;
   margin: 0;/*space around outside of element*/
@@ -67,24 +65,10 @@ h1 {
   color: #00539F;
   text-shadow: 2px 2px 1px black;/*1:hor offset, 2:ver offeset, 3:blur radius, 4:base color shadow*/
 }
-
-p {
-  text-align: center;
-  font-size: 20px;    
-  line-height: 2;
-  letter-spacing: 1px;
-  text-decoration: underline;
-}
-
 body {
   width: all;/*forces the body to always be xxx pixels wide*/
   margin: 0 auto;/*first value affects element's top & bottom, second value right & left*/
   padding: 0 20px 20px 20px;/*values set top,right,bottom,left*/
   border: 5px solid black;/*solid line around padding*/
-}
-
-img {
-  display: block;
-  margin: 0 auto;
 }
 ```
