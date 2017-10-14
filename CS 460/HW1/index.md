@@ -30,6 +30,8 @@ If I were to edit the README.md file I will need to `git pull` first and then `a
 
 ### Step 2: HTML
 
+As I first started creating my HTML web-page I noticed that I have forgotten some of the basics. I received plenty of help by reading over this website on about[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML). Helped me get something on my web-page like a simple header, image, and paragraph.
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -41,7 +43,48 @@ If I were to edit the README.md file I will need to `git pull` first and then `a
   <body>
   	<h1>Welcome To Daniel's Webpage</h1> <!-- Piano Image -->
 	<img src="images/Piano-Keys.jpg" alt="Image of a Piano!" width="500" height="350">
-	<p>"What has keys but can't listen to the beaty it unlocks? A piano"</p>
+	<p>I love playing the piano</p>
   </body>
 </html>
+```
+
+### Adding the CSS
+
+We are to had a little flavor to our HTML web-site by using CSS. Here is a helpful link: [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS).
+
+CSS helps with presentation of your website! It can be the padding of your body or adding a backgroud color to changing the size of a paragraph. Here are some of the CSS elements I used for my web-page:
+
+```CSS
+html {
+  background-color: #ABABB3;
+  padding: 0 20px 20px 20px; /*values set top,right,bottom,left*/
+}
+
+h1 {
+  text-align: center;
+  margin: 0;/*space around outside of element*/
+  padding: 20px 0;/*space around content(paragraph)*/    
+  color: #00539F;
+  text-shadow: 2px 2px 1px black;/*1:hor offset, 2:ver offeset, 3:blur radius, 4:base color shadow*/
+}
+
+p {
+  text-align: center;
+  font-size: 20px;    
+  line-height: 2;
+  letter-spacing: 1px;
+  text-decoration: underline;
+}
+
+body {
+  width: all;/*forces the body to always be xxx pixels wide*/
+  margin: 0 auto;/*first value affects element's top & bottom, second value right & left*/
+  padding: 0 20px 20px 20px;/*values set top,right,bottom,left*/
+  border: 5px solid black;/*solid line around padding*/
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
 ```
