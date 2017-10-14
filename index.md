@@ -19,5 +19,5 @@ As a Senior at Western Oregon University we are to create this Portfolio. We wil
 
 ### Software Engineering I (CS 460): Homework
 1. [Homework 1](CS 460/HW1/index.md): Git, HTML, CSS, and Bootstrap
-2. Homework 2:
+2. [Homework 2](CS 460/HW1/index.md):
 3. Homework 3:
