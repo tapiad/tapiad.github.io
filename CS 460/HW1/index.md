@@ -51,7 +51,13 @@ As I first started creating my HTML web-page I noticed that I have forgotten som
 
 We are to had a little flavor to our HTML web-site by using CSS. Here is a helpful link: [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS).
 
-CSS helps with presentation of your website! It can be the padding of your body or adding a backgroud color to changing the size of a paragraph. Here are some of the CSS elements I used for my web-page:
+Before adding CSS to your HTML you have to make the CSS is linked to your HTML. Here is an example of mine:
+
+```html
+<link href="styles/style.css" rel="stylesheet" type="text/css">
+```
+
+CSS helps with presentation of your website! It can be the padding of your body or adding a background color to changing the size of a paragraph. Here are some of the CSS elements I used for my web-page:
 
 ```CSS
 html {
@@ -71,4 +77,40 @@ body {
   padding: 0 20px 20px 20px;/*values set top,right,bottom,left*/
   border: 5px solid black;/*solid line around padding*/
 }
+```
+
+### Step 3: Adding Bootstrap
+
+I first had no idea what was bootstrap. I have always thought about it had to do something with a computing booting up. Anyways, here is a link I used to learn some basics of [Bootstrap](https://www.w3schools.com/bootstrap/bootstrap_get_started.asp).
+
+Just like CSS you have to hook up bootstrap. Here is how I linked mine:
+
+```html
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+```
+
+You want to make sure you add this into your in the *<head>* part of your HTML.
+
+There are many things that Bootstrap is useful for. I used a Navbar from Bootstrap to add on to my web-page:
+
+```html
+<nav class="navbar navbar-inverse">  <!-- Bootstrap Navbar -->
+  		<div class="container-fluid">
+   			<div class="navbar-header">
+      			<a class="navbar-brand" href="#">Daniel's Website</a>
+    		</div>
+    		<ul class="nav navbar-nav">
+      			<li class="active"><a href="#">Home</a></li>
+      			<li><a href="https://github.com/tapiad">GitHub Page</a></li>
+      			<li><a href="https://tapiad.github.io/">Portfolio</a></li>
+    		</ul>1
+  		</div>
+	</nav>
 ```
