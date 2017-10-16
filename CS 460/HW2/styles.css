@@ -1,0 +1,8 @@
+h1 {
+  font-size: 70px;/*font size*/
+	text-align: center;
+	margin: 0;/*space around outside of element*/
+  padding: 20px 0;/*space around content(paragraph)*/    
+  color: #00539F;
+  text-shadow: 2px 2px 1px black;/*1:hor offset, 2:ver offeset, 3:blur radius, 4:base color shadow*/
+}
