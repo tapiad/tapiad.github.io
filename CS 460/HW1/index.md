@@ -1,3 +1,11 @@
+---
+title: Daniel
+layout: default
+---
+
+Visit my GitHub [here](https://github.com/tapiad).
+Visit my [Portfolio](https://tapiad.github.io). 
+
 ### Homework 1
 
 For our first homework assignment we are to learn the basics of HTML and CSS. We are also required to use Bootstrap for our website we are to create. This assignment is where we are going to learn the basics of Git. We are to only use the command line while using Git. We are also going to have a working GitHub Pages repository/web page.
