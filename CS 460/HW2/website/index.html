@@ -34,27 +34,33 @@
 				$("#diamond-img").hide();
 				//Action of Cal-Button
 				$("#cal_Button").click(function() {
+					// get input values
 					var dLValue = $("#dLength input[type=number]").val();
 					var dWValue = $("#dWidth input[type=number]").val();
 					var dHValue = $("#dHeight input[type=number]").val();
+					// clearing/setting values
 					var coef = "0.009"; //Mean Coefficient
 					$("#diamond-img").width(300);
 					$("#diamond-img").height(250);
 					$("#cal-result").empty();
 					$("table").empty();
+					// checks for high vaules
 					if ((dLValue > 25.4) || (dWValue > 25.4) || (dHValue > 25.4)) {
 						alert("A value you entered is too high!")
+					// checks to make sure vaules are entered
 					}else if ((dLValue == "") || (dWValue == "") || (dHValue == "")) {
 						alert("Enter Values!");
-					} else{
+					} else{ // determines coefficient 
 						if ((parseFloat(dLValue) /  parseFloat(dWValue)) <= 1.0) {
 							coef = "0.006";//Low Coefficient
 						}
 						if ((parseFloat(dLValue) /  parseFloat(dWValue)) >= 3.0) {
 							coef = "0.012";//High Coefficient
 						}
+						//L * W * H * coefficient = weight of carats
 						var carats = (parseFloat(dLValue) * parseFloat(dWValue) * parseFloat(dHValue) 
 								* parseFloat(coef)).toFixed(3);
+						// sets diamond-img depending on carat weight
 						if (carats >= 5.00) {
 							$("#diamond-img").width(500);
 							$("#diamond-img").height(400);
@@ -65,6 +71,7 @@
 						}
 						$("#diamond-img").show();
 						//alert("Diamond Weight is: " + carats);
+						// creates table 
 						$("table").append( '<tr><td>' + "<b>Diamond's Length:</b> "  +  dLValue + 'mm </td></tr>' );
 						$("table").append( '<tr><td>' + "<b>Diamond's Width:</b> "  +  dWValue + 'mm </td></tr>' );
 						$("table").append( '<tr><td>' + "<b>Diamond's Height:</b> "  +  dHValue + 'mm </td></tr>' );
