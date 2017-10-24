@@ -1,8 +1,4 @@
-//alert("HI!!!"); // Pop-up window sing Hi
-
-//document.write("5 + 4 = ", 5+4, "<br />");
-
-function refresh(){
+function refresh(){ //resets values when page refreshes
 	document.getElementById("dLength").reset();
 	document.getElementById("dWidth").reset();
 	document.getElementById("dHeight").reset();
@@ -10,7 +6,9 @@ function refresh(){
 window.load = refresh();
 
 
+//alert("HI!!!"); // Pop-up window sing Hi
 
+//document.write("5 + 4 = ", 5+4, "<br />");
 
 // var yourName = prompt("What is your name?"); // Ask for name to say hello :)
 
