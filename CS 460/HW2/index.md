@@ -27,6 +27,12 @@ git branch
 ```
 
 
+### Step 2: Wireframe Mockup
+
+This step of the homework we are to make a blue-print-like design of our website. We labeled out our design using classes like `container`, `row`, and `column`. I created my wirframe using an application called *Pencil*.
+
+![Wireframe](Diamond\ Wireframe.png)
+
 
 
 
