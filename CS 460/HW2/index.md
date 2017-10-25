@@ -34,7 +34,8 @@ This step of the homework we are to make a blue-print-like design of our website
 ![Wireframe](https://tapiad.github.io/CS%20460/HW2/Diamond%20Wireframe.png)
 
 
-### Step 3: 
+### Step 3: Javascript/jQuery Website
+
 
 
 
