@@ -241,7 +241,7 @@ $("#diamond-img").height(250);
 
 As I was doing some test runs I noticed the user can insert high values, low values, or no values. They are able to pass the limit of 25.4 or go lower that 0.1. I made sure they received an alert when ever they tried doing such. We can throw an alert at them by using a method call `alert()`.
 
-```JQ
+```JS
 if ((dLValue > 25.4) || (dWValue > 25.4) || (dHValue > 25.4)) { // checks for high values
 	alert("Value too High!")
 }else if ((dLValue < 0.1) || (dWValue < 0.1) || (dHValue < 0.1)) { // checks for low values
