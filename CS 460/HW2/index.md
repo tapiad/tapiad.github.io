@@ -4,7 +4,9 @@ layout: default
 ---
 
 Visit my GitHub [here](https://github.com/tapiad).
+
 Visit my [Portfolio](https://tapiad.github.io).
+
 Link to [Homework 2](http://www.wou.edu/~morses/classes/cs46x/assignments/HW2.html). 
 
 ### Homework 2
@@ -120,7 +122,8 @@ h2{
 
 **Adding Bootstrap**
 
-The first row is where I would contain three inputs(type number). I made sure each input had a column of four which would add to the total number of columns(12). The inputs are for the Diamond's length, width, and height. 
+The first row is where I would contain three inputs(type number). I made sure each input had a column of four which would add to the total number of columns(12). The inputs are for the Diamond's length, width, and height.
+
 Within the input it has a placeholder that reads '*e.g. 2.5mm*' so the user knows it's measured by millimeters. The minimum value a user can enter is 0.1mm and the highest amount is 25.4mm. I set it at 25.4mm because that measures out to exactly 1 inch. The step is by 0.1.
 The second row is where I added a button for the user to click on to see the final result.
 
@@ -214,7 +217,7 @@ Now onto working with jQuery. At the start of jQuery, I set *diamond-img* to be 
 
 Now onto the event action of the button click! this is where the party starts. Within the jQuery code there is an event method called `.click()` which takes action once a specific button is click on which in my case will be *cal_Button*. Note: `#` is for id and `.` is for classes. So referring to id of the button *cal_Button* it will look like `$("#cal_Button")` followed but the method `.click()` which contains a function call `function(){}`.
 
-```HTML
+```jQuery
 $("#cal_Button").click(function() { 
 	//Event Action
 })
