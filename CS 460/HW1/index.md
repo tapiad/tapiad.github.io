@@ -70,7 +70,7 @@ Before adding CSS to your HTML you have to make the CSS is linked to your HTML. 
 
 CSS helps with presentation of your website! It can be the padding of your body or adding a background color to changing the size of a paragraph. Here are some of the CSS elements I used for my web-page:
 
-```CSS
+```css
 html {
   background-color: #ABABB3;
   padding: 0 20px 20px 20px; /*values set top,right,bottom,left*/
