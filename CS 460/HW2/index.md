@@ -283,7 +283,7 @@ $("#diamond-img").show();
 
 Now it is time to add in values to *table* and *cal-result*. The table will consist of the values of length, width, height, and coefficient. The paragraph will express the final result of *carats*. We are able to add values to elements through a method call named `append()`. 
 
-```jScript
+```javascript
 $("table").append( '<tr><td>' + "<b>Diamond's Length:</b> "  +  dLValue + 'mm </td></tr>' );
 $("table").append( '<tr><td>' + "<b>Diamond's Width:</b> "  +  dWValue + 'mm </td></tr>' );
 $("table").append( '<tr><td>' + "<b>Diamond's Height:</b> "  +  dHValue + 'mm </td></tr>' );
