@@ -40,7 +40,7 @@ This step of the homework we are to make a blue-print-like design of our website
 
 I created my website based off diamonds. I did this because I recently bought a ring with a diamond and I did my research on it and I found out how diamonds are calculated for their price. I wanted to do something similar and I found myself creating a webpage based off how to calculate a diamond's weight in carats.
 
-**- Heading and Body**
+**Heading and Body**
 
 The first think I did to the webpage is starting working on the HTML file by adding in the head linking files such as style.css, bootstrap, and jQuery. Giving the wesite a title and making sure it is in Unicode Transformation Format.
 
@@ -344,3 +344,5 @@ git checkout master
 git merge hw2-file
 git push origin master
 ```
+
+You can visit my completed web-site here at [CS460 HW2 Webpage](website)!!!
