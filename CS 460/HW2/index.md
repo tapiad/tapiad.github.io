@@ -89,7 +89,7 @@ I then added in the body which would contain the container with rows containing 
 
 I then added some flavor by editing the styles.css file. I adding some color, padding, ect. to the elements on the webpage. In some cases, it will not allow me to modify an element. I would have to use `!important` for it to overwrite.
 
-```CSS
+```css
 html{
 	background-color: #333333;
 	margin: 20px 20px 20px 20px;
@@ -303,7 +303,7 @@ I wrote Javascript in a different file called *jScript.js*. I added the script i
 
 As I was refreshing the webpage I noticed that the values with in the user input will still be showing the previous values. I created a function call `refresh()` and used a method called `reset` to set the value back to the origin value. Then I added the function call into window when it refreshes. 
 
-```jScript
+```js
 function refresh(){ //resets values when page refreshes
 	document.getElementById("dLength").reset();
 	document.getElementById("dWidth").reset();
