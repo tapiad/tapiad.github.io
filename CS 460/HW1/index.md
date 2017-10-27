@@ -125,4 +125,4 @@ There are many things that Bootstrap is useful for. I used a Navbar which was a 
 
 As part of the requirements of this assignment, I had to add a table, a `ol`, `ul`, and `dl` type of lists. All code has to be our own. We are not allowed to use designers such as Dreamweaver.
 
-You can visit my completed web-site here at [Daniel's Web-Site](website)!!!
+You can visit my completed web-site here at [CS460 HW1 Webpage](website)!!!
