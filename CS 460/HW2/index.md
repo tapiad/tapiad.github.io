@@ -207,7 +207,7 @@ h2{
 
 Now onto working with jQuery. At the start of jQuery, I set *diamond-img* to be hidden. So when a user opens the webpage they won't able to see the image *diamond-img*.
 
-```JS
+```JQ
 <!-- jQuery Code -->
 <script type="text/javascript">
 	$("document").ready(function(){
@@ -217,7 +217,7 @@ Now onto working with jQuery. At the start of jQuery, I set *diamond-img* to be 
 
 Now onto the event action of the button click! this is where the party starts. Within the jQuery code there is an event method called `.click()` which takes action once a specific button is click on which in my case will be *cal_Button*. Note: `#` is for id and `.` is for classes. So referring to id of the button *cal_Button* it will look like `$("#cal_Button")` followed but the method `.click()` which contains a function call `function(){}`.
 
-```JS
+```JQ
 $("#cal_Button").click(function() { 
 	//Event Action
 })
@@ -225,7 +225,7 @@ $("#cal_Button").click(function() {
 
 Right after a user clicks on *cal-Button* the values entered by the user are inserted into variables(`var`) inside of the *//Event Action*. To get a value from an element it uses `.val()`. Since our input elements are of type number you will need to refer to that when referring to the element. ex: `$("#dLength input[type=number]")`. You can also just add in a string into a variable as I did into *coef* referring to coefficient. 
 
-```JS
+```JQ
 var dLValue = $("#dLength input[type=number]").val();
 var dWValue = $("#dWidth input[type=number]").val();
 var dHValue = $("#dHeight input[type=number]").val();
@@ -241,7 +241,7 @@ $("#diamond-img").height(250);
 
 As I was doing some test runs I noticed the user can insert high values, low values, or no values. They are able to pass the limit of 25.4 or go lower that 0.1. I made sure they received an alert when ever they tried doing such. We can throw an alert at them by using a method call `alert()`.
 
-```JS
+```JQ
 if ((dLValue > 25.4) || (dWValue > 25.4) || (dHValue > 25.4)) { // checks for high values
 	alert("Value too High!")
 }else if ((dLValue < 0.1) || (dWValue < 0.1) || (dHValue < 0.1)) { // checks for low values
@@ -251,7 +251,7 @@ if ((dLValue > 25.4) || (dWValue > 25.4) || (dHValue > 25.4)) { // checks for hi
 
 I wanted my coefficient to be more realistic instead of having one mean value. I wanted it to change depend on the length divided by width ratio. If the ratio is below 1.0, then the coefficient is low. If the ratio is higher than 3.0, then the coefficient is high. Else the coefficient will stay the same at 0.009. Note: method `parseFloat()` returns a floating point number.
 
-```HTML
+```JQ
 if ((parseFloat(dLValue) /  parseFloat(dWValue)) <= 1.0) {
 	coef = "0.006";//Low Coefficient
 }
@@ -262,14 +262,14 @@ if ((parseFloat(dLValue) /  parseFloat(dWValue)) >= 3.0) {
 
 Now that we have all the values that we need to find out the weight of a diamond in carats I decided to add it all into variable called *carats*. Note: Length x Width x Height x Coefficient = Weight in Carats. I found a this website to be helpful when finding a way [how to calculate a diamond's weight in carats](http://www.jewelrynotes.com/how-to-calculate-a-diamonds-weight-in-carats/). 
 
-```HTML
+```JQ
 var carats = (parseFloat(dLValue) * parseFloat(dWValue) * parseFloat(dHValue) 
 		* parseFloat(coef)).toFixed(3);
 ```
 
 Depending on the how many carats the image of *diamond-img* can be resized. It can be smaller image if the carat weight is lower than 1.00 or it can be bigger image if the carat weight is higher than 5.00. After it has a fixed sized image, the image will be visible to the user by using the `show()` method call.
 
-```HTML
+```JQ
 if (carats >= 5.00) {
 	$("#diamond-img").width(500);
 	$("#diamond-img").height(400);
@@ -283,7 +283,7 @@ $("#diamond-img").show();
 
 Now it is time to add in values to *table* and *cal-result*. The table will consist of the values of length, width, height, and coefficient. The paragraph will express the final result of *carats*. We are able to add values to elements through a method call named `append()`. 
 
-```HTML
+```JQ
 $("table").append( '<tr><td>' + "<b>Diamond's Length:</b> "  +  dLValue + 'mm </td></tr>' );
 $("table").append( '<tr><td>' + "<b>Diamond's Width:</b> "  +  dWValue + 'mm </td></tr>' );
 $("table").append( '<tr><td>' + "<b>Diamond's Height:</b> "  +  dHValue + 'mm </td></tr>' );
