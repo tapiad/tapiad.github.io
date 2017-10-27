@@ -7,7 +7,7 @@ Visit my GitHub [here](https://github.com/tapiad).
 
 Visit my [Portfolio](https://tapiad.github.io).
 
-Link to [Homework 2](http://www.wou.edu/~morses/classes/cs46x/assignments/HW2.html). 
+Link to Homework 2 [assignment](http://www.wou.edu/~morses/classes/cs46x/assignments/HW2.html). 
 
 ### Homework 2
 
@@ -20,7 +20,7 @@ Before creating the branch I created a new folder in my Git repository named *HW
 Here you can I created a branch called `hw2-file`. I tried to be creative... After creation of the branch I used `git checkout` to have the head to hw2-file. At the end of it I simply checked if head is pointing towards `hw2-file` by executing `git branch`.  
 
 <!-- branch/checkout -->
-```BASH
+```bash
 git branch hw2-file
 git checkout hw2-file
 git branch
@@ -44,7 +44,7 @@ I created my website based off diamonds. I did this because I recently bought a 
 
 The first think I did to the webpage is starting working on the HTML file by adding in the head linking files such as style.css, bootstrap, and jQuery. Giving the wesite a title and making sure it is in Unicode Transformation Format.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -66,7 +66,7 @@ The first think I did to the webpage is starting working on the HTML file by add
 
 I then added in the body which would contain the container with rows containing the header, an image, a paragraph, and another small header used as a footer.
 
-```HTML
+```html
 <body>
   	<!-- container -->
 	<div class="container">
