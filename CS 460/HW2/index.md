@@ -225,7 +225,7 @@ $("#cal_Button").click(function() {
 
 Right after a user clicks on *cal-Button* the values entered by the user are inserted into variables(`var`) inside of the *//Event Action*. To get a value from an element it uses `.val()`. Since our input elements are of type number you will need to refer to that when referring to the element. ex: `$("#dLength input[type=number]")`. You can also just add in a string into a variable as I did into *coef* referring to coefficient. 
 
-```jQ
+```JQ
 var dLValue = $("#dLength input[type=number]").val();
 var dWValue = $("#dWidth input[type=number]").val();
 var dHValue = $("#dHeight input[type=number]").val();
@@ -234,7 +234,7 @@ var coef = "0.009";
 
 I then fixed *diamond-img*'s width and height. Note: at this moment the image is still hidden.
 
-```JS
+```JQ
 $("#diamond-img").width(300);
 $("#diamond-img").height(250);
 ```
