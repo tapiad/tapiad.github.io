@@ -303,7 +303,7 @@ I wrote Javascript in a different file called *jScript.js*. I added the script i
 
 As I was refreshing the webpage I noticed that the values with in the user input will still be showing the previous values. I created a function call `refresh()` and used a method called `reset` to set the value back to the origin value. Then I added the function call into window when it refreshes. 
 
-```js
+```html
 function refresh(){ //resets values when page refreshes
 	document.getElementById("dLength").reset();
 	document.getElementById("dWidth").reset();
