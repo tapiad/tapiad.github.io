@@ -207,7 +207,7 @@ h2{
 
 Now onto working with jQuery. At the start of jQuery, I set *diamond-img* to be hidden. So when a user opens the webpage they won't able to see the image *diamond-img*.
 
-```HTML
+```JS
 <!-- jQuery Code -->
 <script type="text/javascript">
 	$("document").ready(function(){
@@ -217,7 +217,7 @@ Now onto working with jQuery. At the start of jQuery, I set *diamond-img* to be 
 
 Now onto the event action of the button click! this is where the party starts. Within the jQuery code there is an event method called `.click()` which takes action once a specific button is click on which in my case will be *cal_Button*. Note: `#` is for id and `.` is for classes. So referring to id of the button *cal_Button* it will look like `$("#cal_Button")` followed but the method `.click()` which contains a function call `function(){}`.
 
-```JQ
+```JS
 $("#cal_Button").click(function() { 
 	//Event Action
 })
