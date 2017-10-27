@@ -18,7 +18,7 @@ Before creating the branch I created a new folder in my Git repository named *HW
 Here you can I created a branch called `hw2-file`. I tried to be creative... After creation of the branch I used `git checkout` to have the head to hw2-file. At the end of it I simply checked if head is pointing towards `hw2-file` by executing `git branch`.  
 
 <!-- branch/checkout -->
-```bash
+```BASH
 git branch hw2-file
 git checkout hw2-file
 git branch
@@ -257,7 +257,7 @@ if ((parseFloat(dLValue) /  parseFloat(dWValue)) >= 3.0) {
 }
 ```
 
-Now that we have all the values that we need to find out the weight of a diamond in carats I decided to add it all into variable called *carats*. Note: Length x Width x Height x Coefficient = Weight in Carats.
+Now that we have all the values that we need to find out the weight of a diamond in carats I decided to add it all into variable called *carats*. Note: Length x Width x Height x Coefficient = Weight in Carats. I found a this website to be helpful when finding a way [how to calculate a diamond's weight in carats](http://www.jewelrynotes.com/how-to-calculate-a-diamonds-weight-in-carats/). 
 
 ```HTML
 var carats = (parseFloat(dLValue) * parseFloat(dWValue) * parseFloat(dHValue) 
@@ -324,7 +324,20 @@ th, td {
 ```
 
 
+### Step 4: Merge Feature Branch
 
+As I was working on this assignment I would be adding, commenting, and pushing the feature branch(*hw2-file*) away from the master branch.
 
+```BASH
+git add .
+git commit -m "modified files"
+git push origin hw2-file
+``` 
 
+After adding and pushing, it is time to merge the branch with master. To merge your the feature branch to the master in need to make sure you have `checkout master` first and then `merge` and finally `push origin master`.
 
+```BASH
+git checkout master
+git merge hw2-file
+git push origin master
+```
