@@ -3,7 +3,8 @@
 
 namespace Java_app
 {
-    interface StackADT
+    /** Java Interface defining a Stack. */
+    public interface StackADT
     {
         /**
          * Push an item onto the top of the stack. Pushing an object that 
@@ -26,19 +27,19 @@ namespace Java_app
          * an error if the stack is empty. An acceptable alternative is to return 
          * something which the user can use to check to see if the stack was in fact empty.
          */
-        public Object peek();
+        Object peek();
 
         /**
          * Query the stack to see if it is empty or not. Cannot produce an error.
          */
-        public boolean isEmpty();
+        bool isEmpty();
 
         /**
          * Reset the stack by emptying it. The exact technique used to clear 
          * the stack is up to the implementor. The user should pay attention to what 
          * this behavior is.
          */
-        public void clear();
+        void clear();
     }
 
 }

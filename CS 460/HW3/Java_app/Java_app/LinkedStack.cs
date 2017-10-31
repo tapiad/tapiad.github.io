@@ -11,13 +11,10 @@ namespace Java_app
 
         private Node top;
 
-        LinkedStack(){
-            top = null;//Empty stack condition
-        }
 
-        Object push(Object newItem)
+        public Object StackADT.push(Object newItem)
         {
-            if(newItem == null)
+            if (newItem == null)
             {
                 return null;
             }
@@ -26,9 +23,10 @@ namespace Java_app
             return newItem;
         }
 
-        Object pop()
+        public Object StackADT.pop()
         {
-            if (isEmpty()){
+            if (isEmpty())
+            {
                 return null;
             }
             Object topItem = top.data;
@@ -36,21 +34,21 @@ namespace Java_app
             return topItem;
         }
 
-        Object peek()
+        public Object StackADT.peek()
         {
-            if(isEmpty())
+            if (isEmpty())
             {
                 return null;
             }
             return top.data;
         }
 
-        Boolean isEmpty()
+        public bool StackADT.isEmpty()
         {
             return top = null;
         }
 
-        void clear()
+        public void StackADT.clear()
         {
             top = null;
         }

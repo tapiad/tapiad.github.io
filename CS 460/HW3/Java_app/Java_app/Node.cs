@@ -12,13 +12,13 @@ namespace Java_app
         Object data; //The Payload
         Node next; //Reference to the next Node in the chain
 
-        Node()
+        public Node()
         {
             data = null;
             next = null;
         }
 
-        Node(Object data, Node next)
+        public Node(Object data, Node next)
         {
             this.data = data;
             this.next = next;

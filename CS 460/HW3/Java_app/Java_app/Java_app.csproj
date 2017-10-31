@@ -37,6 +37,7 @@
     <Compile Include="Node.cs" />
     <Compile Include="Calculator.cs" />
     <Compile Include="StackADT.cs" />
+    <Compile Include="Scanner.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
