@@ -3,16 +3,21 @@
 
 namespace Java_app
 {
-    /**
-     * A singly linked stack implementation.
-     */
-    class LinkedStack : StackADT
+    //***************************************
+    /// <summary>
+    /// A singly linked stack implementation.
+    /// </summary>
+    //****************************************
+    class LinkedStack : IStackADT
     {
 
         private Node top;
 
+        public LinkedStack(){
+            top = null;//Empty stack condition
+        }
 
-        Object StackADT.push(Object newItem)
+        object IStackADT.Push(object newItem)
         {
             if (newItem == null)
             {
@@ -23,33 +28,36 @@ namespace Java_app
             return newItem;
         }
 
-        Object StackADT.pop()
+        object IStackADT.Pop()
         {
-            if (isEmpty())
+            if (IsEmpty())
             {
                 return null;
             }
-            Object topItem = top.data;
+            object topItem = top.data;
             top = top.next;
             return topItem;
         }
 
 
-        Object StackADT.peek()
+        object IStackADT.Peek() 
         {
-            if (isEmpty())
+            if (IsEmpty())
             {
                 return null;
             }
             return top.data;
         }
 
-        bool StackADT.isEmpty()
+        /**
+         * Query the stack to see if it is empty or not. Cannot produce an error.
+         */
+        bool IsEmpty()
         {
-            return top = null;
+            return top == null;
         }
 
-        void StackADT.clear()
+        void IStackADT.Clear()
         {
             top = null;
         }

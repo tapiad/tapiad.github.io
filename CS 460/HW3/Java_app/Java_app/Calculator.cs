@@ -2,21 +2,31 @@
 
 namespace Java_app
 {
+    //*********************************************************************************
+    /// <summary>
+    /// Command line postfix calculator.  
+    /// </summary>
+    /// <creator> Daniel Tapia </creator>
+    /// <date> 10.31.17 </date>
+    //*********************************************************************************
     class Calculator
     {
-        /**
-         * Our data structure, used to hold operands for the postfix calculation.
-         */
-        private StackADT stack = new LinkedStack();
+        /// <summary>
+        /// Our data structure, used to hold operands for the postfix calculation.
+        /// </summary>
+        private IStackADT IStack = new LinkedStack();
 
-        /**
-         * Scanner to get input from the user from the command line.
-         */
+
+        /// <summary>
+        /// Scanner to get input from the user from the command line.
+        /// </summary>
         private Scanner scin = new Scanner( Console.ReadLine() );
 
-        /**
-         * Entry point method. Disregards any command line arguments.
-         */
+
+        /// <summary>
+        /// The entry point of the program, where the program control starts and ends.
+        /// </summary>
+        /// <param name="args">The command-line arguments.</param>
         public static void Main(string[] args)
         {
             //Instantiate a "Main" object so we don't have to make everything static
@@ -26,27 +36,30 @@ namespace Java_app
             Console.WriteLine("\nPostfix Calculator. Recognizes these operators: + - * /");
             while (playAgain)
             {
-                playAgain = app.doCalculation();
+                playAgain = app.DoCalculation();
             }
             Console.WriteLine("Bye.");
         }
 
-        /** 
-         * Get input string from user and perform calculation, returning true when
-         * finished. If the user wishes to quit this method returns false.
-        */
-        private Boolean doCalculation()
+
+        /// <summary>
+        /// Get input string from user and perform calculation, returning true when
+        /// finished.If the user wishes to quit this method returns false.
+        /// </summary>
+        /// <returns><c>true</c>, if calculation succeeds, <c>false</c> if user quits.</returns>
+        private Boolean DoCalculation()
         {
             Console.WriteLine("Please enter q to quit\n");
             string input = "2 2 +";
             Console.WriteLine("> ");    //promt user
 
-            input = scin.hasNextStr();
+            input = scin.HasNextStr();
             // looks like nextLine() blocks for input when used on an InputStream 
             // (System.in).  Docs don't say that!
 
             // See if the user wishes to quit
-            if (input.StartsWith("q", StringComparison.Ordinal) || input.StartsWith("Q", StringComparison.Ordinal))
+            if (input.StartsWith("q", StringComparison.Ordinal) || 
+                input.StartsWith("Q", StringComparison.Ordinal))
             {
                 return false;
             }
@@ -54,7 +67,7 @@ namespace Java_app
             string output = "4";
             try
             {
-                output = evaluatePostFixInput(input);
+                output = EvaluatePostFixInput(input);
             }
             catch (Exception e)
             {
@@ -64,10 +77,13 @@ namespace Java_app
             return true;
         }
 
-        /**
-         * Evaluate an arithmetic expression written in postfix form.
-         */
-        public string evaluatePostFixInput(string input)
+
+        /// <summary>
+        /// Evaluate an arithmetic expression written in postfix form.
+        /// </summary>
+        /// <returns>Answer as a string.</returns>
+        /// <param name="input">Postfix mathematical expression as a string.</param>
+        public string EvaluatePostFixInput(string input)
         {
             try
             {
@@ -83,7 +99,7 @@ namespace Java_app
             }
 
             //Clear our stack before doing a new calculation
-            stack.clear();
+            IStack.Clear();
 
             string s;   //Temporary variable for token read
             double a;   //Temporary variable for operand
@@ -91,11 +107,12 @@ namespace Java_app
             double c;   //... for answer
 
             Scanner st = new Scanner(input);
-            while (st.hasNext())
+            while (st.HasNext())
             {
-                if (st.hasNextDouble())
+                if (st.HasNextDouble())
                 {
-                    LinkedStack.push(stack, new Double(st.nextDouble()));
+                    double.TryParse(st);
+                    //LinkedStack.push(stack, new Double(st.nextDouble()));
                     //if it's a number push it on the stack
                 }
                 else
@@ -125,7 +142,7 @@ namespace Java_app
                         a = ((Double)(stack.pop())).doubleValue();
                         //Wrap up all operations in a single method, easy to add 
                         //other binary operators this way if desired
-                        c = doOperation(a, b, s);
+                        c = DoOperation(a, b, s);
                         // push the answer back on the stack
                         LinkedStack.push(stack, new Double(c));
                     }
@@ -138,12 +155,15 @@ namespace Java_app
             return ((Double)(stack.pop())).ToString();
         }
 
-        /**
-         * Perform arithmetic. 
-         * Put it here so as not to clutter up the previous method, 
-         * which is already pretty ugly.
-         */
-        public double doOperation(double a, double b, string s)
+
+        /// <summary>
+        /// Performs arithmetic
+        /// </summary>
+        /// <returns>The answer.</returns>
+        /// <param name="a">First operand.</param>
+        /// <param name="b">Second operand.</param>
+        /// <param name="s">Operator.</param>
+        public double DoOperation(double a, double b, string s)
         {
             double c = 0.0;
             if (s.Equals("+"))//Can't use a switch-case with Strings, so we do if-else

@@ -9,8 +9,8 @@ namespace Java_app
      */
     class Node
     {
-        Object data; //The Payload
-        Node next; //Reference to the next Node in the chain
+        readonly object data; //The Payload
+        readonly Node next; //Reference to the next Node in the chain
 
         public Node()
         {
@@ -18,7 +18,7 @@ namespace Java_app
             next = null;
         }
 
-        public Node(Object data, Node next)
+        public Node(object data, Node next)
         {
             this.data = data;
             this.next = next;

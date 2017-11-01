@@ -9,10 +9,10 @@ namespace Java_app
 
         public Scanner(string source) : base(source)
         {
-            readNextWord();
+            ReadNextWord();
         }
 
-        private void readNextWord()
+        private void ReadNextWord()
         {
             StringBuilder sb = new StringBuilder();
             char nextChar;
@@ -35,21 +35,20 @@ namespace Java_app
                 currentWord = null;
         }
 
-        public string hasNextStr()
+        public string HasNextStr()
         {
-            readNextWord();
+            ReadNextWord();
             return currentWord;
         }
 
-        public bool hasNextInt()
+        public bool HasNextInt()
         {
             if (currentWord == null)
                 return false;
-            int dummy;
-            return int.TryParse(currentWord, out dummy);
+            return int.TryParse(currentWord, out int dummy);
         }
 
-        public int nextInt()
+        public int NextInt()
         {
             try
             {
@@ -57,19 +56,18 @@ namespace Java_app
             }
             finally
             {
-                readNextWord();
+                ReadNextWord();
             }
         }
 
-        public bool hasNextDouble()
+        public bool HasNextDouble()
         {
             if (currentWord == null)
                 return false;
-            double dummy;
-            return double.TryParse(currentWord, out dummy);
+            return double.TryParse(currentWord, out double dummy);
         }
 
-        public double nextDouble()
+        public double NextDouble()
         {
             try
             {
@@ -77,11 +75,11 @@ namespace Java_app
             }
             finally
             {
-                readNextWord();
+                ReadNextWord();
             }
         }
 
-        public bool hasNext()
+        public bool HasNext()
         {
             return currentWord != null;
         }
