@@ -2,9 +2,11 @@
 
 namespace Java_app
 {
+    //******************************************
     /// <summary>
     /// Operates the same way as a java Scanner.
     /// </summary>
+    //******************************************
     class Scanner : System.IO.StringReader
     {
         /// <summary>

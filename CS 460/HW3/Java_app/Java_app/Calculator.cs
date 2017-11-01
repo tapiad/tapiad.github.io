@@ -56,11 +56,11 @@ namespace Java_app
 
             input = scin.HasNextStr();
             // looks like nextLine() blocks for input when used on an InputStream 
-            // (System.in).  Docs don't say that!
 
             // See if the user wishes to quit
-            if (input.StartsWith("q", StringComparison.CurrentCulture) || 
-                input.StartsWith("Q", StringComparison.Ordinal))
+            //if (input.StartsWith("q", StringComparison.CurrentCulture) || 
+            //input.StartsWith("Q", StringComparison.CurrentCulture))
+            if(input == "q" || input == "Q")
             {
                 return false;
             }
