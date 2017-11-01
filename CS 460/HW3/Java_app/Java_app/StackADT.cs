@@ -2,30 +2,32 @@
 
 namespace Java_app
 {
-    /** Java Interface defining a Stack. */
+    //*****************************
+    /// <summary>
+    /// Interface defining a Stack.
+    /// </summary>
+    //*****************************
     public interface IStackADT
     {
-        /**
-         * Push an item onto the top of the stack. Pushing an object that 
-         * doesn’t exist should result in an error and should not succeed.
-         * Pushing an object that is not an item should result in an error.
-         * This operation returns a reference (pointer or link, but not a copy)
-         * to the item pushed so that an anonymous object can be pushed and then used.
-         */
+        /// <summary>
+        /// Push an item onto the top of the stack.
+        /// </summary>
+        /// <returns>A reference to the object that was pushed.</returns>
+        /// <param name="newItem">The object to push onto the top of the stack.</param>
         object Push(object newItem);
 
-        /**
-         * Remove and return the top item on the stack. This operation should 
-         * result in an error if the stack is empty. Returns a reference to the 
-         * item removed.
-         */
+
+        /// <summary>
+        /// Remove and return the top item on the stack.
+        /// </summary>
+        /// <returns>A reference that was popped.removed from stack.</returns>
         object Pop();
 
-        /**
-         * Return the top item but do not remove it. Generally should result in 
-         * an error if the stack is empty. An acceptable alternative is to return 
-         * something which the user can use to check to see if the stack was in fact empty.
-         */
+
+        /// <summary>
+        /// Return the top item but do not remove it.
+        /// </summary>
+        /// <returns>A reference to the item currently on the top of the stack.</returns>
         object Peek();
 
         /**
@@ -33,6 +35,10 @@ namespace Java_app
          * the stack is up to the implementor. The user should pay attention to what 
          * this behavior is.
          */
+
+        /// <summary>
+        /// Reset the stack by emptying it.
+        /// </summary>
         void Clear();
     }
 
