@@ -26,13 +26,14 @@ namespace Java_app
         /// <summary>
         /// The entry point of the program, where the program control starts and ends.
         /// </summary>
-        /// <param name="args">The command-line arguments.</param>
-        public static void Main(string[] args)
+        // <param name="args">The command-line arguments.</param>
+        //public static void Main(string[] args)
+        public static void Main()
         {
             //Instantiate a "Main" object so we don't have to make everything static
             Console.WriteLine("Hello World!");
             Calculator app = new Calculator();
-            Boolean playAgain = true;
+            bool playAgain = true;
             Console.WriteLine("\nPostfix Calculator. Recognizes these operators: + - * /");
             while (playAgain)
             {
@@ -47,7 +48,7 @@ namespace Java_app
         /// finished.If the user wishes to quit this method returns false.
         /// </summary>
         /// <returns><c>true</c>, if calculation succeeds, <c>false</c> if user quits.</returns>
-        private Boolean DoCalculation()
+        private bool DoCalculation()
         {
             Console.WriteLine("Please enter q to quit\n");
             string input = "2 2 +";
@@ -58,7 +59,7 @@ namespace Java_app
             // (System.in).  Docs don't say that!
 
             // See if the user wishes to quit
-            if (input.StartsWith("q", StringComparison.Ordinal) || 
+            if (input.StartsWith("q", StringComparison.CurrentCulture) || 
                 input.StartsWith("Q", StringComparison.Ordinal))
             {
                 return false;
@@ -111,14 +112,16 @@ namespace Java_app
             {
                 if (st.HasNextDouble())
                 {
-                    double.TryParse(st);
-                    //LinkedStack.push(stack, new Double(st.nextDouble()));
+                    //double.TryParse(string, double);
+                    //double.TryParse(st.HasNextStr(), out a);
+                    IStack.Push(double.TryParse(st.HasNextStr(), out a));
+                    //LinkedStack.push(IStack, new Double(st.HasNextDouble()));
                     //if it's a number push it on the stack
                 }
                 else
                 {
                     //Must be an operator or some other character or word.
-                    s = st.next();
+                    s = st.HasNextStr();
                     try
                     {
                         if (s.Length > 1)
@@ -128,23 +131,26 @@ namespace Java_app
                         }
                         //it may be an operator so pop two values off 
                         //the stack and perform the indicated operation
-                        if (stack == null)
+                        if (IStack == null)
                         {
                             throw (new Exception("Improper input format. Stack became " +
                                                 "empty when expecting second operand."));
                         }
-                        b = ((Double)(stack.pop())).doubleValue();
-                        if (stack == null)
+                        //b = ((Double)(IStack.Pop())).doubleValue();
+                        b = (double)IStack.Pop();
+                        if (IStack == null)
                         {
                             throw (new Exception("Improper input format. Stack became " +
                                                  "empty when expecting first operand."));
                         }
-                        a = ((Double)(stack.pop())).doubleValue();
+                        //a = ((Double)(IStack.Pop())).doubleValue();
+                        a = (double)IStack.Pop();
                         //Wrap up all operations in a single method, easy to add 
                         //other binary operators this way if desired
                         c = DoOperation(a, b, s);
                         // push the answer back on the stack
-                        LinkedStack.push(stack, new Double(c));
+                        //LinkedStack.push(IStack, new Double(c));
+                        IStack.Push(double.TryParse(st.HasNextStr(), out c));
                     }
                     catch (Exception ex)
                     {
@@ -152,7 +158,7 @@ namespace Java_app
                     }
                 }
             }//End while
-            return ((Double)(stack.pop())).ToString();
+            return ((Double)(IStack.Pop())).ToString();
         }
 
 

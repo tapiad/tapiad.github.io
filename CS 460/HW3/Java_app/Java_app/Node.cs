@@ -9,8 +9,8 @@ namespace Java_app
      */
     class Node
     {
-        readonly object data; //The Payload
-        readonly Node next; //Reference to the next Node in the chain
+        public object data; //The Payload
+        public Node next; //Reference to the next Node in the chain
 
         public Node()
         {
