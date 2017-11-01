@@ -6,6 +6,9 @@ namespace Java_app
     /// <summary>
     /// Operates the same way as a java Scanner.
     /// </summary>
+    /// <credit>
+    /// https://stackoverflow.com/questions/722270/is-there-an-equivalent-to-the-scanner-class-in-c-sharp-for-strings
+    /// </credit>
     //******************************************
     class Scanner : System.IO.StringReader
     {
