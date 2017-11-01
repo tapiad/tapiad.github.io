@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 
 
 namespace Java_app
@@ -15,7 +14,7 @@ namespace Java_app
 
         private void readNextWord()
         {
-            System.Text.StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             char nextChar;
             int next;
             do
@@ -34,6 +33,12 @@ namespace Java_app
                 currentWord = sb.ToString();
             else
                 currentWord = null;
+        }
+
+        public string hasNextStr()
+        {
+            readNextWord();
+            return currentWord;
         }
 
         public bool hasNextInt()

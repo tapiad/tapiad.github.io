@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace Java_app
 {
     class Calculator
@@ -13,7 +12,7 @@ namespace Java_app
         /**
          * Scanner to get input from the user from the command line.
          */
-        private Scanner scin = new Scanner(System.in );
+        private Scanner scin = new Scanner( Console.ReadLine() );
 
         /**
          * Entry point method. Disregards any command line arguments.
@@ -42,12 +41,12 @@ namespace Java_app
             string input = "2 2 +";
             Console.WriteLine("> ");    //promt user
 
-            input = scin.nextLine();
+            input = scin.hasNextStr();
             // looks like nextLine() blocks for input when used on an InputStream 
             // (System.in).  Docs don't say that!
 
             // See if the user wishes to quit
-            if (input.StartsWith("q") || input.StartsWith("Q"))
+            if (input.StartsWith("q", StringComparison.Ordinal) || input.StartsWith("Q", StringComparison.Ordinal))
             {
                 return false;
             }
@@ -57,9 +56,9 @@ namespace Java_app
             {
                 output = evaluatePostFixInput(input);
             }
-            catch (IllegalArgumentExeception e)
+            catch (Exception e)
             {
-                output = e.getMessage();
+                Console.WriteLine(e.Message);
             }
             Console.WriteLine("\n\t>>> " + input + " = " + output);
             return true;
@@ -68,7 +67,7 @@ namespace Java_app
         /**
          * Evaluate an arithmetic expression written in postfix form.
          */
-        string evaluatePostFixInput(string input)
+        public string evaluatePostFixInput(string input)
         {
             try
             {
@@ -96,8 +95,8 @@ namespace Java_app
             {
                 if (st.hasNextDouble())
                 {
-                    stack.push(new Double(st.nextDouble()));//if it's a number 
-                                                            //push it on the stack
+                    LinkedStack.push(stack, new Double(st.nextDouble()));
+                    //if it's a number push it on the stack
                 }
                 else
                 {
@@ -128,7 +127,7 @@ namespace Java_app
                         //other binary operators this way if desired
                         c = doOperation(a, b, s);
                         // push the answer back on the stack
-                        stack.push(new Double(c));
+                        LinkedStack.push(stack, new Double(c));
                     }
                     catch (Exception ex)
                     {
@@ -136,7 +135,7 @@ namespace Java_app
                     }
                 }
             }//End while
-            return ((Double)(stack.pop())).ToString()
+            return ((Double)(stack.pop())).ToString();
         }
 
         /**
@@ -144,7 +143,7 @@ namespace Java_app
          * Put it here so as not to clutter up the previous method, 
          * which is already pretty ugly.
          */
-        double doOperation(double a, double b, string s)
+        public double doOperation(double a, double b, string s)
         {
             double c = 0.0;
             if (s.Equals("+"))//Can't use a switch-case with Strings, so we do if-else
@@ -164,7 +163,7 @@ namespace Java_app
                 try
                 {
                     c = (a / b);
-                    if (c == Double.NegativeInfinity || c == Double.PositiveInfinity)
+                    if (double.IsNegativeInfinity(c) || double.IsPositiveInfinity(c))
                     {
                         throw (new Exception("Can't divide by zero"));
                     }
@@ -181,7 +180,7 @@ namespace Java_app
                     throw (new Exception("Improper operator: " + s +
                                     ", is not one of +, -, *, or /"));
                 }
-                catch
+                catch(Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                 }

@@ -12,7 +12,7 @@ namespace Java_app
         private Node top;
 
 
-        public Object StackADT.push(Object newItem)
+        Object StackADT.push(Object newItem)
         {
             if (newItem == null)
             {
@@ -23,7 +23,7 @@ namespace Java_app
             return newItem;
         }
 
-        public Object StackADT.pop()
+        Object StackADT.pop()
         {
             if (isEmpty())
             {
@@ -34,7 +34,8 @@ namespace Java_app
             return topItem;
         }
 
-        public Object StackADT.peek()
+
+        Object StackADT.peek()
         {
             if (isEmpty())
             {
@@ -43,14 +44,15 @@ namespace Java_app
             return top.data;
         }
 
-        public bool StackADT.isEmpty()
+        bool StackADT.isEmpty()
         {
             return top = null;
         }
 
-        public void StackADT.clear()
+        void StackADT.clear()
         {
             top = null;
         }
+
     }
 }
