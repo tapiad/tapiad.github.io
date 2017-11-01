@@ -1,6 +1,5 @@
 ﻿using System.Text;
 
-
 namespace Java_app
 {
     class Scanner : System.IO.StringReader
