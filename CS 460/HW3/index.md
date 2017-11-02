@@ -3,12 +3,17 @@ title: Daniel
 layout: default
 ---
 
-Visit my GitHub [here](https://github.com/tapiad).
+Quick links:
 
-Visit my [Portfolio](https://tapiad.github.io).
+* Visit my GitHub [here](https://github.com/tapiad).
 
-Link to Homework 3 [assignment](http://www.wou.edu/~morses/classes/cs46x/assignments/HW3.html).
+* Visit my [Portfolio](https://tapiad.github.io).
 
+* Link to Homework 3 [assignment](http://www.wou.edu/~morses/classes/cs46x/assignments/HW3.html).
+
+* View [Java Code](https://github.com/tapiad/tapiad.github.io/tree/master/CS%20460/HW3/javacode).
+
+* View Replicated [C# Code](https://github.com/tapiad/tapiad.github.io/tree/master/CS%20460/HW3/Java_app/Java_app)
 
 ### Homework 3
 
@@ -37,7 +42,7 @@ git commit -m "modified File"
 git push origin hw3-branch
 ```
 
-We are given a Java program that we will need to make replicate of but in C#. We are not to copy and paste the code and then try to fix the errors. The point is to learn the Visual Studio IDE style of development.
+We are given a [Java program](https://github.com/tapiad/tapiad.github.io/tree/master/CS%20460/HW3/javacode) that we will need to make replicate of but in C#. We are not to copy and paste the code and then try to fix the errors. The point is to learn the Visual Studio IDE style of development.
 
 After reviewing the Java code I opened up Visual Studio. I opened up a C# console application and started working on creating a mimic of the Java program. The first thing I learned about C# is how to get an input from the user. `Console.ReadLine()` takes the input of the user. I put the user input into a class called `Scanner` in which I found online([The Scanner Class](https://stackoverflow.com/questions/722270/is-there-an-equivalent-to-the-scanner-class-in-c-sharp-for-strings)). With this class I was able the class Scanner as Java's Scanner class.
 
@@ -96,6 +101,7 @@ I have also learned comment using XML comments.
 //*********************************************************************************
 ```
 
+You can view full replicated C# Code [here](https://github.com/tapiad/tapiad.github.io/tree/master/CS%20460/HW3/Java_app/Java_app).
 
 ### Step 3: Merging All Together
 
