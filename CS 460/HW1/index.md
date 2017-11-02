@@ -3,11 +3,11 @@ title: Daniel
 layout: default
 ---
 
-Visit my GitHub [here](https://github.com/tapiad).
+* Visit my GitHub [here](https://github.com/tapiad).
 
-Visit my [Portfolio](https://tapiad.github.io). 
+* Visit my [Portfolio](https://tapiad.github.io). 
 
-Link to Homework 1 [assignment](http://www.wou.edu/~morses/classes/cs46x/assignments/HW1.html).
+* Link to Homework 1 [assignment](http://www.wou.edu/~morses/classes/cs46x/assignments/HW1.html).
 
 ### Homework 1
 
