@@ -9,6 +9,7 @@ namespace MVC_Project.Controllers
 {
     public class HomeController : Controller
     {
+        // GET: /Home/
         public ActionResult Index()
         {
             var mvcName = typeof(Controller).Assembly.GetName();
@@ -16,6 +17,13 @@ namespace MVC_Project.Controllers
 
             ViewData["Version"] = mvcName.Version.Major + "." + mvcName.Version.Minor;
             ViewData["Runtime"] = isMono ? "Mono" : ".NET";
+
+            ViewBag.Countries = new List<string>()
+            {
+                "USA",
+                "Mexico",
+                "Canada"
+            };
 
             return View();
         }

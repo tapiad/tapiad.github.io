@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "IsPost";
+}
+
+<h2>
+    IsPostback = @ViewBag.IsPostback
+</h2>
+
+@using (@Html.BeginForm())
+{
+    <input type="submit" value="Submit" />
+}

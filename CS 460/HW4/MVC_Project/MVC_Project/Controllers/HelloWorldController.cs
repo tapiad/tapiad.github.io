@@ -10,16 +10,46 @@ namespace MVC_Project.Controllers
     {
         //
         // GET: /HelloWorld/
-        public string Index()
+        public ActionResult Index()
         {
-            return "This is my <b>default</b> action...";
+            ViewBag.Countries = new List<string>()
+            {
+                "USA",
+                "Mexico",
+                "Canada"
+            };
+
+            ViewData["Cities"] = new List<string>()
+            {
+                "Salem",
+                "Woodburn",
+                "Monmouth"
+            };
+
+            return View();
         }
 
         //
-        // GET: /HelloWorld/Welcome/
-        public string Welcome(string name, int ID = 1)
+        // GET: /HelloWorld/IndexGet/
+        [HttpGet]
+        public ActionResult IndexGet()
         {
-            return HttpUtility.HtmlEncode("Hello " + name + ", ID: " + ID);
+            ViewBag.IsPostback = IsPost();
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("IndexGet")]
+        public ActionResult IndexPost()
+        {
+            ViewBag.IsPostback = IsPost();
+            return View();
+        }
+
+
+        private bool IsPost()
+        {
+            return Request.HttpMethod == "POST";
         }
     }
 }

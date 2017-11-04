@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Hello World";
+}
+
+<h1>Hello World</h1>
+
+
+<!--ViewBag example-->
+<h2>Countries List:</h2>
+<ul>
+    @foreach(string strCountry in ViewBag.Countries)
+    {
+        <li>@strCountry</li>
+    }
+</ul>
+
+<!--ViewData example-->
+<h2>Cities List:</h2>
+<ul>
+    @foreach(string strCountry in (List<string>)ViewData["Cities"])
+    {
+        <li>@strCountry</li>
+    }
+</ul>
+
+<!-- Single statement blocks  -->
+@{ var total = 7; }
+@{ var myMessage = "Hello World"; }
+
+<!-- Inline expressions -->
+<p>The value of your account is: @total </p>
+<p>The value of myMessage is: @myMessage</p>
+
+<!-- Multi-statement block -->
+@{
+    var greeting = "Welcome to our site!";
+    var weekDay = DateTime.Now.DayOfWeek;
+    var greetingMessage = greeting + " Today is: " + weekDay;
+}
+<p>The greeting is: @greetingMessage</p>
+
+<table border="1">
+<tr>
+    <td>Requested URL</td>
+    <td>Relative Path</td>
+    <td>Full Path</td>
+    <td>HTTP Request Type</td>
+</tr>
+<tr>
+    <td>@Request.Url</td>
+    <td>@Request.FilePath</td>
+    <td>@Request.MapPath(Request.FilePath)</td>
+    <td>@Request.RequestType</td>
+</tr>
+</table>
+
