@@ -1,14 +1,18 @@
-﻿<h2>Welcome to ASP.NET MVC @ViewData["Version"] on @ViewData["Runtime"]!</h2>
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Welcome to ASP.NET MVC @ViewData["Version"] on @ViewData["Runtime"]!</h2>
 
 <!--Home-->
 <h3>This is the Home default landing page.</h3>
 
-<ul>                                <!--text, link-->
-    <li>@Html.ActionLink("Hello World Link", "HelloWorld")</li>
-	<li>Link Item Two</li>
+<ul>                     <!--text, link-->
+    <li>@Html.ActionLink("Page 1", "Page1")</li>
+	<li>@Html.ActionLink("Page 2", "Page2")</li>
 	<li>Link Item Three</li>
 </ul>
 
 
 
-
+ 
