@@ -8,23 +8,27 @@
 
 <div class="container">
     <div class="form-group">
-		<form method="post">
+		<form method="post"> <!--post method-->
             <div id="slideAmount">
+			    <!--Loan Slider-->
               <span><b>Loan Amount:</b>$</span>
 			  <output name="outAmount">2000</output>
               <input type="range" min="1000" max="10000" value="2000" name="amount" class="slider" oninput="outAmount.value = amount.value">
             </div>
     		<div id="slideRate">
+				<!--Rate Slider-->
               <span><b>Intrest Rate:</b> %</span>
 			  <output name="outRate">5.00</output>
               <input type="range" min="0.01" max="50.00" value="5.00" step="0.01" class="slider" name="rate" oninput="outRate.value = rate.value">
             </div>
     		<div id="slideTime">
+				<!--Months Slider-->
               <span><b>Duration of Loan:</b> <i>Months</i> </span>
 			  <output name="outTime">12</output>
               <input type="range" min="6" max="60" value="12" class="slider" name="time" oninput="outTime.value = time.value">
             </div>
     		<div>
+				<!--Submit Button-->
                 <button type="submit" class="btn btn-primary">Calculate</button>
     		</div>
         </form>

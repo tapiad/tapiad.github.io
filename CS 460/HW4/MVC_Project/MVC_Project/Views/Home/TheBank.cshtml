@@ -8,12 +8,13 @@
 
 <h2>Welcome to The Bank</h2>
 
+@*Check if USD value is not Null or Empty*@
 @if (ViewBag.USD != "" && ViewBag.USD != null) {
     <div class="alert">
         <p>Hi human, Here is your US Dollar amount: <u>$@ViewBag.USD</u></p>
     </div>
 }
-
+@*Check if MP value is not Null or Empty*@
 @if (ViewBag.MP != "" && ViewBag.MP != null) {
     <div class="alert">
         <p>Hi human, Here is your Mexican Peso amount: <u>$@ViewBag.MP</u></p>
@@ -24,12 +25,13 @@
 
 
 <div class="container">
+    <!--Button for new Calculation-->
     <form action="/Home/Page1" method="get">
       <div class="input-group">
         <button type="submit"  class="btn btn-info">New Calculation</button>
       </div>
     </form>
-
+    <!--Button to go Home-->
 	<form action="/Home" method="get">
       <div class="input-group">
 		<button type="submit"  class="btn btn-primary">Go Home</button>

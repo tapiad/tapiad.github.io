@@ -10,22 +10,23 @@
     <form method="post">
 		<div class="form-group">
 			<h3>Calculate Volume of Boxes</h3>
+                                    <!--Example of user need to do-->
 			<p><b>Measures by inches</b> EX: <i>3" x 5" x 7"</i></p>
 		</div>
         <div class="form-group">
-			<div>
+			<div><!--Length Label/Input-->
                 <label>Lenght: </label>
     			<input type="number" max="100" min="1" step="1" value="1" name="Length"/>
             </div>
-			<div>
+			<div><!--Width Label/Input-->
     			<label>Width: </label>
                 <input type="number" max="100" min="1" step="1" value="1" name="Width"/>
             </div>
-			<div>
+			<div><!--Height Label/Input-->
     			<label>Height: </label>
                 <input type="number" max="100" min="1" step="1" value="1" name="Height"/>
             </div>
-		</div>
+		</div><!--Submit Button-->
         <div class="form-group">
             <button type="submit" class="btn btn-success">Submit</button>
         </div>
@@ -34,8 +35,10 @@
 
 
 @if (IsPost){
+    @*Checks values are Empty or Null*@
     if(@ViewBag.IsNull != "true"){
     <div class="form-group">
+	    @*Creates Table*@
         <table class="table">
           <thead>
             <tr>
@@ -52,15 +55,17 @@
             </tr>
     	  </tbody>
         </table>
-
+        @*Final Result*@
 	    <p><b>Box Volume:</b> @ViewBag.Volume"</p>
 	</div>
 
     }
+    @*Error message displayed*@
     else{
         <h3>MISSING VALUE!</h3>
     }
 }
+    <!--Go Home Button-->
     <form action="/Home" method="get">
       <div class="input-group">
         <button type="submit"  class="btn btn-primary">Go Home</button>
