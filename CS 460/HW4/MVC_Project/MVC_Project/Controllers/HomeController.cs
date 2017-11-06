@@ -42,13 +42,13 @@ namespace MVC_Project.Controllers
             string USD = Request.QueryString["USD"];
             string MP = Request.QueryString["MP"];
 
-            if(!string.IsNullOrEmpty(USD))
+            if (!string.IsNullOrEmpty(USD))
             {
                 int US = int.Parse(USD);
                 ViewBag.MP = Math.Round((US * 19.264299), 2).ToString();//As of November 2017
                 return View();
             }
-            if(!string.IsNullOrEmpty(MP))
+            if (!string.IsNullOrEmpty(MP))
             {
                 int MX = int.Parse(MP);
                 ViewBag.USD = Math.Round((MX * 0.051946), 2).ToString();//As of November 2017
@@ -95,15 +95,16 @@ namespace MVC_Project.Controllers
             return View("Page2");
         }
 
-        private bool IsNUll(FormCollection form){
+        private bool IsNUll(FormCollection form)
+        {
             string L = Request.Form["Length"];
             string W = Request.Form["Width"];
             string H = Request.Form["Height"];
 
-            if(string.IsNullOrEmpty(L) || string.IsNullOrEmpty(W) || string.IsNullOrEmpty(H))
+            if (string.IsNullOrEmpty(L) || string.IsNullOrEmpty(W) || string.IsNullOrEmpty(H))
             {
                 ViewBag.IsNull = "true";
-                return true;    
+                return true;
             }
             else
             {
@@ -112,11 +113,39 @@ namespace MVC_Project.Controllers
             }
         }
 
-        //[HttpGet]
-        //public ActionResult Page3(int? id, int? size, string kind)
-        //{
-        //    //...
-        //}
+        [HttpGet]
+        public ActionResult Page3()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public ActionResult Page3(double? amount, double? rate, double? time)
+        {
+
+            double Amount = (double)amount;
+            double Rate = (double)((double)(rate / 100) / time); //Annual Rate
+            double Time = (double)time;
+
+            double Factor = (Math.Pow((1 + Rate), Time) - 1) / (Rate * (Math.Pow((1 + Rate), Time)));
+
+            double MonPay = Amount / Factor; //Monthly Pay
+            double IntPay = (MonPay * Time) - Amount; //Interest
+            double Total = Amount + IntPay; //Total Amount
+
+            ViewBag.Amount = String.Format("{0:n}", Amount);
+            ViewBag.Rate = Math.Round(Rate, 5);
+            ViewBag.Time = Time;
+            ViewBag.Total = String.Format("{0:n}", Total);
+            ViewBag.MonPay = String.Format("{0:n}", MonPay);
+            ViewBag.IntPay = String.Format("{0:n}", IntPay);
+
+            return View("MonthlyPay");
+        }
+
+        public ActionResult MonthlyPay()
+        {
+            return View();
+        }
     }
 }

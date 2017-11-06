@@ -94,6 +94,8 @@
     <Content Include="Views\Home\TheBank.cshtml" />
     <Content Include="Views\HelloWorld\QSExample1.cshtml" />
     <Content Include="Views\Home\Page2.cshtml" />
+    <Content Include="Views\Home\Page3.cshtml" />
+    <Content Include="Views\Home\MonthlyPay.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
