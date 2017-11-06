@@ -1,14 +1,24 @@
 ﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
     ViewBag.Title = "Page 2";
 }
 
 <div class="container">
     <form method="post">
+		<div class="form-group">
+			<h3>Calculate Volume of Boxes</h3>
+			<p><b>Measures by inches</b> EX: <i>3" x 5" x 7"</i></p>
+		</div>
         <div class="form-group">
-            <label>UserName; </label>
-			<input class="text" maxlength="10" name="Uname"/>
-			<label>Fake Password; </label>
-            <input class="text" maxlength="10" name="FPW"/>
+            <label>Lenght: </label>
+			<input type="number" max="100" min="1" step="1" value="1" name="Length"/>
+            <label>Width: </label>
+            <input type="number" max="100" min="1" step="1" value="1" name="Width"/>
+			<label>Height: </label>
+            <input type="number" max="100" min="1" step="1" value="1" name="Height"/>
         </div>
         <div class="form-group">
             <button type="submit" class="btn">Submit</button>
@@ -16,3 +26,33 @@
     </form>
 </div>
 
+
+@if (IsPost){
+    if(@ViewBag.IsNull != "true"){
+    <div class="form-group">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Length</th>
+              <th>Width</th>
+              <th>Height</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>@ViewBag.Lenght</td>
+              <td>@ViewBag.Width</td>
+              <td>@ViewBag.Height</td>
+            </tr>
+    	  </tbody>
+        </table>
+
+	    <p><b>Box Volume:</b> @ViewBag.Volume"</p>
+	</div>
+
+    }
+    else{
+        <h3>MISSING VALUE!</h3>
+    }
+}
+        

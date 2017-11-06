@@ -1,4 +1,8 @@
 ﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
     ViewBag.Title = "Home";
 }
 
@@ -10,7 +14,7 @@
 <ul>                     <!--text, link-->
     <li>@Html.ActionLink("Page 1", "Page1")</li>
 	<li>@Html.ActionLink("Page 2", "Page2")</li>
-	<li>Link Item Three</li>
+	<li>@Html.ActionLink("Page 3", "Page3")</li>
 </ul>
 
 

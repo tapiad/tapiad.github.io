@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
 
+
 namespace MVC_Project.Controllers
 {
     public class HomeController : Controller
@@ -31,7 +32,6 @@ namespace MVC_Project.Controllers
         // GET: /Home/Page1/
         public ActionResult Page1()
         {
-            Debug.WriteLine("This is Page1()");
             return View();
         }
 
@@ -62,6 +62,7 @@ namespace MVC_Project.Controllers
         [HttpGet]
         public ActionResult Page2()
         {
+            //ViewBag.IsPost = "GET";
             return View();
         }
 
@@ -70,10 +71,52 @@ namespace MVC_Project.Controllers
         [HttpPost]
         public ActionResult Page2(FormCollection form)
         {
-            // Values POSTed can be retrieved from the FormCollection object
-            Console.WriteLine("This is POST of Page 2.");
-            return View();
+            //ViewBag.IsPost = "POST";
+
+            // And then redirect the user to another page (if desired)
+            //return RedirectToAction("Index");
+
+            if (!(IsNUll(form)))
+            {
+                int Lenght = int.Parse(Request.Form["Length"]);
+                int Width = int.Parse(Request.Form["Width"]);
+                int Height = int.Parse(Request.Form["Height"]);
+
+                int Volume = Lenght * Width * Height;
+                ViewBag.Volume = Volume.ToString();
+
+                ViewBag.Lenght = Lenght;
+                ViewBag.Width = Width;
+                ViewBag.Height = Height;
+
+                return View("Page2");
+            }
+
+            return View("Page2");
         }
+
+        private bool IsNUll(FormCollection form){
+            string L = Request.Form["Length"];
+            string W = Request.Form["Width"];
+            string H = Request.Form["Height"];
+
+            if(string.IsNullOrEmpty(L) || string.IsNullOrEmpty(W) || string.IsNullOrEmpty(H))
+            {
+                ViewBag.IsNull = "true";
+                return true;    
+            }
+            else
+            {
+                ViewBag.IsNull = "false";
+                return false;
+            }
+        }
+
+        //[HttpGet]
+        //public ActionResult Page3(int? id, int? size, string kind)
+        //{
+        //    //...
+        //}
 
     }
 }
