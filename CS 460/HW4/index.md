@@ -32,7 +32,7 @@ We create a new empty MVC project. It will have Visual Studio's `.gitignore` fil
 
 ### Step 2: Page 1 
 
-**Converting US Dollar into Mexican Peso Vis Versa**
+* **Converting US Dollar into Mexican Peso Vis Versa (`GET` Method)**
 
 Creating *Page 1*: using method `GET` that contains user's input to controller. This page you will be able to convert your US Dollar into Mexican Peso; vis versa. In *Page 1 View()*, I wrote a simple HTML form to send data to the server as query strings after user clicks on *Submit* button. 
 
@@ -67,11 +67,11 @@ if (!string.IsNullOrEmpty(USD))
 		return View();
 	}
 ```
-*Note: I used `ViewBag` to put calculated data*
+> *Note: I used `ViewBag` to put calculated data*
 
 In the *TheBank View()* I extracted the calculated data and displayed the result if data is not null or empty
 
-```cshtml
+```html
 @*Check if USD value is not Null or Empty*@
 @if (ViewBag.USD != "" && ViewBag.USD != null) {
 	<div class="alert">
