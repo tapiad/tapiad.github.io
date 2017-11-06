@@ -10,10 +10,24 @@ using System.Web.Mvc.Ajax;
 
 namespace MVC_Project.Controllers
 {
+    //********************************************
+    /// <summary>
+    /// The Home Controller
+    /// </summary>
+    /// <creator>
+    /// Daniel Tapia
+    /// </creator>
+    /// <date>
+    /// 11/06/17
+    /// </date>
+    //********************************************
     public class HomeController : Controller
     {
-        //
         // GET: /Home/
+        /// <summary>
+        /// This is the Home Page
+        /// </summary>
+        /// <returns>Home</returns>
         public ActionResult Index()
         {
             var mvcName = typeof(Controller).Assembly.GetName();
@@ -28,15 +42,22 @@ namespace MVC_Project.Controllers
             return View();
         }
 
-        //
         // GET: /Home/Page1/
+        /// <summary>
+        /// Directs you to View of Page 1
+        /// </summary>
+        /// <returns>Page1</returns>
         public ActionResult Page1()
         {
             return View();
         }
 
-        //
         // GET: /Home/TheBank/
+        /// <summary>
+        /// This is The Bank Where we can convert 
+        /// USD to Mexican Peso; Mexican Peso to USD.
+        /// </summary>
+        /// <returns>TheBank</returns>
         public ActionResult TheBank()
         {
             string USD = Request.QueryString["USD"];
@@ -45,44 +66,51 @@ namespace MVC_Project.Controllers
             if (!string.IsNullOrEmpty(USD))
             {
                 int US = int.Parse(USD);
-                ViewBag.MP = Math.Round((US * 19.264299), 2).ToString();//As of November 2017
+                //US to MP is around 19.26 as of November 2017
+                ViewBag.MP = Math.Round((US * 19.264299), 2).ToString();
                 return View();
             }
             if (!string.IsNullOrEmpty(MP))
             {
                 int MX = int.Parse(MP);
-                ViewBag.USD = Math.Round((MX * 0.051946), 2).ToString();//As of November 2017
+                //MP to USD is around 0.052 As of November 2017
+                ViewBag.USD = Math.Round((MX * 0.051946), 2).ToString();
                 return View();
             }
             return View();
         }
 
-        //
+
+
         // Get: /Home/Page2/
+        /// <summary>
+        /// Using HttpGet to get info from user
+        /// </summary>
+        /// <returns>Page2</returns>
         [HttpGet]
         public ActionResult Page2()
         {
-            //ViewBag.IsPost = "GET";
             return View();
         }
 
-        //
         // POST: /Home/Page2/
+        /// <summary>
+        /// Retrieves information from using
+        /// Using HttpPost and FormCollection
+        /// </summary>
+        /// <returns>Page2</returns>
+        /// <param name="form">Request Information</param>
         [HttpPost]
         public ActionResult Page2(FormCollection form)
         {
-            //ViewBag.IsPost = "POST";
-
-            // And then redirect the user to another page (if desired)
-            //return RedirectToAction("Index");
-
             if (!(IsNUll(form)))
             {
                 int Lenght = int.Parse(Request.Form["Length"]);
                 int Width = int.Parse(Request.Form["Width"]);
                 int Height = int.Parse(Request.Form["Height"]);
 
-                int Volume = Lenght * Width * Height;
+                //Volume = Length * Width * Height
+                int Volume = Lenght * Width * Height; 
                 ViewBag.Volume = Volume.ToString();
 
                 ViewBag.Lenght = Lenght;
@@ -91,10 +119,17 @@ namespace MVC_Project.Controllers
 
                 return View("Page2");
             }
-
             return View("Page2");
         }
 
+        /// <summary>
+        /// Checks if FormCollection Form is NULL
+        /// </summary>
+        /// <returns>
+        /// <c>true</c>, if true, Lenght, Width, or Height is empty or null.
+        /// <c>false</c> otherwise, no empty values .
+        /// </returns>
+        /// <param name="form">User Values.</param>
         private bool IsNUll(FormCollection form)
         {
             string L = Request.Form["Length"];
@@ -113,12 +148,28 @@ namespace MVC_Project.Controllers
             }
         }
 
+
+
+        /// <summary>
+        /// GET user info
+        /// </summary>
+        /// <returns>Page3</returns>
         [HttpGet]
         public ActionResult Page3()
         {
             return View();
         }
 
+        /// <summary>
+        /// Loan Calculator
+        /// </summary>
+        /// <credit>
+        /// https://www.thebalance.com/loan-payment-calculations-315564
+        /// </credit>
+        /// <returns>MonthlyPay</returns>
+        /// <param name="amount">Loan Amount.</param>
+        /// <param name="rate">Interest Rate.</param>
+        /// <param name="time">Months.</param>
         [HttpPost]
         public ActionResult Page3(double? amount, double? rate, double? time)
         {
@@ -127,11 +178,12 @@ namespace MVC_Project.Controllers
             double Rate = (double)((double)(rate / 100) / time); //Annual Rate
             double Time = (double)time;
 
+            //Discount Factor
             double Factor = (Math.Pow((1 + Rate), Time) - 1) / (Rate * (Math.Pow((1 + Rate), Time)));
 
             double MonPay = Amount / Factor; //Monthly Pay
-            double IntPay = (MonPay * Time) - Amount; //Interest
-            double Total = Amount + IntPay; //Total Amount
+            double IntPay = (MonPay * Time) - Amount; //Period Rate
+            double Total = Amount + IntPay; //Total Cost
 
             ViewBag.Amount = String.Format("{0:n}", Amount);
             ViewBag.Rate = Math.Round(Rate, 5);
@@ -143,6 +195,10 @@ namespace MVC_Project.Controllers
             return View("MonthlyPay");
         }
 
+        /// <summary>
+        /// Results
+        /// </summary>
+        /// <returns>Monthly Payment Page</returns>
         public ActionResult MonthlyPay()
         {
             return View();
