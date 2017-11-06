@@ -185,6 +185,7 @@ namespace MVC_Project.Controllers
             double IntPay = (MonPay * Time) - Amount; //Period Rate
             double Total = Amount + IntPay; //Total Cost
 
+            //Store Values in ViewBag
             ViewBag.Amount = String.Format("{0:n}", Amount);
             ViewBag.Rate = Math.Round(Rate, 5);
             ViewBag.Time = Time;

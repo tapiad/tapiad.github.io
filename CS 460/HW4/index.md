@@ -105,7 +105,7 @@ In *Page 2 View()*, `POST` form is in action.
 			<label>Length: </label>
 			<input type="number" max="100" min="1" step="1" value="1" name="Length"/>
 		</div>
-						<!--Code Omitted-->
+	<!--Code Omitted-->
 ```
 
 Then have a one parameter POST the uses `FormCollection` as the parameter.
@@ -173,12 +173,69 @@ Going back to *Page 2 View()* I displayed the result.
 ```
 
 
+### Step 4: Page 3
 
+Creating *Page 3*: Use model binding. This page is a loan calculator where a user can know how mush they will be paying if they plan on getting a loan. We have a choice if we want to use Razor HTML Helpers and `GET` or `Post`.
 
+I decided to go with `POST`:
 
+```cs
+[HttpGet]
+public ActionResult Page3()
+{
+	return View();
+}
+```
 
+A code snippet of *Page 3 View()*
 
+```html
+<div class="container">
+	<div class="form-group">
+		<form method="post"> <!--post method-->
+			<div id="slideAmount">
+				<!--Loan Slider-->
+				<span><b>Loan Amount:</b>$</span>
+				<output name="outAmount">2000</output>
+				<input type="range" min="1000" max="10000" value="2000" name="amount" class="slider" oninput="outAmount.value = amount.value">
+			</div>
+	<!--Code Omitted-->
+```
 
+Calculate Loan using model binding
+
+```cs
+[HttpPost]
+public ActionResult Page3(double? amount, double? rate, double? time)
+	{
+		//...
+
+		double Rate = (double)((double)(rate / 100) / time); //Annual Rate
+
+		//Discount Factor
+		double Factor = (Math.Pow((1 + Rate), Time) - 1) / (Rate * (Math.Pow((1 + Rate), Time)));
+
+		double MonPay = Amount / Factor; //Monthly Pay
+		double IntPay = (MonPay * Time) - Amount; //Period Rate
+		double Total = Amount + IntPay; //Total Cost
+
+		//...
+	}
+```
+
+Display Loan Calculations
+
+```html
+<div class="container">
+	<!--Displays Results-->
+	<p><b>Loan Amount:</b> $@ViewBag.Amount</p>
+	<p><b>Periodic Interest Rate:</b> % @ViewBag.Rate</p>
+	<p><b>Months to Pay:</b> @ViewBag.Time</p>
+	<p><b>Monthly Payment:</b> $@ViewBag.MonPay</p>
+	<p><b>Total Interest:</b> $@ViewBag.IntPay</p>
+	<p><b><u>Total Cost:</u></b> $@ViewBag.Total</p>
+</div>
+```
 
 
 
