@@ -21,3 +21,10 @@ As a Senior at Western Oregon University we are to create this Portfolio. We wil
 1. [Homework 1](CS 460/HW1): Git, HTML, CSS, and Bootstrap
 2. [Homework 2](CS 460/HW2): Javascript, jQuery, and branch in Git
 3. [Homework 3](CS 460/HW3): Learn C# by translating a Java application into a C# console app
+4. [Homework 4](CS 460/HW4): ASP.NET MVC 5
+4. [Homework 5](CS 460/HW5): T-SQL
+
+
+
+
+
