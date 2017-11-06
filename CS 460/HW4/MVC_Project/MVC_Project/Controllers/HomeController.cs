@@ -66,14 +66,14 @@ namespace MVC_Project.Controllers
             if (!string.IsNullOrEmpty(USD))
             {
                 int US = int.Parse(USD);
-                //US to MP is around 19.26 as of November 2017
+                //US to MP is around 19.26 a Dollar as of November 2017
                 ViewBag.MP = Math.Round((US * 19.264299), 2).ToString();
                 return View();
             }
             if (!string.IsNullOrEmpty(MP))
             {
                 int MX = int.Parse(MP);
-                //MP to USD is around 0.052 As of November 2017
+                //MP to USD is around 0.052 a Peso as of November 2017
                 ViewBag.USD = Math.Round((MX * 0.051946), 2).ToString();
                 return View();
             }
