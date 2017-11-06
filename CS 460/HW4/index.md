@@ -69,6 +69,7 @@ if (!string.IsNullOrEmpty(USD))
 ```
 > *Note: I used `ViewBag` to put calculated data*
 
+
 In the *TheBank View()* I extracted the calculated data and displayed the result if data is not null or empty
 
 ```html
