@@ -9,7 +9,7 @@ Quick links:
 
 * Visit my [Portfolio](https://tapiad.github.io).
 
-* Link to Homework 4 [assignment](http://www.wou.edu/~morses/classes/cs46x/assignments/HW4.html).
+* Link to Homework 5 [assignment](http://www.wou.edu/~morses/classes/cs46x/assignments/HW5.html).
 
 
-### Homework 4
+### Homework 5
