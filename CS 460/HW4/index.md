@@ -72,7 +72,7 @@ if (!string.IsNullOrEmpty(USD))
 
 In the *TheBank View()* I extracted the calculated data and displayed the result if data is not null or empty
 
-```html
+```cshtml
 @*Check if USD value is not Null or Empty*@
 @if (ViewBag.USD != "" && ViewBag.USD != null) {
 	<div class="alert">
@@ -80,9 +80,11 @@ In the *TheBank View()* I extracted the calculated data and displayed the result
 	</div>
 }
 ```
-*Note: `@ViewBag.USD` to view calculated data*
+> *Note: `@ViewBag.USD` to view calculated data*
 
 ### Step 3: Page 2
+
+* **Finding The Volume of a Box (`POST` Method)**
 
 Creating *Page 2*: Uses HTML `POST` to post form data into the server. This page you'll be able to find the volume of any box. First part in creating *Page 2* is having a controller action method that is parameterless (GET).
 
@@ -118,7 +120,7 @@ public ActionResult Page2(FormCollection form)
 	//... code omitted
 }
 ```
-*Note: not using model binding*
+> *Note: not using model binding*
 
 To retrieve the user data from *form*, use `Request.Form["element"]`.
 
@@ -148,7 +150,7 @@ private bool IsNUll(FormCollection form)
 		}
 }
 ```
-*Note I added a `ViewBag.IsNull`*
+> *Note I added a `ViewBag.IsNull`*
 
 I then added the calculated results into `ViewBag`.
 
@@ -175,6 +177,8 @@ Going back to *Page 2 View()* I displayed the result.
 
 
 ### Step 4: Page 3
+
+* **Loan Calculator (Model Binding, `POST` Method)**
 
 Creating *Page 3*: Use model binding. This page is a loan calculator where a user can know how mush they will be paying if they plan on getting a loan. We have a choice if we want to use Razor HTML Helpers and `GET` or `Post`.
 
