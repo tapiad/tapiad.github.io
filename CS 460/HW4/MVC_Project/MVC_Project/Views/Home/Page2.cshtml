@@ -15,7 +15,7 @@
 		</div>
         <div class="form-group">
 			<div><!--Length Label/Input-->
-                <label>Lenght: </label>
+                <label>Length: </label>
     			<input type="number" max="100" min="1" step="1" value="1" name="Length"/>
             </div>
 			<div><!--Width Label/Input-->
@@ -33,8 +33,8 @@
     </form>
 </div>
 
-
-@if (IsPost){
+@*If true*@
+@*@if (IsPost){*@
     @*Checks values are Empty or Null*@
     if(@ViewBag.IsNull != "true"){
     <div class="form-group">
@@ -49,7 +49,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>@ViewBag.Lenght</td>
+              <td>@ViewBag.Length</td>
               <td>@ViewBag.Width</td>
               <td>@ViewBag.Height</td>
             </tr>
@@ -64,7 +64,7 @@
     else{
         <h3>MISSING VALUE!</h3>
     }
-}
+@*}*@
     <!--Go Home Button-->
     <form action="/Home" method="get">
       <div class="input-group">

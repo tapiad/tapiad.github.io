@@ -105,15 +105,15 @@ namespace MVC_Project.Controllers
         {
             if (!(IsNUll(form)))
             {
-                int Lenght = int.Parse(Request.Form["Length"]);
+                int Length = int.Parse(Request.Form["Length"]);
                 int Width = int.Parse(Request.Form["Width"]);
                 int Height = int.Parse(Request.Form["Height"]);
 
                 //Volume = Length * Width * Height
-                int Volume = Lenght * Width * Height; 
+                int Volume = Length * Width * Height; 
                 ViewBag.Volume = Volume.ToString();
 
-                ViewBag.Lenght = Lenght;
+                ViewBag.Length = Length;
                 ViewBag.Width = Width;
                 ViewBag.Height = Height;
 
@@ -126,7 +126,7 @@ namespace MVC_Project.Controllers
         /// Checks if FormCollection Form is NULL
         /// </summary>
         /// <returns>
-        /// <c>true</c>, if true, Lenght, Width, or Height is empty or null.
+        /// <c>true</c>, if true, Length, Width, or Height is empty or null.
         /// <c>false</c> otherwise, no empty values .
         /// </returns>
         /// <param name="form">User Values.</param>
