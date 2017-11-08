@@ -22,5 +22,18 @@ namespace DMV_Application.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult ChangeAdd(FormCollection form)
+        {
+            TempData["CID"] = Request.Form["CID"];
+            return RedirectToAction("PRG");
+        }
+    
+        public ActionResult PRG()
+        {
+            ViewBag.CID = TempData["CID"];
+            return View();
+        }
     }
 }

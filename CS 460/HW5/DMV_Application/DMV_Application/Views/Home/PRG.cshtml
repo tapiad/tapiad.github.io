@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "/Views/Home/Layout.cshtml";
+}
+@{
+    ViewBag.Title = "PRG";
+}
+
+<h3><span class="label label-success">Request Submitted!</span></h3>
+<p>Your ID is @ViewBag.CID</p>
+
+<!--Go Home Button-->
+<form action="/Home" method="get">
+  <div class="input-group">
+    <button type="submit"  class="btn btn-primary">Go Home</button>
+  </div>
+</form>
+
+

@@ -104,6 +104,7 @@
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1-vsdoc.js" />
     <Content Include="Views\Home\ChangeAdd.cshtml" />
+    <Content Include="Views\Home\PRG.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
