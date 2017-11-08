@@ -1,0 +1,68 @@
+﻿@{
+    Layout = "/Views/Home/Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Requests";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Requests</title>
+</head>
+<body>
+	<div class="container">
+        <!--ID-->
+      <div class="form-group">
+        <label class="col-form-label" for="IDLable">Customer ID</label>
+        <input class="form-control" id="DOB" type="text">
+       </div>
+		 <!--DOB-->
+      <div class="form-group">
+        <label class="col-form-label" for="DOBLable">Date of Birth</label>
+        <input class="form-control" id="DOB" type="text">
+       </div>
+		 <!--Full Name-->
+      <div class="form-group">
+        <label class="col-form-label" for="NameLable">Full Name</label>
+        <input class="form-control" id="Name" type="text">
+       </div>
+        <!--Residence Address-->
+      <div class="form-group row col-md-3">
+        <label for="address">New Residence Address</label>
+        <input class="form-control" placeholder="e.g. 12345 Sum St NE" type="address">
+        <!--<small id="newAddress" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+      </div>
+		<!--Email Address-->
+      <div class="form-group row col-md-3">
+        <label for="address">New Residence Address</label>
+        <input class="form-control" placeholder="e.g. Loko503@DaMail.com" type="Email">
+        <!--<small id="newAddress" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+      </div>
+		<!--City-->
+      <div class="form-group">
+        <label class="col-form-label" for="CityLable">City</label>
+        <input class="form-control" id="City" type="text">
+       </div>
+		<!--State-->
+      <div class="form-group">
+        <label class="col-form-label" for="StateLable">State</label>
+        <input class="form-control" id="State" type="text">
+       </div>
+		<!--Zip Code-->
+      <div class="form-group">
+        <label class="col-form-label" for="ZipLable">Zip Code</label>
+        <input class="form-control" id="Zip" type="text">
+       </div>        
+        <!--County-->
+      <div class="form-group">
+        <label class="col-form-label" for="inputDefault">Default input</label>
+        <input class="form-control" id="inputDefault" type="text">
+      </div>
+        <!--Button-->
+	  <div align="row">
+        <button type="button" class="btn btn-primary disabled">Submit</button>
+	  </div>
+	</div>
+</body>
+</html>

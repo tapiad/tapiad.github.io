@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "/Views/Home/Layout.cshtml";
+}
+@{
+    ViewBag.Title = "DMV Home";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+</head>
+<body>	
+    <!--Home-->
+    <h2>Welcome To Home of DMV</h2>
+
+	<p>Quick Links:</p>
+
+    <ul>                     <!--text, link-->
+        <li>@Html.ActionLink("Go Home", "Index")</li>
+		<li>@Html.ActionLink("View Requests", "Requests")</li>
+        <li>@Html.ActionLink("Change Address", "ChangeAdd")</li>
+    </ul>
+</body>
+</html>
+

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{362BCE0D-0064-441F-9BD0-70FFF5DD3A98}</ProjectGuid>
+    <ProjectGuid>{E2544173-381A-40C1-B21F-38F9E888D6F2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>DMV_Application.Tests</RootNamespace>
     <AssemblyName>DMV_Application.Tests</AssemblyName>
@@ -64,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DMV_Application\DMV_Application.csproj">
-      <Project>{5440C8CA-182B-480E-AE5D-D63D26638236}</Project>
+      <Project>{0F1B826F-00A4-450E-B05E-9DC98EA7681D}</Project>
       <Name>DMV_Application</Name>
     </ProjectReference>
   </ItemGroup>

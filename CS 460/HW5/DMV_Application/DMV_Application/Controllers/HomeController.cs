@@ -12,5 +12,15 @@ namespace DMV_Application.Controllers
         {
             return View ();
         }
+
+        public ActionResult Requests()
+        {
+            return View();
+        }
+
+        public ActionResult ChangeAdd()
+        {
+            return View();
+        }
     }
 }
