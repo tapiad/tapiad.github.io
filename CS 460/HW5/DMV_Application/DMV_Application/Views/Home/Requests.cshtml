@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<DMV_Application.Models.DMVRequest>
+
+@{
     Layout = "/Views/Home/Layout.cshtml";
 }
 @{
@@ -12,7 +14,8 @@
 </head>
 <body>
     <h3>Here are some pending requests</h3>
-		
+
+		<p>@Html.DisplayNameFor(model => model.Name)</p>
 </body>
 </html>
 

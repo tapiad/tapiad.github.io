@@ -115,6 +115,8 @@
     <Compile Include="DAL\UserContext.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\DMVRequest.cs" />
+    <Compile Include="DAL\DMVContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App_Data\up.sql" />
@@ -126,6 +128,7 @@
     <None Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.2.1.slim.min.map" />
     <None Include="Scripts\jquery-3.2.1.min.map" />
+    <None Include="App_Data\db_UP.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
