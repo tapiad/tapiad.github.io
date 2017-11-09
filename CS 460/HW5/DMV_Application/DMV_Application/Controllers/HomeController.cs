@@ -13,16 +13,6 @@ namespace DMV_Application.Controllers
     {
         private DMVContext db = new DMVContext();
 
-        //public void ConfigureServices(IServiceCollection services)
-        //{
-        //    // Add framework services.
-        //    services.AddMvc();
-
-        //    services.AddDbContext<DMVContext>(options =>
-        //            options.UseSqlite("Data Source=DMV_Application.db"));
-
-        //}
-
         public ActionResult Index()
         {
 
