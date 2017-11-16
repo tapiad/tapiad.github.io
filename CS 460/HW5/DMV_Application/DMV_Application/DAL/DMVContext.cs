@@ -12,6 +12,6 @@ namespace DMV_Application.DAL
         public DMVContext() : base("name=MyDB")
         { }
 
-        public virtual DbSet<DMVRequest> DMVRequest { get; set; }
+        public virtual DbSet<DMVRequest> DMVRequests { get; set; }
     }
 }

@@ -155,6 +155,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711152105222_InitialCreate.cs" />
+    <Compile Include="Migrations\201711152105222_InitialCreate.Designer.cs">
+      <DependentUpon>201711152105222_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DMVRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -219,7 +224,11 @@
     <Content Include="Views\Home\PRG.cshtml" />
     <Content Include="Views\Home\Requests.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711152105222_InitialCreate.resx">
+      <DependentUpon>201711152105222_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />

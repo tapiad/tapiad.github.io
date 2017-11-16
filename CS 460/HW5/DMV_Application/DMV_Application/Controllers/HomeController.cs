@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Configuration;
 using DMV_Application.DAL;
 using DMV_Application.Models;
 
@@ -11,7 +13,7 @@ namespace DMV_Application.Controllers
 {
     public class HomeController : Controller
     {
-        private DMVContext Db = new DMVContext();
+        private DMVContext db = new DMVContext();
 
         //
         // GET: /Home
@@ -25,7 +27,7 @@ namespace DMV_Application.Controllers
         // GET: /Home/Requests
         public ActionResult Requests()
         {
-            return View(Db.DMVRequest.ToList());
+            return View(db.DMVRequests.ToList());
         }
         //
         // GET: /Home/ChangeAdd
@@ -39,18 +41,6 @@ namespace DMV_Application.Controllers
         [HttpPost]
         public ActionResult ChangeAdd(FormCollection form)
         {
-            foreach(string elem in form)
-            {
-                Console.WriteLine();
-            }
-            TempData["CID"] = Request.Form["CID"];
-            TempData["CID"] = Request.Form["CID"];
-            TempData["CID"] = Request.Form["CID"];
-            TempData["CID"] = Request.Form["CID"];
-            TempData["CID"] = Request.Form["CID"];
-            TempData["CID"] = Request.Form["CID"];
-            TempData["CID"] = Request.Form["CID"];
-            TempData["CID"] = Request.Form["CID"];
             TempData["CID"] = Request.Form["CID"];
             return RedirectToAction("PRG");
         }
