@@ -9,9 +9,9 @@ namespace DMV_Application.DAL
 {
     public class DMVContext : DbContext
     {
-        public DMVContext() : base("name=OurDBContext")
+        public DMVContext() : base("name=MyDB")
         { }
 
-        public DbSet<DMV_Application.Models.DMVRequest> DMVRequest { get; set; }
+        public virtual DbSet<DMVRequest> DMVRequest { get; set; }
     }
 }

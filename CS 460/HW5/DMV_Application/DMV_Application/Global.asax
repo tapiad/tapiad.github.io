@@ -1,1 +1,1 @@
-﻿<%@ Application Inherits="DMV_Application.Global" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="DMV_Application.MvcApplication" Language="C#" %>
