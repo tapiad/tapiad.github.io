@@ -149,7 +149,7 @@ Make visible by Razor HTML helper
 ### Step 6: ScreenShots
 
 **Home Page**
-![Alt text](/ScreenShots/Home.PNG?raw=true "Home Page")
+![Alt text](https://github.com/tapiad/tapiad.github.io/blob/hw5-newbranch/CS%20460/HW5/ScreenShots/Home.PNG?raw=true "Home Page")
 
 **Pending Requests**
 
