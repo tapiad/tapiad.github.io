@@ -127,14 +127,37 @@ public ActionResult PRG()
 }
 ```
 
+### Step 5: Miscellaneous
+
+To make the a Model class available to a *View()* add *@model* followed by the model's name. Place on the top of the .cshtml file. 
+
+```html
+@model IEnumerable<DMV_Application.Models.DMVRequest>
+```
+
+Make visible by Razor HTML helper
+
+```html
+<!--Display Name-->
+@Html.DisplayNameFor(model => model.ID)
+
+<!--Display Item Value-->
+@Html.DisplayFor(modelItem => item.ID)
+```
 
 
+### Step 6: Screenshots
+
+**Home Page**
+![Alt text](/ScreenShots/Home "Home Page")
+
+**Pending Requests**
 
 
+**Request Form** 
 
 
-
-
+**Thank You Page**
 
 
 

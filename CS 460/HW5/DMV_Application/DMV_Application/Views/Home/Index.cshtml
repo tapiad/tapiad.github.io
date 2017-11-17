@@ -1,23 +1,28 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Home";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<title>Index</title>
+<div class="container" >
+    <div class="row">
+        <!--Home-->
+        <h2><b>Welcome To Home of DMV</b></h2>
+    </div>
 
-<!--Home-->
-<h2>Welcome To Home of DMV</h2>
+    <div>
+        <h3>Did you come by to give us a change of address notice? </h3>
+    </div>
 
-<p>Quick Links:</p>
+    <!--DMV Image-->
+    <div class="row">
+        <img src="~/dmv_funny.jpg" alt="DMV Picture" style="width:auto;height:auto;">
+    </div>
 
-<ul>
-    <!--text, link-->
-    <li>@Html.ActionLink("Go Home", "Index")</li>
-    <li>@Html.ActionLink("View Requests", "Requests")</li>
-    <li>@Html.ActionLink("Change Address", "ChangeAdd")</li>
-</ul>
-
+    <div class="row">
+        <h4>Just playing! Click on '<i>Change Request</i>' on top of this page.</h4>
+    </div>
+</div>
 
 
 
