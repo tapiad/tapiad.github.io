@@ -146,10 +146,10 @@ Make visible by Razor HTML helper
 ```
 
 
-### Step 6: Screenshots
+### Step 6: ScreenShots
 
 **Home Page**
-![Alt text](/ScreenShots/Home.PNG "Home Page")
+![Alt text](/ScreenShots/Home.PNG?raw=true "Home Page")
 
 **Pending Requests**
 
