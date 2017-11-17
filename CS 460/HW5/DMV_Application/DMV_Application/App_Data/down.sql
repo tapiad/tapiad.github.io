@@ -1,2 +1,2 @@
 ﻿--DROP TABLE Statement
-DROP TABLE dbo.DMVRequest
+DROP TABLE dbo.DMVRequest;

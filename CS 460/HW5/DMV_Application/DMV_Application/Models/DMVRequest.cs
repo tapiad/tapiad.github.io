@@ -7,6 +7,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DMV_Application.Models
 {
+    /// <summary>
+    /// The Model of a DMV Request
+    /// </summary>
     public class DMVRequest
     {
         [Required(ErrorMessage = "Your Id number please (3-digits)")]
@@ -15,6 +18,7 @@ namespace DMV_Application.Models
         public int ID { get; set; }
 
         [StringLength(64)]
+        [Display(Name = "Date of Birth")]
         public string DOB { get; set; }
 
         [Required(ErrorMessage ="Please Enter Your Name Full Legal Name")]
