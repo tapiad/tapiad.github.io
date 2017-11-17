@@ -1,17 +1,81 @@
-﻿
+﻿@model IEnumerable<DMV_Application.Models.DMVRequest>
+
 @{
     ViewBag.Title = "Thank You";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container">
-    <div class="row">
+    <div class="row"> <!--Success Label-->
         <h4><span class="label label-success">Request Submitted!</span></h4>
     </div>
 
-    <div class="row">
-        <p>Your ID is @ViewBag.CID</p>
-    </div>
+    <!--Title of each Value-->
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DOB)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.State)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Zip)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.County)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+            </tr>
+        </thead>
+        <!--Values adding to db Table-->
+        <tbody>
+            <tr>
+                <td>
+                    @ViewBag.CID
+                </td>
+                <td>
+                    @ViewBag.DOB
+                </td>
+                <td>
+                    @ViewBag.Name
+                </td>
+                <td>
+                    @ViewBag.Address
+                </td>
+                <td>
+                    @ViewBag.City
+                </td>
+                <td>
+                    @ViewBag.State
+                </td>
+                <td>
+                    @ViewBag.Zip
+                </td>
+                <td>
+                    @ViewBag.County
+                </td>
+                <td>
+                    @ViewBag.Email
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
     <div class="row">
         <!--Go Home Button-->
