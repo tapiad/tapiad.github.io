@@ -152,13 +152,13 @@ Make visible by Razor HTML helper
 ![Alt text](https://github.com/tapiad/tapiad.github.io/blob/hw5-newbranch/CS%20460/HW5/ScreenShots/Home.PNG?raw=true "Home Page")
 
 **Pending Requests**
-
+![Alt text](https://github.com/tapiad/tapiad.github.io/blob/hw5-newbranch/CS%20460/HW5/ScreenShots/Pending_Request.PNG?raw=true "Pending Request Page")
 
 **Request Form** 
-
+![Alt text](https://github.com/tapiad/tapiad.github.io/blob/hw5-newbranch/CS%20460/HW5/ScreenShots/Request_Form.PNG?raw=true "Request Form Page")
 
 **Thank You Page**
-
+![Alt text](https://github.com/tapiad/tapiad.github.io/blob/hw5-newbranch/CS%20460/HW5/ScreenShots/Thank_You.PNG?raw=true "Thank You Page")
 
 
 
