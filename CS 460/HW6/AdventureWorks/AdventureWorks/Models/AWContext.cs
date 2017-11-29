@@ -1,4 +1,4 @@
-namespace AdventureWorks
+namespace AdventureWorks.Models
 {
     using System;
     using System.Data.Entity;

@@ -106,6 +106,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\Accessories.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -121,6 +122,10 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Images\Adventure.png" />
+    <Content Include="Images\Bikes.jpg" />
+    <Content Include="Images\Clothing.jpg" />
+    <Content Include="Images\Components.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
@@ -134,6 +139,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SubCategoryController.cs" />
     <Compile Include="Models\AWContext.cs" />
     <Compile Include="Models\BillOfMaterial.cs" />
     <Compile Include="Models\Culture.cs" />
@@ -177,6 +183,13 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
+    <Content Include="Views\SubCategory\Index.cshtml" />
+    <Content Include="Views\SubCategory\Bikes.cshtml" />
+    <Content Include="Views\SubCategory\Product.cshtml" />
+    <Content Include="Views\SubCategory\ProductReview.cshtml" />
+    <Content Include="Views\SubCategory\Components.cshtml" />
+    <Content Include="Views\SubCategory\Clothing.cshtml" />
+    <Content Include="Views\SubCategory\Accessories.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
