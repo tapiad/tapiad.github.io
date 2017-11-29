@@ -18,6 +18,7 @@ namespace AdventureWorks.Controllers
         // GET: SubCategory
         public ActionResult Index()
         {
+            //Get Product Caregories
             var productSubcategories = db.ProductSubcategories.Include(p => p.ProductCategory);
             return View(productSubcategories.ToList());
         }
@@ -29,7 +30,7 @@ namespace AdventureWorks.Controllers
         // GET: SubCategory/Bikes
         public ActionResult Bikes()
         {
-            //List of Bikes to ViewBag
+            //List of Bikes into ViewBag
             List<string> bikes = db.ProductSubcategories.Where(n => n.ProductCategory.Name == "Bikes").Select(sn => sn.Name).ToList();
             ViewBag.bikes = bikes;
 
@@ -40,7 +41,7 @@ namespace AdventureWorks.Controllers
         [HttpPost]
         public ActionResult Bikes(string bike)
         {
-            //List of Bikes to ViewBag
+            //List of Bikes into ViewBag
             List<string> bikes = db.ProductSubcategories.Where(b => b.ProductCategory.Name == "Bikes").Select(n => n.Name).ToList();
             ViewBag.bikes = bikes;
 
@@ -62,7 +63,7 @@ namespace AdventureWorks.Controllers
         // GET: SubCategory/Components
         public ActionResult Components()
         {
-            //List of Components to ViewBag
+            //List of Components into ViewBag
             List<string> Components = db.ProductSubcategories.Where(n => n.ProductCategory.Name == "Components").Select(sn => sn.Name).ToList();
             ViewBag.Components = Components;
 
@@ -73,11 +74,11 @@ namespace AdventureWorks.Controllers
         [HttpPost]
         public ActionResult Components(string Component)
         {
-            //List of Components to ViewBag
+            //List of Components into ViewBag
             List<string> Components = db.ProductSubcategories.Where(b => b.ProductCategory.Name == "Components").Select(n => n.Name).ToList();
             ViewBag.Components = Components;
 
-            //Class "H" Components
+            //Components products
             var products = db.Products.Where(b => b.ProductSubcategory.Name == Component
                                                     && b.FinishedGoodsFlag == true
                                                     && b.MakeFlag == true
@@ -97,7 +98,7 @@ namespace AdventureWorks.Controllers
         // GET: SubCategory/Clothing
         public ActionResult Clothing()
         {
-            //List of Clothing to ViewBag
+            //List of Clothing into ViewBag
             List<string> Clothing = db.ProductSubcategories.Where(n => n.ProductCategory.Name == "Clothing").Select(sn => sn.Name).ToList();
             ViewBag.Clothing = Clothing;
 
@@ -108,11 +109,11 @@ namespace AdventureWorks.Controllers
         [HttpPost]
         public ActionResult Clothing(string Cloth)
         {
-            //List of Clothing to ViewBag
+            //List of Clothing into ViewBag
             List<string> Clothing = db.ProductSubcategories.Where(b => b.ProductCategory.Name == "Clothing").Select(n => n.Name).ToList();
             ViewBag.Clothing = Clothing;
 
-            //Clothing
+            //Clothing products
             var products = db.Products.Where(b => b.ProductSubcategory.Name == Cloth       
                                                     && b.SellEndDate == null);
 
@@ -130,7 +131,7 @@ namespace AdventureWorks.Controllers
         // GET: SubCategory/Accessories
         public ActionResult Accessories()
         {
-            //List of Accessories to ViewBag
+            //List of Accessories into ViewBag
             List<string> Accessories = db.ProductSubcategories.Where(n => n.ProductCategory.Name == "Accessories").Select(sn => sn.Name).ToList();
             ViewBag.Accessories = Accessories;
 
@@ -141,11 +142,11 @@ namespace AdventureWorks.Controllers
         [HttpPost]
         public ActionResult Accessories(string Accessory)
         {
-            //List of Accessories to ViewBag
+            //List of Accessories into ViewBag
             List<string> Accessories = db.ProductSubcategories.Where(b => b.ProductCategory.Name == "Accessories").Select(n => n.Name).ToList();
             ViewBag.Accessories = Accessories;
 
-            //Accessories
+            //Accessories products
             var products = db.Products.Where(b => b.ProductSubcategory.Name == Accessory
                                                     && b.SellEndDate == null);
 
@@ -169,12 +170,13 @@ namespace AdventureWorks.Controllers
                 return RedirectToAction("Index");
             }
 
+            //String to int
             int id = Convert.ToInt32(Request.QueryString["id"]);
-
+            //Get specific product
             var product = db.Products.Where(p => p.ProductID == id).FirstOrDefault();
             //Product Model ID
             int? pmi = product.ProductModelID;
-            //English description
+            //Description
             string desc = "Not Availiable";
 
             if (pmi != null)
@@ -184,11 +186,12 @@ namespace AdventureWorks.Controllers
                                                                 .FirstOrDefault().ProductDescription
                                                                 .Description;
             }
+            //Description into View
             ViewBag.desc = desc;
 
-            //Product image
+            //Product's image
             byte[] image = product.ProductProductPhotoes.FirstOrDefault().ProductPhoto.LargePhoto;
-            //Product image to View
+            //Product image into View
             ViewBag.image = "data:image/png;base64," + Convert.ToBase64String(image, 0, image.Length);
 
             return View(product);
@@ -206,6 +209,7 @@ namespace AdventureWorks.Controllers
             {
                 return RedirectToAction("Index");
             }
+            //Get specific product into View
             var product = db.Products.Where(p => p.ProductID.ToString() == id).FirstOrDefault();
             ViewBag.PID = id;
             ViewBag.PName = product.Name;
@@ -230,6 +234,7 @@ namespace AdventureWorks.Controllers
                 return RedirectToAction("Index");
             }
 
+            //Get specific product
             var product = db.Products.Where(p => p.ProductID.ToString() == id).FirstOrDefault();
             //Get the product image
             byte[] image = product.ProductProductPhotoes.FirstOrDefault().ProductPhoto.LargePhoto;
@@ -240,7 +245,7 @@ namespace AdventureWorks.Controllers
 
             if (ModelState.IsValid)
             {
-                //Set the values for the fields to be auto generated from the product/temporal stuff
+                //Set Values for Review
                 review.ProductID = Convert.ToInt32(id);
                 review.ReviewDate = DateTime.Now;
                 review.ModifiedDate = review.ReviewDate;

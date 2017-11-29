@@ -10,7 +10,7 @@
         <h1><b>@Html.DisplayFor(model => model.ProductModel.Name)</b></h1>
     </div>
     &nbsp;
-    <div class="row">
+    <div class="row">@*Product's Image*@
         <div class="row col-lg-6 col-lg-offset-3" align="center">
             <img class="img-responsive center-block" src="@ViewBag.image" alt="No Image Source :(" />
             &nbsp;
@@ -19,6 +19,7 @@
     </div>
     &nbsp;
     <div class="row col-lg-offset-2">
+        @*Product's Information*@
         <div class="panel-group col-lg-3">
             <div class="panel panel-default">
                 <div class="panel-heading"><b>@Html.DisplayNameFor(model => model.ProductSubcategory)</b></div>
@@ -65,6 +66,7 @@
 
     <hr width="5" size="500">
 
+    @*Rate/Review Product*@
     <div class="row text-center">
         <h3>Write a Reveiw!</h3>
         <input id="review" type="button" class="btn btn-default" value="Rate"
@@ -77,6 +79,7 @@
     </div>
     <vr />
 
+    @*View Reviews*@
     @foreach (var review in Model.ProductReviews)
     {
         <div class="row col-lg-7 col-lg-offset-2" align="center">
