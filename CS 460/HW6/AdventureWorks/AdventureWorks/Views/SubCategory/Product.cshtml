@@ -1,0 +1,104 @@
+﻿@model AdventureWorks.Models.Product
+
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row text-center">
+        <h1><b>@Html.DisplayFor(model => model.ProductModel.Name)</b></h1>
+    </div>
+    &nbsp;
+    <div class="row">
+        <div class="row col-lg-6 col-lg-offset-3" align="center">
+            <img class="img-responsive center-block" src="@ViewBag.image" alt="No Image Source :(" />
+            &nbsp;
+            <p class="list-group-item">@ViewBag.desc</p>
+        </div>
+    </div>
+    &nbsp;
+    <div class="row col-lg-offset-2">
+        <div class="panel-group col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-heading"><b>@Html.DisplayNameFor(model => model.ProductSubcategory)</b></div>
+                <div class="panel-body">@Html.DisplayFor(model => model.ProductSubcategory.Name)</div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading"><b>@Html.DisplayNameFor(model => model.Color)</b></div>
+                <div class="panel-body">@Html.DisplayFor(model => model.Color)</div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading"><b>@Html.DisplayNameFor(model => model.ProductLine)</b></div>
+                <div class="panel-body">@Html.DisplayFor(model => model.ProductLine)</div>
+            </div>
+        </div>
+        <div class="panel-group col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-heading"><b>@Html.DisplayNameFor(model => model.ProductNumber)</b></div>
+                <div class="panel-body">@Html.DisplayFor(model => model.ProductNumber)</div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading"><b>@Html.DisplayNameFor(model => model.Class)</b></div>
+                <div class="panel-body">@Html.DisplayFor(model => model.Class)</div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading"><b>@Html.DisplayNameFor(model => model.Style)</b></div>
+                <div class="panel-body">@Html.DisplayFor(model => model.Style)</div>
+            </div>
+        </div>
+        <div class="panel-group col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-heading"><b>@Html.DisplayNameFor(model => model.ListPrice)</b></div>
+                <div class="panel-body">$@Html.DisplayFor(model => model.ListPrice)</div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading"><b>@Html.DisplayNameFor(model => model.Size)</b></div>
+                <div class="panel-body">@Html.DisplayFor(model => model.Size) @Html.DisplayFor(model => model.SizeUnitMeasureCode)</div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading"><b>@Html.DisplayNameFor(model => model.Weight)</b></div>
+                <div class="panel-body">@Html.DisplayFor(model => model.Weight) @Html.DisplayFor(model => model.WeightUnitMeasureCode)</div>
+            </div>
+        </div>
+    </div>
+
+    <hr width="5" size="500">
+
+    <div class="row text-center">
+        <h3>Write a Reveiw!</h3>
+        <input id="review" type="button" class="btn btn-default" value="Rate"
+               onclick="return review_onclick()" />
+        <script language="javascript" type="text/javascript">
+            function review_onclick() {
+                window.location.href = "/SubCategory/ProductReview?id="+@Model.ProductID;
+            }
+        </script>
+    </div>
+    <vr />
+
+    @foreach (var review in Model.ProductReviews)
+    {
+        <div class="row col-lg-7 col-lg-offset-2" align="center">
+            <div class="vr">&nbsp;</div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Rating</th>
+                        <th>Reviewer</th>
+                        <th>Date</th>
+                        <th>Comment:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@review.Rating</td>
+                        <td>@review.ReviewerName</td>
+                        <td>@review.ReviewDate</td>
+                        <td>@review.Comments</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
