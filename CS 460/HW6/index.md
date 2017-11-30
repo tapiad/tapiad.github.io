@@ -12,9 +12,9 @@ Quick links:
 * Link to Homework 6 [assignment](http://www.wou.edu/~morses/classes/cs46x/assignments/HW6.html).
 
 
-### Demo Video
+### Demo Video:
 
-[Video](https://www.youtube.com/watch?v=1NoL2G5nNuk&feature=youtu.be)
+[![Video](https://www.youtube.com/watch?v=1NoL2G5nNuk&feature=youtu.be)]
 
 ### Homework 6
 
