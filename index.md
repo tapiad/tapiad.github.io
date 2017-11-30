@@ -22,8 +22,8 @@ As a Senior at Western Oregon University we are to create this Portfolio. We wil
 2. [Homework 2](CS 460/HW2): Javascript, jQuery, and branch in Git
 3. [Homework 3](CS 460/HW3): Learn C# by translating a Java application into a C# console app
 4. [Homework 4](CS 460/HW4): ASP.NET MVC 5
-4. [Homework 5](CS 460/HW5): ASP.NET MVC 5, Local DataBase, T-SQL
-
+5. [Homework 5](CS 460/HW5): MVC app 2, Local DataBase, T-SQL
+6. [Homework 6](CS 460/HW6): MVC app 3, pre-existing relational dB
 
 
 
