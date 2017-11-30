@@ -14,7 +14,7 @@ Quick links:
 
 ### Demo Video
 
-[Video](AdventureWorks_DemoVideo)
+[Video](https://www.youtube.com/watch?v=1NoL2G5nNuk&feature=youtu.be)
 
 ### Homework 6
 
