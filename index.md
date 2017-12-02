@@ -24,7 +24,7 @@ As a Senior at Western Oregon University we are to create this Portfolio. We wil
 4. [Homework 4](CS 460/HW4): ASP.NET MVC 5
 5. [Homework 5](CS 460/HW5): MVC app 2, Local DataBase, T-SQL
 6. [Homework 6](CS 460/HW6): MVC app 3, pre-existing relational dB
-
+7. [Homework 7](CS 460/HW7): MVC app 4, AJAX, JSON, API, Single page app
 
 
 
