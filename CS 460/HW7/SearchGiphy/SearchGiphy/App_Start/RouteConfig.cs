@@ -13,6 +13,18 @@ namespace SearchGiphy
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //routes.MapRoute(
+            //    name: "HomeRoutes",
+            //    //url: "admin/{controller}/{action}",
+            //    url: "home/{action}",
+            //    defaults: new { controller = "Home", action = "Search" });
+
+            routes.MapRoute(
+                name: "Search",
+                url: "Giphy/{action}",
+                defaults: new { controller = "Giphy", action = "Search", page = UrlParameter.Optional }
+);
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

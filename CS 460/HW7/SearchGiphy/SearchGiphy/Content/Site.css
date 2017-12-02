@@ -1,26 +1,43 @@
 ﻿body {
-    background-color: #000d58 !important;
-    padding: 20px,20px;
+    background-color: #01015a !important;
+    padding-bottom: 20px,20px,20px,20px;
 }
 
 h2 {
-    font-size: 75px !important; /*font size*/
+    font-size: 75px !important;
     text-align: center;
-    margin: 50px; /*space around outside of element*/
-    padding: 20px 0; /*space around content(paragraph)*/
-    color: #007acc !important;
-    text-shadow: 1px 1px 1px white; /*1:hor offset, 2:ver offeset, 3:blur radius, 4:base color shadow*/
+    padding: 20px 0;
+    color: #006bcc !important;
+    text-shadow: 2px 2px 1px silver; 
 }
 
-button {
-    border-radius: 12px !important;
+label {
+    color: white;
+    margin-left: 20px;
+}
+
+span {
+    font-size: 20px;
+    color: white;
+    margin-right: 20px;
 }
 
 input {
-    max-width: 300px;
-    margin-right: 10px !important;
+    font-size: 20px !important;
 }
 
+input.btn {
+    border-radius: 12px;
+    background-color: #2d9800;
+    margin-left: 20px;
+}
+
+p,
 footer {
     color: white;
+    text-align: center;
+}
+
+img {
+    max-height: 200px;
 }
