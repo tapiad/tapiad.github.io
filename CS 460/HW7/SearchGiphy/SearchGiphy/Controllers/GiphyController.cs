@@ -19,7 +19,7 @@ namespace SearchGiphy.Controllers
             //Get Top Secret APIKey
             string key = System.Web.Configuration.WebConfigurationManager.AppSettings["GiphyAPIKey"];
             string q = Request.QueryString["q"]; //User's Input
-            string rating = Request.QueryString["rating"]; //Rating prefrence
+            string rating = Request.QueryString["rating"]; //Rating preference
             string lang = Request.QueryString["lang"]; //Language
 
             //URL to Giphy API

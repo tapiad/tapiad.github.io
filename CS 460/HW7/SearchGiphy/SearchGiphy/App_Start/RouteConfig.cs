@@ -23,7 +23,7 @@ namespace SearchGiphy
                 name: "Search",
                 url: "Giphy/{action}",
                 defaults: new { controller = "Giphy", action = "Search", page = UrlParameter.Optional }
-);
+            );
 
             routes.MapRoute(
                 name: "Default",
