@@ -18,13 +18,11 @@ As we move on to homework 7, we start to use JSON and AJAX. Again we will write 
 
 ### Step #1: ScreenShots
 
-This is a screenshot of the *Search Giphy* web application page.
-**Search Giphy**
+**Search Giphy**: This is a screenshot of the *Search Giphy* web application page.
 ![Alt text](https://github.com/tapiad/tapiad.github.io/blob/hw7-Giphy/CS%20460/HW7/ScreenShots/SearchGiphy.PNG?raw=true "Search Giphy")
 
 
-This is what a user gets after searching for *'Lazy Cat'*.
-**Lazy Cat**
+**Lazy Cat**: This is what a user gets after searching for *'Lazy Cat'*.
 ![Alt text](https://github.com/tapiad/tapiad.github.io/blob/hw7-Giphy/CS%20460/HW7/ScreenShots/LazyCat.PNG?raw=true "Lazy Cat")
 
 ### Step #2: Keep API Key A Secret!
@@ -36,7 +34,7 @@ We are to put our Giphy API Key a Secret so that no one can abuse the key. To do
     <add ...
 ```
 
-It will first back out of the repository(i.e. '..\'). Then go into the *TopSecrets* directory, and then into *AppSettingsSecrets.config*. This is where the Giphy API Key is located.
+It will first back out of the repository(i.e. "..\"). Then go into the *TopSecrets* directory, and then into *AppSettingsSecrets.config*. This is where the Giphy API Key is located.
 
 ```config
 <appSettings>
@@ -66,20 +64,20 @@ First we will set up our *URL*. Here we will get the User's input, rating prefer
 
 ```cs
 public JsonResult Search()
-        {
-			//Get Top Secret APIKey
-			string key = System.Web.Configuration.WebConfigurationManager.AppSettings["GiphyAPIKey"];
-			string q = Request.QueryString["q"]; //User's Input
-			string rating = Request.QueryString["rating"]; //Rating prefrence
-			string lang = Request.QueryString["lang"]; //Language
+{
+	//Get Top Secret APIKey
+	string key = System.Web.Configuration.WebConfigurationManager.AppSettings["GiphyAPIKey"];
+	string q = Request.QueryString["q"]; //User's Input
+	string rating = Request.QueryString["rating"]; //Rating prefrence
+	string lang = Request.QueryString["lang"]; //Language
 
-			//...
+	//...
 ```
 
 With all User's inputs we will assemble the *URL*.
 
 ```cs
- //URL to Giphy API
+//URL to Giphy API
 string url = "https://api.giphy.com/v1/gifs/search?q=" + q + "&api_key=" + key +
     "&limit=9&rating=" + rating + "&lang=" + lang;
 ```
@@ -96,7 +94,7 @@ string reader = new StreamReader(dataStream).ReadToEnd(); //Data Stream to a rea
 
 Once we have our JSON string we will need to change it to a JSON Object. We will get a *Serializer* to *Deserialize* JSON string into a JSON Object. After that we clean up and close up and now we have our JSON Object.
 ```cs
-	//JSon string to a JSon object             
+    //JSon string to a JSon object             
     var serializer = new JavaScriptSerializer();            
     var data = serializer.DeserializeObject(reader); //Deserialize string into JSon Object
 
@@ -177,7 +175,7 @@ if (data.data[i]) {
     }
 //...
 ```
->Note: If User chooses *Animated*
+>Note: This is if User chooses *Animated*
 
 
 User can choose *Animated* or *Still*
@@ -200,7 +198,7 @@ var animate = $("input[name=animated]:checked").val(); //Animated or Still
 ```
 
 
-The user is allowed to choose their rating preferences.
+The user is allowed to choose their *rating* preferences.
 
 ```html
 @*Rating*@
@@ -213,7 +211,7 @@ The user is allowed to choose their rating preferences.
 ``` 
 
 
-They can choose a preferred language.
+They can choose a preferred *language*.
 
 ```html
 @*Language*@
