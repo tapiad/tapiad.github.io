@@ -22,8 +22,8 @@ CREATE TABLE dbo.Items
 	Description	VARCHAR(100)	NULL,
 	Seller		VARCHAR(50)		NOT NULL
 
-	CONSTRAINT [PK_dbo.Items] PRIMARY KEY (ID,Name),
-	CONSTRAINT [UC_dbo.Items] UNIQUE (Description),
+	CONSTRAINT [PK_dbo.Items] PRIMARY KEY (ID),
+	CONSTRAINT [UC_dbo.Items] UNIQUE (Description, Name),
 	CONSTRAINT [FK_dbo.Items] FOREIGN KEY (Seller)
 		REFERENCES dbo.Sellers(Name)
 );
@@ -35,7 +35,8 @@ CREATE TABLE dbo.Bids
 	Buyer		VARCHAR(50)		NOT NULL,
 	Price		INT				NOT NULL,
 	Timestamp	Date			NULL
-
+	
+	CONSTRAINT [PK_dbo.Bids] PRIMARY KEY (Item,Buyer),
 	CONSTRAINT [FK1_dbo.Bids] FOREIGN KEY (Item)
 		REFERENCES dbo.Items(ID),
 	CONSTRAINT [FK2_dbo.Bids] FOREIGN KEY (Buyer)
