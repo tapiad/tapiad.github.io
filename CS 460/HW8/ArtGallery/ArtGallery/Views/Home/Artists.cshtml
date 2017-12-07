@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ArtGallery.Models.Artist>
+
+@{
+    ViewBag.Title = "Artists";
+}
+
+<h2>Artists</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateArtist", null, new { @class = "btn btn-success" })
+</p>
+<table class="table table-hover table-responsive">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthCity)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthCity)
+            </td>
+
+            <td>
+                <div class="btn-group">
+                    @Html.ActionLink("Edit", "EditArtist", new { id = item.Name }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Details", "ArtistDetails", new { id = item.Name }, new { @class = "btn btn-default" })
+                    @Html.ActionLink("Delete", "DeleteArtist", new { id = item.Name }, new { @class = "btn btn-danger" })
+                </div>
+            </td>
+        </tr>
+    }
+
+</table>

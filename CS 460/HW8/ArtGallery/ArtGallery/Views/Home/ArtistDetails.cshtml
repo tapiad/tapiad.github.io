@@ -1,0 +1,43 @@
+﻿@model ArtGallery.Models.Artist
+
+@{
+    ViewBag.Title = "ArtistDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Artist Details</h2>
+
+<div>
+    <h4>Artists</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthCity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditArtist", new { id = Model.Name }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Cancel", "Artists", null, new { @class = "btn btn-danger" })
+</p>

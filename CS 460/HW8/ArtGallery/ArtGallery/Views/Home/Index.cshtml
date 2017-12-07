@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ArtGallery.Models.Genre>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Welcome to Art Gallery</h2>
+
+@*Buttons of Genres*@
+<div class="btn-group">
+    @foreach (var genre in Model)
+    {                               @*Sends Genre's string 'Name' to JSON to convert to a JSON Object *@
+        <input class="btn btn-default" type="button" value=@genre.Name onclick="genreClicked('@genre.Name')" />
+    }
+</div>
+<br />
+@*Display Results*@
+<div id="results" style="display: none">
+    <table class="table table-hover table-responsive">
+        <thead>
+            <tr>
+                <th>Art Work</th>
+                <th>Artist</th>
+            </tr>
+        </thead>
+        <tbody id="resultsBody">
+
+        </tbody>
+    </table>
+</div>
+<br />
+
+@*JavaScript of AJAX to get the Genre's Details*@
+@section scripts
+{
+    <script type="text/javascript" src="~/Scripts/genDetail.js"></script>
+}
