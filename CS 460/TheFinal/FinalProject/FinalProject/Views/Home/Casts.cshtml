@@ -1,0 +1,33 @@
+﻿@model IEnumerable<FinalProject.Models.Cast>
+
+@{
+    ViewBag.Title = "Casts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Casts</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Actor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movie)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie)
+            </td>
+        </tr>
+    }
+
+</table>
