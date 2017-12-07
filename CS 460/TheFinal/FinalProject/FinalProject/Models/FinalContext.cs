@@ -42,23 +42,23 @@ namespace FinalProject.Models
                 .Property(e => e.Name)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Cast>()
-                .Property(e => e.Actor)
-                .IsUnicode(false);
+            //modelBuilder.Entity<Cast>()
+            //    .Property(e => e.Actor)
+            //    .IsUnicode(false);
 
-            modelBuilder.Entity<Actor>()
-                .HasMany(e => e.Casts)
-                .WithOptional(e => e.Actor1)
-                .HasForeignKey(e => e.Actor);
+            //modelBuilder.Entity<Actor>()
+            //    .HasMany(e => e.Casts)
+            //    .WithOptional(e => e.Actor1)
+            //    .HasForeignKey(e => e.Actor);
 
-            modelBuilder.Entity<Cast>()
-                .Property(e => e.Movie)
-                .IsUnicode(false);
+            //modelBuilder.Entity<Cast>()
+            //    .Property(e => e.Movie)
+            //    .IsUnicode(false);
 
-            modelBuilder.Entity<Movie>()
-                .HasMany(e => e.Casts)
-                .WithOptional(e => e.Movie1)
-                .HasForeignKey(e => e.Movie);
+            //modelBuilder.Entity<Movie>()
+            //    .HasMany(e => e.Casts)
+            //    .WithOptional(e => e.Movie1)
+            //    .HasForeignKey(e => e.Movie);
 
             //modelBuilder.Entity<Movie>()
             //    .HasMany(e => e.Actors)

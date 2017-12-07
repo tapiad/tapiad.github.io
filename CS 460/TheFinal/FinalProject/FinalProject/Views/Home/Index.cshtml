@@ -1,5 +1,30 @@
-﻿@{
+﻿@model IEnumerable<FinalProject.Models.Actor>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
 <h1>Welcome to the Final</h1>
+
+
+<div class="btn-group">
+    @foreach (var mov in Model)
+    {
+        <input class="btn btn-default" type="button" value=@mov.Name onclick="aClicked('@mov.Name')" />
+    }
+</div>
+<br />
+<div id="results" style="display: none">
+    <table class="table table-hover table-responsive">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Director</th>
+            </tr>
+        </thead>
+        <tbody id="resultsBody"></tbody>
+    </table>
+</div>
+<br />
+

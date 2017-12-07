@@ -1,6 +1,7 @@
 ﻿
 CREATE TABLE dbo.Movies
 (
+	--ID			INT				NOT NULL,
 	Title		VARCHAR(50)		NOT NULL,
 	Year		INT				NULL,
 	Director	VARCHAR(50)		NOT NULL,
@@ -27,11 +28,11 @@ CREATE TABLE dbo.Casts
 	Actor		VARCHAR(50)		NOT NULL,
 	Movie		VARCHAR(50)		NOT NULL,
 
-	CONSTRAINT [PK_dbo.Casts] PRIMARY KEY CLUSTERED (Actor ASC, Movie ASC),
-	CONSTRAINT [FK1_dbo.Casts] FOREIGN KEY (Actor)
-		REFERENCES dbo.Actors(Name),
-	CONSTRAINT [FK2_dbo.Casts] FOREIGN KEY (Movie)
-		REFERENCES dbo.Movies(Title)
+	CONSTRAINT [PK_dbo.Casts] PRIMARY KEY (Movie),
+	--CONSTRAINT [FK1_dbo.Casts] FOREIGN KEY (Actor)
+	--	REFERENCES dbo.Actors(Name),
+	--CONSTRAINT [FK2_dbo.Casts] FOREIGN KEY (Movie)
+	--	REFERENCES dbo.Movies(Title)
 );
 
 

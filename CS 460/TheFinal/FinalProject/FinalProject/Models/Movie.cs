@@ -8,12 +8,13 @@
 
     public partial class Movie
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Movie()
-        {
-            Casts = new HashSet<Cast>();
-        }
-
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        //public Movie()
+       // {
+           // Casts = new HashSet<Cast>();
+        //}
+           
+        
         [Key]
         [StringLength(50)]
         public string Title { get; set; }
@@ -25,7 +26,7 @@
 
         public virtual Director Director1 { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cast> Casts { get; set; }
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        //public virtual ICollection<Cast> Casts { get; set; }
     }
 }

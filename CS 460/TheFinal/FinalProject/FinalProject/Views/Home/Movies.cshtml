@@ -7,6 +7,9 @@
 
 <h2>Movies</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
 <table class="table">
     <tr>
         <th>
@@ -32,6 +35,11 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Director)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Title }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Title }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Title })
             </td>
         </tr>
     }
