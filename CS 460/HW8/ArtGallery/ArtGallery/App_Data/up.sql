@@ -48,7 +48,7 @@ INSERT INTO dbo.Artists (Name, BirthDate, BirthCity) VALUES
 ('Hatip Mehmed Efendi', '1680-11-18', 'Unknown'),
 ('Salvador Dali', '1904-05-11', 'Figueres, Spain');
 
-----Insert data into ArtWorks Table
+--Insert data into ArtWorks Table
 INSERT INTO dbo.ArtWorks (Title, Artist) VALUES
 ('Circle Limit III', 'M C Escher'),
 ('Twon Tree', 'M C Escher'),
