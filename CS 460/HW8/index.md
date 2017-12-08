@@ -32,11 +32,12 @@ Quick Links:
 
 ### Demo Video
 
-[![Video](https://youtu.be/pwJ_TzcrDYw)]
+![Video](https://youtu.be/pwJ_TzcrDYw)
+
 
 ### Step #1: Generate an E-R Diagram
 
-![Alt text](https://github.com/tapiad/tapiad.github.io/blob/master/CS%20460/HW8/E-R_Diagram.PNG "E-R Diagram")
+![Alt text](E-R_Diagram.PNG)
 
 ### Step #2: Seed Data, UP & DOWN script
 
