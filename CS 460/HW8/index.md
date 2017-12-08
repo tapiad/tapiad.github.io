@@ -30,6 +30,10 @@ Quick Links:
  * All pages must use strongly typed views
  * Use only fluent (dot notation) LINQ syntax
 
+### Demo Video
+
+[![Video](https://youtu.be/pwJ_TzcrDYw)]
+
 ### Step #1: Generate an E-R Diagram
 
 ![Alt text](https://github.com/tapiad/tapiad.github.io/blob/master/CS%20460/HW8/E-R_Diagram.PNG "E-R Diagram")
