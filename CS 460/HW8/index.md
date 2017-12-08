@@ -32,7 +32,7 @@ Quick Links:
 
 ### Demo Video
 
-![Video](https://youtu.be/pwJ_TzcrDYw)
+[Video](https://youtu.be/pwJ_TzcrDYw)
 
 
 ### Step #1: Generate an E-R Diagram
