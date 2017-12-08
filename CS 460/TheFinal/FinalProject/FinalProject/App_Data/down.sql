@@ -1,0 +1,4 @@
+﻿DROP TABLE IF EXISTS dbo.Movies;
+DROP TABLE IF EXISTS dbo.Actors;
+DROP TABLE IF EXISTS dbo.Directors;
+DROP TABLE IF EXISTS dbo.Casts;
