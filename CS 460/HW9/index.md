@@ -9,213 +9,104 @@ Quick Links:
 
 * Visit my [Portfolio](https://tapiad.github.io).
 
-* Link to Homework 8 [assignment](http://www.wou.edu/~morses/classes/cs46x/assignments/HW8.html).
+* Link to Homework 9 [assignment](http://www.wou.edu/~morses/classes/cs46x/assignments/HW9.html).
 
 
-### Homework 8
+### Homework 9
 
 **Primary Objectives:**
-1. Be able to write a MVC web application that uses a multi-table, relational database instance that you created
-2. Be able to create models with foreign keys and navigation properties
-3. Be able to implement CRUD functionality with non-trivial models
-4. Learn to write more complex T-SQL scripts to create more complex database tables
-5. Practice more LINQ
-6. Implement custom attribute checking
+1. Be able to write a complex MVC web application and deploy to the cloud
+2. Learn how to provision and deploy a database to the cloud
+
 
 
 **Overall Requirements:**
 
- * You must use a “Code First with an Existing Database” workflow
- * Use a script to create your tables, populate them with sample data and another to delete them; the script(s) need to be added and committed to your git repository
- * All pages must use strongly typed views
- * Use only fluent (dot notation) LINQ syntax
+* Use Azure for both the web application and the database
+* Must build the database from script files that are maintained in your project under Git
+* Your database password cannot appear in your Git repository
 
-### Demo Video
+### Step #1: Create the Database Remotely on Azure
 
-[Video](https://youtu.be/pwJ_TzcrDYw)
+To create a database remotely on Azure you first have to create and subscribe to Azure on their [website](https://azure.microsoft.com/en-us/features/azure-portal).
 
+* Click on **+ New** located on the top left of Azure Portal
+* Click **Databases**
+* Final click on **SQL Database**
+* Then just fill in the information to create you SQL Database!
 
-### Step #1: Generate an E-R Diagram
+> Note: These is also a quick *SQL databases* on the side menu
 
-![Alt text](E-R_Diagram.PNG)
-
-### Step #2: Seed Data, UP & DOWN script
-
-Using our UP script we are to seed the data into our database tables. We had to create four tables and insert data into those tables. To create a table use `CREATE TABLE` then *dbo.TableName*. `CONSTRAINT` are used to limit the type of data in the table. The *constraints* I use were `PRIMARY KEY` and `FOREIGN KEY` which uses `REFERENCES`. This is the UP script:
-
-```sql
---ArtWorks Table
-CREATE TABLE dbo.ArtWorks
-(
-    Title   VARCHAR(100)    NOT NULL,
-    Artist  VARCHAR(50)     NULL
-    
-    CONSTRAINT [PK_dbo.ArtWorks] PRIMARY KEY (Title),
-    CONSTRAINT [FK_dbo.ArtWorks] FOREIGN KEY (Artist)
-    REFERENCES dbo.Artists (Name)
-);
-```
-
-To seed the table use `INSERT INTO` followed by each *column name* and `VALUES`. Seed in each value respectivly.
-
-```sql
---Insert data into ArtWorks Table
-INSERT INTO dbo.ArtWorks (Title, Artist) VALUES
-('Circle Limit III', 'M C Escher'),
-('Twon Tree', 'M C Escher'),
-('Mona Lisa', 'Leonardo Da Vinci'),
-('The Vitruvian Man', 'Leonardo Da Vinci'),
-('Ebru', 'Hatip Mehmed Efendi'),
-('Honey Is Sweeter Than Blood', 'Salvador Dali');
-```
-
-To *DROP* a table out of the database use `DROP TABLE`. I used and if statement to check if the table to exists.
-
-```sql
---Drop Table ArtWorks
-DROP TABLE IF EXISTS dbo.ArtWorks;
-``` 
-
-### Step #3: CRUD
-
-*CRUD* (Create, Read, Update, Delete) functionality for Artist. So much code to go over, I'll cut it short. We will take a look at the *CreateArtist.cshtml* View. This will let the user know what value to enter to create a new artist.
-
-```html
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4>Artist</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        @*Code Omitted*@
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10 btn-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-                @Html.ActionLink("Cancel", "Artists", null, new { @class = "btn btn-danger" })
-            </div>
-        </div>
-    </div>
-}
-```
-
-Once the user has added the values, it takes a *POST* action which will be handled in the controller. Checks if the the user's values are vaild. If it is, then save it to the database!
-
-```cs
-// POST: Home/CreateArtist
-[HttpPost]
-[ValidateAntiForgeryToken]
-public ActionResult CreateArtist([Bind(Include = "Name, BirthDate, BirthCity")] Artist artist)
-{
-    if (ModelState.IsValid)
-    {
-        db.Artists.Add(artist);
-        db.SaveChanges();
-        return RedirectToAction("Artists");
-    }
-    return View(artist);
-} 
-```
-
-### Step #4: JSON & AJAX
-
-First we will display the buttons in which the user can select which genres they will like to see. After the button is clicked, it will make a JSON and AJAX call.
-
-```html
-@*Genres Buttons*@
-<div class="btn-group">
-    @foreach (var genre in Model)
-    {                               
-        <input class="btn btn-default" type="button" value=@genre.Name onclick="genreClicked('@genre.Name')" />
-    }
-</div>
-<br />
-@*Display Results*@
-<div id="results" style="display: none">
-    <table class="table table-hover table-responsive">
-        <thead>
-            <tr>
-                <th>Art Work</th>
-                <th>Artist</th>
-            </tr>
-        </thead>
-        <tbody id="resultsBody">
-
-        </tbody>
-    </table>
-</div>
-<br />
-
-@section scripts
-{
-    <script type="text/javascript" src="~/Scripts/genDetail.js"></script>
-}
-```
+![Alt Text]("Add Database")
+![Alt Text]("SQL Database Form")
 
 
-`JsonRuesult` gets the data to return a JSON Object.
+### Step #2: Deploy the web application on Azure
 
-```cs
-// Returns a JSON Object
-public JsonResult GenreDetails(string id)
-{
-    //Data
-    var data = db.Genres.Where(g => g.Name == id)
-                         .Select(s => s.ArtWorks)
-                         .FirstOrDefault()
-                         .Select(s => new { s.Title, s.Artist }) 
-                         .OrderBy(o => o.Title)
-                         .ToList();
-    //return Json Object
-    return Json(data, JsonRequestBehavior.AllowGet);
-}
-```
+* Same as adding a database, click on **+ New**
+* Click **Web + Mobile**
+* Select **Web App**
+* Fill out the form
 
-The AJAX:
+> Note When adding a Database/Web App it will take some time to deploy
 
-```js
-function genreClicked(genre) {
-    //URL Display
-    var source = "/Home/GenreDetails/" + genre;
-    $.ajax({
-        type: "GET",
-        dataType: "json",
-        url: source,
-        success: displayResults,
-        error: error
-    });
-}
-```
+![Alt Text]("Web App Form") 
 
-This is the function to display the results:
+### Step #3: Deploying
 
-```js
-function displayResults(data) {
-    //Where result is Displayed
-    var item = document.getElementById("resultsBody");
-    //For each data
-    jQuery.each(data, function (i, val){
-        if (i == 0)
-        {   //Adds 'Title' & 'Artist' to Table
-            item.innerHTML = '<tr><td>' + val["Title"] + '</td><td>' + val["Artist"] + '</td></tr>';
-        }
-        else
-        {
-            item.innerHTML += '<tr><td>' + val["Title"] + '</td><td>' + val["Artist"] + '</td></tr>';
-        }
-    });
-    $("#results").css("display", "block"); //Makes Table Visible
-}
+After completing your web application, on Microsoft Visual Studio you will want to connect to Azure Database the one you created. This is located in the *up.sql* script:  
 
-```
+![Alt Text]("Adding Tables to Azure Database")
+
+> Note: You will need to login to your Azure
+
+After adding table to the Azure Database you will want to *Publish*. Right-click on your project's name and search for **publish...**
+
+![Alt Text]("Click to Publish!")
+
+After clicking, you are going to **import profile** where it is going to ask you for a publish profile. You will need to download this from you *App Service* on Azure. This is called **Get publish profile**. Save it where you will be able to find it. 
+
+![Alt Text]("Import Profile")
+
+![Alt Text]("Browse for Profile and Open it")
+
+This will take you to your Azure website but we will need to go back to add the *string connection* if you still want to update and add more to your web application.
+
+![Alt Text]("Publish Details")
+
+* Click on **Settings...**
+* Validate Connection
+
+![Alt Text]("Validate Connection")
+
+* Click **Next >**
+ 
+ Now, go back to your Azure Portal and click on your database. Under *Connection strings* click on **Show database connection strings**. This will take you to your ADO.NET (SQL authentication) where you will need to copy and paste. This will be added in the **Remote connection string**:
+
+ ![Alt Text]("Copy Connection String")
+ ![Alt Text]("Paste into Remote connection string")
+
+ * Click **Save**
+ 
+ Now for the final step click on **Publish**! This will take a minute or two to load and deploy your web application onto Azure.
+
+ ![Alt Text]("Azure Web Application)
+
+ You successfully deplored your web application!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
