@@ -26,6 +26,6 @@ As a Senior at Western Oregon University we are to create this Portfolio. We wil
 6. [Homework 6](CS 460/HW6): MVC app 3, pre-existing relational dB
 7. [Homework 7](CS 460/HW7): MVC app 4, AJAX, JSON, API, Single page app
 8. [Homework 8](CS 460/HW8): MVC app 5, diy multi-table/relation dB
-
+8. [Homework 9](CS 460/HW9): MVC app 6, Cloud deployment
 
 
