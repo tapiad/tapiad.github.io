@@ -40,7 +40,10 @@ To create a database remotely on Azure you first have to create and subscribe to
 
 Add Database:
 ![Add Database](Deploy-Images/Add-Database.PNG "Add Database")
+
+
 SQL Database Form:
+
 ![SQL Database Form](Deploy-Images/SQL-Database-Form.PNG "SQL Database Form")
 
 
@@ -55,6 +58,7 @@ SQL Database Form:
 
 
 Web App Form:
+
 ![Alt Text](Deploy-Images/Web-App-Form.PNG "Web App Form") 
 
 ### Step #3: Deploying
