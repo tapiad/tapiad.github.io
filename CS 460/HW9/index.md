@@ -71,6 +71,7 @@ After adding table to the Azure Database you will want to *Publish*. Right-click
 
 
 Click to Publish:
+
 ![Click to Publish](Deploy-Images/Publish.png "Click to Publish!")
 
 After clicking, you are going to **import profile** where it is going to ask you for a publish profile. You will need to download this from you *App Service* on Azure. This is called **Get publish profile**. Save it where you will be able to find it. 
@@ -98,7 +99,8 @@ Now, go back to your Azure Portal and click on your database. Under *Connection 
 
 
 Copy Connection String:
-![Copy Connection String](Deploy-Images/Connection-String.PNG "Copy Connection String")
+![Copy Connection String](Deploy-Images/Connection-Strings.PNG "Copy Connection String")
+
 Paste into Remote connection string:
 ![Paste into Remote connection string](Deploy-Images/Remote-Connection-String.PNG "Paste into Remote connection string")
 
