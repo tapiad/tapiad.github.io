@@ -90,7 +90,7 @@ This will take you to your Azure website but we will need to go back to add the 
  
  Now for the final step click on **Publish**! This will take a minute or two to load and deploy your web application onto Azure.
 
- ![Alt Text](Deploy-Images/Azure-Website.PNG "Azure Web Application")
+ ![Alt Text](Deploy-Images/Azure-WebSite.PNG "Azure Web Application")
 
  You successfully deplored your web application!
 
