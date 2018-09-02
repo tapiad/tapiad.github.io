@@ -1,3 +1,6 @@
+title: [Daniel Tapia]
+description: [This will be my Portfolio of some projects I developed as a collage student here at Western Oregon University.]
+
 Daniel Tapia
 ===
 
