@@ -15,9 +15,9 @@ function start() {
     var q = $("#UserInput").val(); //Get User Input
     var rating = $("#rating").val(); //Rating
     var lang = $("#lang").val(); //Language
-    //console.log("The user entered: " + q);
+    console.log("The user entered: " + q);
     var source = "Giphy/Search?q=" + q + "&rating=" + rating + "&lang=" + lang; //Source
-    //console.log("Source: " + source);
+    console.log("Source: " + source);
 
     //Requesting JSon through Ajax
     $.ajax({
