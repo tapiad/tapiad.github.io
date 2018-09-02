@@ -1,7 +1,7 @@
 Daniel Tapia
 ===
 
-Please visit my GitHub page [here](https://github.com/tapiad)!
+Please visit my [GitHub Page](https://github.com/tapiad)!
 
 
 Welcome to my Portfolio
@@ -12,9 +12,9 @@ This will be my Portfolio of some projects I developed as a collage student here
 
 ### About Me
 
-Just a tad bit about myself is that I'm a very patient, kind-hearted person. I can play the piano but can't read notes. I have been in a church choir for over ten years now. I love to eat, play sports, and be a gamer.
+Just a tad bit about myself is that I'm a very patient, kind-hearted person. I can play the piano but can't read notes. I have been in a  choir for over ten years now. I love to eat, play sports, play video games, and code!
 
-As a Senior at Western Oregon University we are to create this Portfolio. We will be working on this Portfolio throughout the whole school year. This is our Senior Project in which we are to complete with hard work and dedication.
+As a Senior at Western Oregon University we are to create this Portfolio. We will be working on this Portfolio throughout the whole school year and take notes on how we did our work. This is our Senior Project in which we are to complete with hard work and dedication. The Senior Project is spread out into three courses.
 
 
 ### Software Engineering I (CS 460): Homework
@@ -28,4 +28,4 @@ As a Senior at Western Oregon University we are to create this Portfolio. We wil
 8. [Homework 8](CS 460/HW8): MVC app 5, diy multi-table/relation dB
 8. [Homework 9](CS 460/HW9): MVC app 6, Cloud deployment
 
-
+### Software Engineering II (CS 461)
