@@ -1,14 +1,13 @@
 Daniel Tapia
 ===
 
-Please visit my [GitHub Page](https://github.com/tapiad)!
+<!-- Please visit my [GitHub Page](https://github.com/tapiad)! -->
 
 
-Welcome to my Portfolio
+<!-- Welcome to my Portfolio
 ---
 
-This will be my Portfolio of some projects I developed as a collage student here at Western Oregon University.
-
+This will be my Portfolio of some projects I developed as a collage student here at Western Oregon University. -->
 
 ### About Me
 
