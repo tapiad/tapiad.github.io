@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HW 6</title>
+	<link href="HW%206_files/bootstrap.css" rel="stylesheet">
+	<link href="HW%206_files/site.css" rel="stylesheet">
+	<link href="HW%206_files/assignments.css" rel="stylesheet">
+</head>
+<body>
+	<div class="page-header">
+		<h1 class="text-center">Homework <small>Six</small></h1>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="objectives">
+					<h4>Primary Objectives:</h4>
+					<ol>
+						<li>Be able to write a MVC web application <strong>that uses portions of a large, complex pre-existing database</strong></li>
+						<li>Be able to derive C# models from an existing database using Entity Framework and “Code First with an Existing Database” workflow</li>
+						<li>Be able to write LINQ queries using fluent syntax</li>
+						<li>Learn to use C# language features: partial classes</li>
+						<li>Use more Razor language features to build feature-laden views</li>
+					</ol>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="requirements">
+					<h4>Overall Requirements:</h4>
+					<ul class="list-unstyled">
+					    <li>You must use “Code First with an Existing Database” workflow</li>
+						<li>Don't add and commit your database file (ignore it please; it's 205 MB)</li>
+						<li>If you need to add something to a model class, do it in a new file (still in the model folder) and use a <code>partial</code> class</li>
+						<li>Make this a single website, with a landing page and links as 
+appropriate.  Remove unnecessary boilerplate and add in something to 
+make it look like a prototype of a real system</li>
+						<li>You should prefer strongly-typed views over untyped viewbag-only views</li>
+						<li>Use only fluent LINQ syntax (dot notation) and <strong>not</strong> query syntax (the sql-like version)</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p class="user-story paper">
+					"As a Web Application Developer Padawan (WADP™), I want to build an
+ example application that uses a lot of data and showcases the use of an
+ existing large database, so I can practice my LINQ and MVC moves."
+				</p>
+				<div class="questions">
+					<h4>Questions/Tasks:</h4>
+					<ol>
+						<li><p><strike>Begin this homework by <a href="http://msftdbprodsamples.codeplex.com/">downloading</a></strike> and <a href="https://msdn.microsoft.com/en-us/library/mt710790.aspx">extracting</a> the AdventureWorks 2014 example database <strike>from CodePlex.</strike> It's moved.  The database you want to use is the OLTP version from <a href="https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works">here</a>.  (They moved sample databases from "CodePlex" to GitHub.)  Use the full database backup zip file version.</p><p>For a full description of the AdventureWorks "company" and database, see <a href="https://technet.microsoft.com/en-us/library/ms124825(v=sql.100).aspx">here</a>.</p></li>
+						
+						<li>Follow the steps shown in class, or here (for reference: <a href="https://msdn.microsoft.com/en-us/library/jj200620(v=vs.113).aspx">Entity Framework - Code First from Existing Database</a>) to create an empty MVC project, add the database and reverse engineer (generate) model classes.  We will only be using the <strong>Production</strong>
+ subsystem, so I recommend you only generate model classes for that 
+subsystem (something like 24 tables/classes plus the context class).</li>
+						<li><strong>Feature 1: Browse Products</strong> <p class="user-story paper">As
+ a potential customer who is visiting the website I would like to be 
+able to browse to find products to buy.  I already know what category of
+ product I want, I just want to pick an item in that category.</p>  <p>A
+ user should easily be able to find products in the store/catalog and 
+view details of that product.  The user does not want to search by 
+keyword.  They want to browse by product category.  Products can be 
+organized by top level category (<code>Production.ProductCategory</code>) and then by a sub-category (<code>Production.ProductSubcategory</code>).
+  Don't show results until the user has selected both category and 
+sub-category.  Then allow them to see a short listing of products (or a 
+paged version), from which they can select or click on one to bring up a
+ full product description, maybe with a review.  Kudos to anyone who can
+ display the product photo.</p>  <p>For an example, go to nearly any large web store, say <a href="https://www.rei.com/">REI</a>.
+  Click on Snow (the top level category), then click on Downhill Skiing 
+(a subcategory).  You see a number of products.  Click on Arc'teryx 
+Sabre Jacket - Men's to see a full description, yikes :-( $625!)  They 
+have at least 2 levels of sub-categories where we have only 1, but you 
+get the idea. (You can see the subcategories in the <a href="https://en.wikipedia.org/wiki/Breadcrumb_(navigation)">breadcrumbs</a>.)</p><p>Your
+ stakeholders have not given a preference as to what this should look 
+like or how you do this, so it's your choice.  Do you use hyperlinks?  
+Drop down (select) lists? What info do you show the user?  Well, 
+certainly don't show them primary key or foreign key values, or internal
+ things like FinishedGoodsFlag.  Should you show discontinued items?  
+Probably not.  It's up to you.  Also, try to make it look decent please;
+ the default auto-generated CRUD look won't cut it!</p></li>
+						<li><strong>Feature 2: Add Review</strong>  <p>Let's see if we can insert to the database.  This user story describes what is needed.</p> <p class="user-story paper">As
+ a customer who has purchased a product I would like to be able to write
+ and submit a review of a particular product so others can read about my
+ experience with the it.</p><p>For ease of implementation, assume the user knows the <code>Production.Product.ProductID</code>.
+  Allow them to enter their name, email address, rating and a possibly 
+lengthy comment/review.  When they correctly submit the information, 
+insert it into the database and thank the user for their review (using 
+POST/Redirect/GET).</p><p>You can integrate this feature with the browse
+ functionality or not; it's up to you.  If you integrate it then the 
+user won't have to know the product ID as you'll already have it.</p></li>
+						<li>And by now you know the drill; put it all in your Portfolio.  
+Do you know what would make the grader really happy?  A video of you 
+demonstrating your website.  </li>
+					</ol>
+                </div>
+			</div>
+		</div>
+	</div>
+	<script src="HW%206_files/jquery.js"></script>
+	<script src="HW%206_files/bootstrap.js"></script>
+
+</body></html>

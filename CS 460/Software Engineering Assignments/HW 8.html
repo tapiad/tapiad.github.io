@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HW 8</title>
+	<link href="HW%208_files/bootstrap.css" rel="stylesheet">
+	<link href="HW%208_files/site.css" rel="stylesheet">
+	<link href="HW%208_files/assignments.css" rel="stylesheet">
+</head>
+<body>
+	<div class="page-header">
+		<h1 class="text-center">Homework <small>Eight</small></h1>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="objectives">
+					<h4>Primary Objectives:</h4>
+					<ol>
+						<li>Be able to write a MVC web application <strong>that uses a multi-table, relational database instance that you created</strong></li>
+						<li>Be able to create models with foreign keys and navigation properties</li>
+						<li>Be able to implement CRUD functionality with non-trivial models</li>
+						<li>Learn to write more complex T-SQL scripts to create more complex database tables</li>
+						<li>Practice more LINQ</li>
+						<li>Implement custom attribute checking</li>
+					</ol>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="requirements">
+					<h4>Overall Requirements:</h4>
+					<ul class="list-unstyled">
+						<li>You must use a “Code First with an Existing Database” workflow</li>
+						<li>Use a script to create your tables, populate them with sample 
+data and another to delete them; the script(s) need to be added and 
+committed to your git repository</li>
+						<li>All pages must use strongly typed views</li>
+						<li>Use only fluent (dot notation) LINQ syntax</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p class="user-story paper">
+					"As a student in CS 460 who is preparing for the final exam, I wish
+ to create a complex web application from scratch -- including database,
+ CRUD functionality and some AJAX -- so that I can practice and get a 
+good grade on the exam."
+				</p>
+				<figure class="figure pull-right"><img class="img-fluid" src="HW%208_files/escher_circle.jpg" alt="Circle Limit III by M.C.Escher" width="340"><figcaption class="figure-caption">Circle Limit III by M.C.Escher</figcaption></figure>
+				<p>This assignment is based off last years CS 460 Programming Final Exam.</p>
+				<div class="questions">
+						<h4>Questions/Tasks:</h4>
+						<p>There are <strong>Artists</strong>.  They paint, sketch, sculpt, draw, ... to produce <strong>ArtWorks</strong>.  People like to categorize works of art into various categories, which we'll call <strong>Genres</strong>; these categorizations can be called <strong>Classifications</strong>.  Artists produce many works of art. Works of art can be classified under multiple genres (examples follow).  </p>
+						
+						<ol>
+						   <li>Create a new MVC application in your homework Git repository.  Do all your work for this homework in a new feature branch.</li>
+							<li><p>Begin with the domain model.  There are four entities: <strong>Artist</strong>, <strong>ArtWork</strong>, <strong>Genre</strong> and <strong>Classification</strong>. <a href="http://www.wou.edu/~morses/classes/cs46x/assignments/HW8_tables.html">This page</a>
+ explains the relations between entities and provides seed data.  All 
+relations must be present as named constraints in your database schema. 
+ Draw or generate an E-R diagram of your database schema.</p>
+							
+							<p>Write an UP and a DOWN script (in App_Data) to create and destroy the database in LocalDB or SQLServer.</p>
+							</li>
+							<li>Using your UP script (in App_Data), seed the data above into your database tables.</li>
+							<li>Place a menu item on the shared layout to select one of three
+ views: Artists, ArtWorks and Classifications.  Each of these views 
+should show all artists, works of art and classifications, respectively,
+ that are in the database.  i.e. they are each a list view.  Also add a 
+home page with some form of a welcome.</li>
+						   <li>Commit your work to your local Git repository now.  This is
+ so that you can show at least one commit on your development branch for
+ your in-progress work.</li>
+							<li><p>Implement CRUD functionality for Artists.</p><p>Here are the 5 items needed:</p>
+							<ul>
+								<li>Artist Index/List page</li>
+								<li>Artist Create page (<strong>C</strong>reate)</li>
+								<li>Artist Details page (<strong>R</strong>ead)</li>
+								<li>Artist Edit page (<strong>U</strong>pdate)</li>
+								<li>Artist Delete page (<strong>D</strong>elete)</li>
+							</ul>
+							</li>
+							<li>Add attribute checking to the Artist Edit page to make sure 
+that no attributes are optional, the Name must be no longer than 50 
+characters and the birthdate cannot be in the future.</li>
+							<li>Add buttons to the home page, one for every Genre.  Use a 
+Razor foreach loop to create the buttons.  When a button is clicked, all
+ the works of art that are classified under that Genre are displayed in a
+ table or list on the main page (replacing any that were there from 
+previously clicking a button).  Display the artwork title and artists 
+name, sorted by title.  You must retrieve and display this data using 
+AJAX.</li>
+							<li>That's it; put it in your Portfolio!</li>
+						</ol>
+					</div>
+				<p></p>
+			</div>
+		</div>
+	</div>
+	<script src="HW%208_files/jquery.js"></script>
+	<script src="HW%208_files/bootstrap.js"></script>
+
+</body></html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HW 4</title>
+	<link href="HW%204_files/bootstrap.css" rel="stylesheet">
+	<link href="HW%204_files/site.css" rel="stylesheet">
+	<link href="HW%204_files/assignments.css" rel="stylesheet">
+	<link rel="stylesheet" href="HW%204_files/prism.css">
+</head>
+<body>
+	<div class="page-header">
+		<h1 class="text-center">Homework <small>Four</small></h1>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="objectives">
+					<h4>Primary Objectives:</h4>
+					<ol>
+						<li>Begin learning ASP.NET MVC 5</li>
+						<li>Be able to write a simple (but multi-page) MVC web application <strong>that does not use a database</strong></li>
+						<li>Be able to use the <code>ViewBag</code> or <code>ViewData</code></li>
+						<li>Demonstrate use of the <code>Request</code> object to utilize query strings and form data</li>
+						<li>Learn simple language constructs for the Razor view engine</li>
+						<li>Understand the relationships between Model, View and 
+Controller and be able to explain how they work together to service 
+requests</li>
+						<li>Understand the operation of controller action methods, including simple routing and parameter binding</li>
+						<li>Learn to use C# language features: namespaces, optional parameters, nullable types, attributes</li>
+					</ol>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="requirements">
+					<h4>Overall Requirements:</h4>
+					<ul class="list-unstyled">
+						<li>Start with an empty MVC project (no templates) and do all work within one project</li>
+						<li>Project should be in your Git repository under a HW4 folder</li>
+						<li>Use Git from the command line only, and use feature branches</li>
+						<li>Comment all C# code with XML comments</li>
+						<li>Comment all Razor code within <code>.cshtml</code> files</li>
+						<li>All pages should use Bootstrap</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p class="user-story paper">
+					"As a new MVC developer I want to learn how to send data from the 
+browser to the server and from the server to the browser, in different 
+ways, so I can see the options I have when creating dynamic web pages 
+with forms and form data."
+				</p>
+				<div class="questions">
+					<h4>Questions/Tasks:</h4>
+					<ol>
+						<li>Begin by creating a new empty MVC project.  Make sure it has Visual Studio's <code>.gitignore</code> file so it will correctly ignore all the temporary build files as well as built binary files.</li>
+						<li>Implement each of the following <i>features</i> in its own feature branch.  Merge each into master when finished. </li>
+						<li>Create a “Home” default landing page that will contain links (in an <code>ul</code>) to each of the other pages you'll create in the tasks below.  You must use Razor <code>@Html.ActionLink</code>
+ HTML helper methods to do this.  (Implied in this is that you create an
+ appropriately named controller with action method and a suitable view.)</li>
+
+						<li><p>Create a new page (let's call this one <samp>Page 1</samp> ) that contains a form with at least two text fields and a submit button.  These should <code>GET</code>
+ a new page that contains some server-side dynamic content, i.e. 
+something is displayed that you set from the controller based on the 
+values in the request.  You must write the form elements yourself using 
+only HTML -- no Razor HTML form helpers are allowed for this page.  Your
+ controller action method can't have any parameters -- you need to get 
+the form data out of the <code>Request</code> object.</p><p>  This page 
+demonstrates that that you can write a simple HTML form, send data to 
+the server as query strings, extract that data within a controller 
+action method by using the <code>Request</code> object, perform some 
+computation with it, and finally pass data to a view which builds a new 
+page for the user containing the resulting new, procedurally created, 
+content.  A simple temperature conversion would be a good example.  The 
+user enters a temperature value into one text field, and a F or C into 
+the other.  Pressing a convert button takes the user to another page 
+where their temperature has been converted from F to C or the other way 
+around.</p></li>
+						
+						<li><p>Create another page (<samp>Page 2</samp>) that also has at 
+least two text fields and a submit button and meets the same 
+requirements as the previous task, but that uses HTML <code>POST</code> 
+to post the form data to the server.  In this case your controller 
+action methods should be a parameterless (GET) and a one parameter POST 
+(use <code>FormCollection</code> as the parameter type as shown below). 
+ This isn't the best way to do it but this is the way you should do it 
+for now.  i.e. we're <strong>not</strong> using model binding until the next question.</p>
+						
+						<pre class=" language-csharp"><code class=" language-csharp"><span class="token punctuation">[</span>HttpPost<span class="token punctuation">]</span>
+<span class="token keyword">public</span> ActionResult <span class="token function">Page2</span><span class="token punctuation">(</span>FormCollection form<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment" spellcheck="true">// Values POSTed can be retrieved from the FormCollection object</span>
+<span class="token punctuation">}</span></code></pre>
+						<p>Now is a great time to start using the debugging and inspection tools available to you:
+							</p><ul>
+								<li>developer tools in the browser</li>
+								<li>“println's” and the output window in Visual Studio</li>
+								<li>Visual Studio's very nice debugger (set a break point and then run with <samp>F5</samp> rather than <samp>Ctrl-F5</samp>)</li>
+								<li><a href="https://www.getpostman.com/apps">Postman</a></li>
+							</ul>
+							You should be able to inspect the page, form values leaving the 
+browser, form values received by the “server” (localhost in this case) 
+and anything else going on in ASP.NET.
+						<p></p>
+						</li>
+						
+						<li><p>Create a loan calculator page (or something of equivalent complexity if you want to get creative) in <samp>Page 3</samp>.
+  At a minimum this would need to have a place for the user to enter the
+ loan amount, interest rate and term length (principal, monthly interest
+ rate and number of payments).  This form data gets sent to the server 
+where you calculate at least the monthly payment and sum of payments.  
+Generate a new page that shows these results to the user.  You get to 
+decide if you want to use Razor HTML Helpers and <code>GET</code> or <code>POST</code>. </p>
+							
+						<p> <strong>The one thing you must do for this page is to use model binding</strong>
+ in controller action methods (parameters that bind to the form element 
+values).  Also, make your page robust so that if, for example, the user 
+doesn't enter an interest rate, or they type letters instead of numbers,
+ no errors are generated and you tell them that it's required.   Double 
+check with online loan calculators that you got the math correct.</p>
+						<p>
+							This is what I mean by model binding with parameters:
+							</p><pre class=" language-csharp"><code class=" language-csharp"><span class="token punctuation">[</span>HttpGet<span class="token punctuation">]</span>
+<span class="token keyword">public</span> ActionResult <span class="token function">Page3</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">?</span> id<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">?</span> size<span class="token punctuation">,</span> <span class="token keyword">string</span> kind<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment" spellcheck="true">//...</span>
+<span class="token punctuation">}</span></code></pre>
+						<p></p>
+					</li>
+					<li>Lastly, put it all in your Portfolio as usual.  We need 
+screenshots to be able to tell if it's working.  Now that we're into 
+ASP.NET MVC there is a lot more code in your project.  We don't want it 
+all though; for your Portfolio, only include the code you write.  Just 
+include it as snippets, with some nice explanations in between!</li>
+					</ol>
+				</div>
+				<div class="payoff">
+					<p></p>
+				<p>Now is the time to make sure you understand precisely what is 
+going on here: from client → HTTP → server → ASP.NET MVC → your code → 
+ASP.NET MVC → server → HTTP → and back to the browser, for both GET and 
+POST.  Get this down before we dive deeper into MVC and add database 
+functionality.  
+				</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="HW%204_files/jquery.js"></script>
+	<script src="HW%204_files/bootstrap.js"></script>
+	<script src="HW%204_files/prism.js"></script>
+
+</body></html>

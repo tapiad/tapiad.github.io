@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CS 460 Software Engineering I</title>
+    <link href="CS%20460%20Software%20Engineering%20I_files/bootstrap.css" rel="stylesheet">
+    <link href="CS%20460%20Software%20Engineering%20I_files/site.css" rel="stylesheet">
+        <link href="CS%20460%20Software%20Engineering%20I_files/tablestyle.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.wou.edu/~morses/index.html">
+                    <!--img src="http://placehold.it/150x50&text=Logo" alt=""-->
+                    Dr. Scot Morse
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="topNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Current Courses <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="http://www.wou.edu/~morses/classes/cs46x/index.html">CS 461: Software Engineering II</a></li>
+                        <li><a href="http://www.wou.edu/~morses/classes/is641/index.html">IS 641: Project Planning &amp; Design</a></li>
+                      </ul>
+                    </li>
+                    <!--li class="dropdown">
+                      <a href="#" class="dropdown-toggle"
+                          data-toggle="dropdown" role="button" aria-haspopup="true"
+                          aria-expanded="false">Past Courses <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><em>None yet</em></li>
+                      </ul>
+                    </li-->
+                    <li>
+                        <a href="http://www.wou.edu/~morses/schedule.html">Office Hours</a>
+                    </li>
+                    <li>
+                        <a href="http://www.wou.edu/~morses/contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="classNavbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="http://www.wou.edu/~morses/classes/cs46x/Syllabus_CS462CS462L.pdf">Syllabus</a>
+                    </li>
+                    <li>
+                        <a href="http://www.wou.edu/~morses/classes/cs46x/grades462.html">Grades</a>
+                    </li>
+                    <li>
+                        <a href="http://www.wou.edu/~morses/classes/cs46x/resources/resources.html">Resources</a>
+                    </li>
+                    <li>
+                        <a href="https://wouseniorproject-1718.slack.com/"><img src="CS%20460%20Software%20Engineering%20I_files/icons8-Slack-100.png" alt="Slack Team icon" height="16">Slack Team</a>
+                    </li>
+                    <li>
+                        <a href="https://bitbucket.org/morses/seniorproject_2017-18/"><img src="CS%20460%20Software%20Engineering%20I_files/Git-Icon-1788C.png" alt="Git icon" height="14">Git Repo</a>
+                    </li>
+                    <li>
+                        <a href="http://www.wou.edu/~morses/classes/cs46x/assignments/CS460_HW_Rubri.pdf">HW Rubrics</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <!--div class="well">
+                    Much of the content below is just as it appeared last year.  Homework assignments with a <img src="../../resources/checkmark-32.png" alt="Green check mark" width="14"> next to them have been updated for 2017-18 and are ready to go.  The others may change before they're formally assigned.
+                </div-->
+                <p>Jump to: <button onclick="jump('cs461main')">CS 461</button> <button onclick="jump('cs462main')">CS 462</button> </p>
+            </div>
+        </div>
+
+        <!-- Fall Term ********** CS 460 ********** -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>CS 460 Fall 2017</h2>
+                <table class="table table-condensed table-striped schedule">
+                    <thead>
+                        <tr>
+                            <th>Week</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Reading/Lecture</th>
+                            <th>Homework</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+                            <td>Intro, Overview of Capstone,<br> Expectations</td>
+                            <td class="lang">Version Control, Git Theory</td>
+                            <td class="lang">Git basics</td>
+                            <td class="software_eng">Intro to Software Processes, SDLC</td>
+                            <td>Ambler 1, Slides: <a href="http://www.wou.edu/~morses/classes/cs46x/presentations/CS460_Intro.html">Intro</a>, <a href="http://www.wou.edu/~morses/classes/cs46x/presentations/CS460_1.html">One</a>, <a href="http://www.wou.edu/~morses/classes/cs46x/presentations/CS460_SE_1.html">SE_1</a></td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/HW1.html">HW 1</a> <img src="CS%20460%20Software%20Engineering%20I_files/checkmark-32.png" alt="Green check mark" width="14"> (Git,HTML/CSS,Bootstrap)</td>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+                            <td class="lang">HTML</td>
+                            <td class="lang">CSS</td>
+                            <td class="lang">Javascript</td>
+                            <td class="lang">Javascript, DOM, jQuery</td>
+                            <td> Slides: <a href="http://www.wou.edu/~morses/classes/cs46x/presentations/CS460_2.html">Two</a></td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/HW2.html">HW 2</a> <img src="CS%20460%20Software%20Engineering%20I_files/checkmark-32.png" alt="Green check mark" width="14"> (HTML,Javascript,jQuery) <a href="http://www.wou.edu/~morses/classes/cs46x/assignments/hw2/index.html">JS calendar</a></td>
+                        </tr>
+                        <tr>
+                            <th>3</th>
+                            <td class="lang">HTTP, Web Servers</td>
+                            <td class="lang">HTTP, REST</td>
+                            <td class="lang">C#</td>
+                            <td class="lang">C#</td>
+                            <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview">HTTP Overview</a> Slides: <a href="http://www.wou.edu/~morses/classes/cs46x/presentations/CS460_3.html">Three</a> </td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/HW3.html">HW 3</a> <img src="CS%20460%20Software%20Engineering%20I_files/checkmark-32.png" alt="Green check mark" width="14"> (C# console, translate app)</td>
+                        </tr>
+                        <tr>
+                            <th>4</th>
+                            <td class="mvc">ASP.NET&nbsp;MVC Concepts, organization</td>
+                            <td class="mvc">ASP.NET&nbsp;MVC Tour, Day&nbsp;1</td>
+                            <td class="mvc">ASP.NET&nbsp;MVC Tour, Day&nbsp;2</td>
+                            <td class="software_eng">Software Development Life Cycles</td>
+                            <td>Freeman 1-2,4 </td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/HW4.html">HW 4</a> <img src="CS%20460%20Software%20Engineering%20I_files/checkmark-32.png" alt="Green check mark" width="14"> (MVC app 1, no dB)</td>
+                        </tr>
+                        <tr>
+                            <th>5</th>
+                            <td class="mvc">ASP.NET&nbsp;MVC Tour, Day&nbsp;3</td>
+                            <td class="mvc">Entity&nbsp;Framework&nbsp;(EF), Database&nbsp;First</td>
+                            <td class="software_eng">Agile Software Development</td>
+                            <td class="software_eng">Agile Processes: Disciplined Agile Delivery</td>
+                            <td>Ambler 2-3<br>Freeman 3,5,14</td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/HW5.html">HW 5</a> <img src="CS%20460%20Software%20Engineering%20I_files/checkmark-32.png" alt="Green check mark" width="14"> (MVC app 2, simple dB)</td>
+                        </tr>
+                        <tr>
+                            <th>6</th>
+                            <td class="mvc">Entity Framework and Models</td>
+                            <td class="mvc">Data access &amp; LINQ</td>
+                            <td class="software_eng">People, Roles, Rights, Responsibilities, Team Organization</td>
+                            <td class="software_eng">Project Initiation &amp; Inception, Vision</td>
+                            <td>Ambler 4-7<br>Freeman 7-11</td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/HW6.html">HW 6</a> <img src="CS%20460%20Software%20Engineering%20I_files/checkmark-32.png" alt="Green check mark" width="14"> (MVC app 3, pre-existing relational dB)</td>
+                        </tr>
+                        <tr>
+                            <th>7</th>
+                            <td class="exam">Midterm<br>(HW 1-5 due)</td>
+                            <td class="mvc">Controllers and Action Methods, Routing</td>
+                            <td class="software_eng">Scope, Software Requirements Engineering</td>
+                            <td class="software_eng">Software Requirements Engineering</td>
+                            <td>Ambler 8<br></td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/HW7.html">HW 7</a> <img src="CS%20460%20Software%20Engineering%20I_files/checkmark-32.png" alt="Green check mark" width="14"> (MVC app 4, AJAX single page app)</td>
+                        </tr>
+                        <tr>
+                            <th>8</th>
+                            <td class="mvc">Model Binding and Validation</td>
+                            <td class="mvc">Views, Razor</td>
+                            <td class="software_eng">Software Architecture, Design &amp; Modeling</td>
+                            <td class="software_eng">Software Design &amp; Modeling</td>
+                            <td><span class="nowrap">Ambler 9<br>Freeman 15-18,</span>24-25</td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/HW8.html">HW 8</a> <img src="CS%20460%20Software%20Engineering%20I_files/checkmark-32.png" alt="Green check mark" width="14"> (MVC app 5, diy multi-table/relational dB)</td>
+                        </tr>
+                        <tr>
+                            <th>9</th>
+                            <td>Cloud Deployment (Azure)</td>
+                            <td>Cloud Deployment (Azure)</td>
+                            <td>Modeling example</td>
+                            <!--td class="mvc">Team Software, Agile Management, Jira or VSTS</td-->
+                            <td class="holiday">Thanksgiving Holiday (NO CLASS)</td>
+                            <td>Ambler 10-12<br>Freeman 13,20-22</td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/HW9.html">HW 9</a> <img src="CS%20460%20Software%20Engineering%20I_files/checkmark-32.png" alt="Green check mark" width="14"> (MVC app 6, Cloud deployment)</td>
+                        </tr>
+                        <tr>
+                            <th>10</th>
+                            <td>Modeling example</td>
+                            <td>Modeling example</td>
+                            <td>Plan for CS 461, Processes, Requirements, Expectations</td>
+                            <td>Formation of Student Groups, Discuss Final Exams</td>
+                            <td>HW 6-9 Due Friday</td>
+                            <td>M1 (Team formation)</td>
+                        </tr>
+                        <tr>
+                            <th>11</th>
+                            <td>Final Exam (Moodle): Monday 8-9:50, UPCC C130</td>
+                            <td>Final Exam (programming) 1st offering, 2-5pm ITC 311</td>
+                            <td>Final Exam (programming) 2nd offering, 2-5pm ITC 311</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Winter Term ********** CS 461 ********** -->
+            <div class="col-lg-12" id="cs461main">
+                <h2>CS 461 Winter 2018</h2>
+                <table class="table table-condensed schedule">
+                    <caption><small class="right">Schedule (<a href="http://www.wou.edu/~morses/classes/cs46x/resources/CS461_2.mpp">.mpp</a>, <a href="http://www.wou.edu/~morses/classes/cs46x/resources/CS461_2.pdf">.pdf</a>)</small></caption>
+                    <thead>
+                        <tr>
+                            <th>Week</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Reading</th>
+                            <th>Homework</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+                            <td class="overview">Welcome Back, Milestone 1 discussion</td>
+                            <td class="lang">Git Forking Workflow (<a href="http://www.wou.edu/~morses/classes/cs46x/lecture/GitForkingWorkflow.png">diagram</a>)</td>
+                            <td class="lang">Git Forking Workflow, demo</td>
+                            <td class="software_eng">Software Construction: Scrum process</td>
+                            <td>Ambler 13-14,  <a href="http://scrumreferencecard.com/ScrumReferenceCard.pdf">ScrumReferenceCard</a>(.pdf)  Watch: <a href="http://scrumtrainingseries.com/">Scrum Training Series Videos</a>, <a href="http://www.wou.edu/~morses/classes/cs46x/presentations/CS460_Scrum.html">Agile Software Construction</a></td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/t2/M1.html">Milestone&nbsp;1</a> <img src="CS%20460%20Software%20Engineering%20I_files/checkmark-32.png" alt="Green check mark" width="14"></td>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+                            <!--td class="overview">Milestone 3 discussion, Project Tools &amp; Environments</td-->
+                            <td class="holiday">MLK Jr. Holiday (NO CLASS)</td>
+                            <td class="overview">Milestone 2 discussion</td>
+                            <td class="software_eng">Software Construction: Scrum process</td>
+                            <td class="lang">Agile project management tools</td>
+                            <td><span class="nowrap">Ambler 15,17</span></td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/t2/M2.html">Milestone&nbsp;2</a> <img src="CS%20460%20Software%20Engineering%20I_files/checkmark-32.png" alt="Green check mark" width="14"></td>
+                        </tr>
+                        <tr>
+                            <th>3</th>
+                            <td class="overview">Milestone 3 discussion</td>
+                            <td class="software_eng">Software Requirements: User Stories</td>
+                            <td class="software_eng">Software Requirements</td>
+                            <td class="software_eng">Software Requirements</td>
+                            <td><span class="nowrap"></span> <a href="http://www.wou.edu/~morses/classes/cs46x/lecture/ContinuousDeployment.html">Continuous Deployment to Azure</a></td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/t2/M3.html">Milestone&nbsp;3</a> <img src="CS%20460%20Software%20Engineering%20I_files/checkmark-32.png" alt="Green check mark" width="14">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>4</th>
+                            <td class="overview">Milestone 4 discussion</td>
+                            <td class="software_eng">Software Architecture Patterns</td>
+                            <td class="software_eng">Software Modeling: Agile modeling, UML, Design patterns</td>
+                            <td class="software_eng">Design example</td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/presentations/CS460_4.html">Architecture &amp; Modeling</a>, <a href="http://www.wou.edu/~morses/classes/cs46x/presentations/files/UML.pdf">UML</a>(.pdf), <a href="http://www.wou.edu/~morses/classes/cs46x/resources/DesignPatterns.pdf">DesignPatterns</a>(.pdf), <a href="https://sourcemaking.com/design_patterns">Design Patterns</a> (link to good resource)</td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/t2/M4.html">Milestone&nbsp;4</a> <img src="CS%20460%20Software%20Engineering%20I_files/checkmark-32.png" alt="Green check mark" width="14"></td>
+                        </tr>
+                        <tr>
+                            <th>5</th>
+                            <td class="overview">Milestone 5 discussion</td>
+                            <td class="software_eng">Modeling and Design</td>
+                            <td class="mvc">Authentication and Authorization in MVC</td>
+                            <td class="mvc">Authentication and Authorization in MVC</td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/lecture/Identity.html">ASP.NET Identity Helper</a>, <a href="http://www.wou.edu/~morses/classes/cs46x/presentations/CS460_Authentication.html">Authentication &amp; Authorization</a></td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/t2/M5.html">Milestone&nbsp;5</a> <img src="CS%20460%20Software%20Engineering%20I_files/checkmark-32.png" alt="Green check mark" width="14"></td>
+                        </tr>
+                        <tr>
+                            <th>6</th>
+                            <td class="overview">Sprint 1 discussion/planning</td>
+                            <td class="mvc"></td>
+                            <td class="software_eng">Continuous Integration (CI) &amp; Deployment (CD)</td>
+                            <td class="exam">Midterm <br> (ITC 003)</td>
+                            <td></td>
+                            <td>Team:&nbsp;Sprint 1 Individual:&nbsp;<a href="http://www.wou.edu/~morses/classes/cs46x/assignments/t2/M6.html">Milestone&nbsp;6</a><img src="CS%20460%20Software%20Engineering%20I_files/checkmark-32.png" alt="Green check mark" width="14">, <a href="http://www.wou.edu/~morses/classes/cs46x/assignments/t2/TeamPresentations.html">Team Presentations</a><img src="CS%20460%20Software%20Engineering%20I_files/checkmark-32.png" alt="Green check mark" width="14"></td>
+                        </tr>
+                        <tr>
+                            <th>7</th>
+                            <td class="mvc">Sprint 1 issues</td>
+                            <td class="mvc">MVC/Implementation Topics, Security, XSS, SQL injection</td>
+                            <td class="software_eng">Testing &amp; Test-Driven Development (TDD)</td>
+                            <td class="software_eng">Testing &amp; Test-Driven Development (TDD)</td>
+                            <td></td>
+                            <td>Mid-Sprint tech mtg</td>
+                        </tr>
+                        <tr>
+                            <th>8</th>
+                            <td class="overview">Sprint 2 discussion/planning</td>
+                            <td class="mvc">MVC/Implementation Topics</td>
+                            <td class="software_eng"></td>
+                            <td class="student"><a href="https://bitbucket.org/devonsmith/senior-project">Team RevolutionAi</a> Presentation: Containers</td>
+                            <td></td>
+                            <td>Team:&nbsp;Sprint 2 Individual:&nbsp;Sprint 1, Sprint Review Sheet: <a href="http://www.wou.edu/~morses/classes/cs46x/assignments/t2/SprintPlanningDocument.docx">.docx</a> or <a href="http://www.wou.edu/~morses/classes/cs46x/assignments/t2/SprintPlanningDocument.odt">.odt</a></td>
+                        </tr>
+                        <tr>
+                            <th>9</th>
+                            <td class="mvc">Sprint 2 issues</td>
+                            <td class="student"><a href="https://bitbucket.org/blackwood-incorporated/senior-project">Team Blackwood</a> Presentation: Revision Control Software</td>
+                            <td class="student"><a href="https://bitbucket.org/daniel_tapia/collegecompanion">Team SSTark Industries</a> Presentation: Microservices Architecture</td>
+                            <td class="student"><a href="https://bitbucket.org/lloyh/supertek">Team SuperTek</a> Presentation: Cloud deployed web application</td>
+                            <td></td>
+                            <td>Mid-Sprint tech mtg</td>
+                        </tr>
+                        <tr>
+                            <th>10</th>
+                            <td class="student"><a href="https://bitbucket.org/blakebauer/sneakysoftware">Team Sneaky Software</a> Presentation: Javascript Web Applications, MERN stack</td>
+                            <td class="student"><a href="https://bitbucket.org/aearl16/squareone">Team SquareOne</a> Presentation: Continuous Integration, Continuous Deployment (CI/CD) and DevOps</td>
+                            <td class="student"><a href="https://bitbucket.org/JTMozingo/diredog">Team DireDog</a> Presentation: Acceptance Test-Driven Development (ATDD)</td>
+                            <td>Wrap-up</td>
+                            <td></td>
+                            <td>Sprint 3 preparation, print of sprint backlog due Friday 3/16 at 4pm</td>
+                        </tr>
+                        <tr>
+                            <th>11</th>
+                            <td></td>
+                            <td><strike>Tools Final Exam TBA</strike></td>
+                            <td>Final Exam (Moodle): 08:00 - 09:50 in ITC 311</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Spring Term ********** CS 462 ********** -->
+            <div class="col-lg-12" id="cs462main">
+                <h2>CS 462 Spring 2018</h2><table class="table table-condensed schedule">
+                    
+                    <thead>
+                        <tr>
+                            <th>Week</th>
+                            <th>Tuesday</th>
+                            <th>Thursday</th>
+                            <th>Resources/Assignments</th>
+                            <th>Sprints</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+                            <td>Software Quality, Software Testing</td>
+                            <td>Unit Testing, NUnit, Refactoring for Testing, Dealing with Dependencies, Repository Pattern</td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/lecture/Testing_DI_IOC.html">Testing links</a>, <br> <a href="http://www.wou.edu/~morses/classes/cs46x/lecture/SpeakerInvitation.html">Inviting speakers</a>, <br><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/t3/TestingSprint3.html">Testing Reqs for Sprint 3</a></td>
+                            <td>Sprint 3 (team), 2 (individual), Sprint Review Sheet: <a href="http://www.wou.edu/~morses/classes/cs46x/assignments/t2/SprintPlanningDocument.docx">.docx</a> or <a href="http://www.wou.edu/~morses/classes/cs46x/assignments/t2/SprintPlanningDocument.odt">.odt</a></td>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+                            <td>Mocking Framework, Moq</td>
+                            <td>Dependency Injection, NInject and Inversion of Control (IoC) Pattern</td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/t3/TestingSprint4.html">Testing Reqs for Sprint 4</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>3</th>
+                            <td>Testing with dependencies, continued; examples</td>
+                            <td class="speaker">Industry Speaker: <strong>Bill Hill</strong>, Technical Account Manager at <a href="https://www.vmware.com/">VMware</a></td>
+                            <td></td>
+                            <td>Sprint 4 (team), 3 (individual)</td>
+                        </tr>
+                        <tr>
+                            <th>4</th>
+                            <td> Integration testing; Test automation</td>
+                            <td>Integration testing; Selenium; Cucumber/Gherkin</td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/t3/TestingSprint5.html">Testing Reqs for Sprint 5</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>5</th>
+                            <td class="speaker">Industry Speaker (9-10): <strong>Howard Passmore</strong>, <a href="https://www.amazon.com/">Amazon.com</a></td>
+                            <td class="speaker">Industry Speaker: <strong>Jon Brewster</strong>, HP Fellow and VP Chief Technologist for Software at HP Inc.</td>
+                            <td><a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a>, <a href="https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet#Why_Can.27t_I_Just_HTML_Entity_Encode_Untrusted_Data.3F">XSS Prevention Cheat Sheet</a>, <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet">CSRF Prevention Cheat Sheet</a>, <a href="https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages">CSRF in ASP.NET MVC</a>, <a href="https://docs.microsoft.com/en-us/aspnet/core/security/cross-site-scripting">Preventing XSS in MVC</a>, <a href="https://excess-xss.com/">Excess XSS</a></td>
+                            <td>Sprint 5 (team), 4 (individual)</td>
+                        </tr>
+                        <tr>
+                            <th>6</th>
+                            <td class="speaker">Industry Speaker (9-10): <strong>Raja Kushalnagar</strong> Ph.D., J.D., Director, Information Technology program in the Dept. of Science, Technology and Mathematics at <a href="http://www.gallaudet.edu/">Gallaudet University</a></td>
+                            <td class="speaker">Industry Speaker (9-10): <strong>Lisa Orr</strong>, Data Scientist at <a href="https://www.urbanairship.com/">Urban Airship</a></td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/t3/AlphaTesting.html">Alpha Testing Requirements</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>7</th>
+                            <td class="noclass">At NCWIT conference, Alpha Testing (no class,no meetings)</td>
+                            <td class="noclass">At NCWIT conference, Alpha Testing (no class,no meetings)</td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/assignments/t3/FinalTechnicalRequirements.html">Final Technical Reqs</a>,    <a href="http://www.wou.edu/~morses/classes/cs46x/resources/AppSecrets.html">Hiding Application Secrets</a></td>
+                            <td>Sprint 6 (team), 5 (individual)</td>
+                        </tr>
+                        <tr>
+                            <th>8</th>
+                            <td class="speaker">Industry Speakers (8-9): <strong>Susan Lee</strong> (Lead Software Developer) <strong>Joe McCarty</strong> (Software Developer) and <strong>David Sewell</strong> (Software Developer) from <a href="https://demandlink.com/">DemandLink</a></td>
+                            <td class="speaker">Industry Speakers: <strong>Anna Regimbal (Product Services Analyst) &amp; Colin Mulcahy (Managing Director)</strong> from <a href="https://www.huronconsultinggroup.com/">Huron Consulting Group</a></td>
+                            <td>Configuration Management slides</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>9</th>
+                            <td class="speaker">Industry Speaker (9-10): <strong>Tony Astolfi</strong> Software Engineer at Amazon</td>
+                            <td class="showcase">Academic Excellence Showcase: Posters, Team  Presentations</td>
+                            <td></td>
+                            <td>Final Release, Last Bug Fixes and Technical Reqs</td>
+                        </tr>
+                        <tr>
+                            <th>10</th>
+                            <td></td>
+                            <td>No Class</td>
+                            <td><a href="http://www.wou.edu/~morses/classes/cs46x/lecture/SCM_lastday.pdf">SCM last day slides</a>, <a href="http://www.wou.edu/~morses/classes/cs46x/resources/azwebapp.sh">azwebapp.sh</a>, <a href="http://www.wou.edu/~morses/classes/cs46x/lecture/Awards_2018.pdf">Awards 2018</a></td>
+                            <td></td>
+                        </tr>
+                        <tr class="current_week">
+                            <th>11</th>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight2">Final Exam: Tuesday, June 12 08:00 - 09:50 in ITC 311</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+		</div>
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="text-center">
+                        <a href="http://www.wou.edu/cs/">Division of Computer Science</a>
+                      &nbsp;&nbsp;|&nbsp;&nbsp; <a href="http://www.wou.edu/">Western Oregon University</a>
+                      &nbsp;&nbsp;|&nbsp;&nbsp; 2017
+                  </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Load jQuery and Bootstrap javascript AFTER page content has been loaded into the DOM -->
+    <script src="CS%20460%20Software%20Engineering%20I_files/jquery-2.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="CS%20460%20Software%20Engineering%20I_files/bootstrap.js"></script>
+    <script>
+        function jump(h)
+        {
+            var top = document.getElementById(h).offsetTop;
+            window.scrollTo(0,top);
+        }
+    </script>
+
+
+</body></html>

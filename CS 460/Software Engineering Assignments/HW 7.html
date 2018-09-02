@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HW 7</title>
+	<link href="HW%207_files/bootstrap.css" rel="stylesheet">
+	<link href="HW%207_files/site.css" rel="stylesheet">
+	<link href="HW%207_files/assignments.css" rel="stylesheet">
+	<link rel="stylesheet" href="HW%207_files/prism.css">
+</head>
+<body>
+	<div class="page-header">
+		<h1 class="text-center">Homework <small>Seven</small></h1>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="objectives">
+					<h4>Primary Objectives:</h4>
+					<ol>
+						<li>Be able to write a MVC web application <strong>that employs AJAX to build responsive views</strong></li>
+						<li>Learn how to use an existing API to acquire data, serverside</li>
+						<li>Demonstrate the use of JSON and AJAX</li>
+						<li>Demonstrate custom routing URLs</li>
+					</ol>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="requirements">
+					<h4>Overall Requirements:</h4>
+					<ul class="list-unstyled">
+						<li>This application should have only one page (main view)</li>
+						<li>All functionality is created with Javascript and AJAX calls to
+ action methods that don't return views (ok, you'll have to have one 
+view for the main page itself)</li>
+						<li>Use JSON as the data exchange format</li>
+						<li>All Javascript must be placed into a separate file (in the Scripts folder) and included via a <code>@section</code> section</li>
+						<li>All CSS rules must be placed into a separate file (in the Content folder) and included in the shared layout</li>
+						<li>Use a different controller for AJAX calls, that fits with your custom routing (below)</li>
+						<li>Write custom routing rule(s) for retrieving data via AJAX with appropriate REST-like URLs</li>
+						<li>Use jQuery</li>
+						<li>Use CSS to make it look nice</li>
+						<li>Use a database for logging of requests</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p class="user-story paper">
+					"To make sure I'm keeping up with the times I want to build a web 
+page that uses Javascript and asynchronous calls to the web server to 
+create a responsive design solution for a simple problem."
+				</p>
+				<p>This homework is all about creating a responsive, single-page 
+application.  An extreme case of this kind of application is the GMail 
+client.  We don't have those kinds of aspirations, but we can definitely
+ get the main process down.</p>
+				<p>So the page that first loads (from the server) doesn't have any 
+data.  It presents the interface only.  But it does load your 
+Javascript, which requests data from your server via asynchronous web 
+requests and then builds the page content as desired.  Users then 
+interact with the page and more asynchronous calls are placed to send 
+data to and receive data back from your server. The benefit is that, 
+perhaps surprisingly, the time to load HTML, CSS and associated 
+resources, and build and render a DOM, is actually significant.  Not 
+doing those things, while using Javascript to retrieve data and modify 
+the DOM, often creates a more <strong>responsive</strong> page for the user.  We want to learn about this as a viable option for building parts of your project next year.</p>
+				<p>Here's some good documentation from the <a href="https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started">Mozilla Developer Network</a>.</p>
+				<p>A second purpose of this homework is to learn how to use an 
+existing API as a resource.  Ideally we would use a real REST API like 
+those offered by <a href="https://www.lyft.com/developers">Lyft</a> (<a href="http://petstore.swagger.io/?url=https://api.lyft.com/v1/spec">Docs)</a>, <a href="https://developer.twitter.com/en/docs">Twitter</a> (<a href="https://developer.twitter.com/en/docs/tweets/post-and-engage/api-reference/post-statuses-update">Docs</a>) or <a href="https://developers.trello.com/">Trello</a> (<a href="https://developers.trello.com/reference/#cards">Docs</a>).
+  It is certainly possible to use these. But, examples like these 
+require you to apply for a developer api key or authentication 
+credentials and be really responsible in how you use it.  Yes, of course
+ we'll be responsible, but it would be better to choose something a bit 
+less risky.  The one we'll use isn't a comprehensive REST API, but 
+that's OK.  It's safe, kind of silly, easy and you can have your api key
+ in seconds.  </p>
+				<p>We will use an API from <a href="https://developers.giphy.com/docs/">Giphy</a>, the world's precious repository of cat and internet meme gifs.</p>
+				<div class="questions">
+					<h4>Questions/Tasks:</h4>
+					<ol>
+                        <li><p>Start by creating a simple, single-page 
+web application that allows users to search Giphy for gifs.  Get rid of 
+the nav bar.  For now, use a single text input and a button for search.</p>
+								<figure>
+										<img src="HW%207_files/hw7f1.png" alt="Wireframe of initial design" width="400">
+										<figcaption>Figure 1: The initial simple design.</figcaption>
+								</figure>
+                        </li><li><p>Next up, go to <a href="https://developers.giphy.com/docs/">Giphy</a>
+ and register as a developer.  Create an application and they'll give 
+you your API key.  This key is a secret.  Don't put it in your 
+repository.  (I'll show you in class how to hide this secret from your 
+repo and still use it in your code.)</p>
+						<p>Read their documentation so you understand how to use their 
+API.  We'll start with their Search API.  Try out some searches with 
+your key.  I find that using Firefox Developers Edition is really nice 
+for this because it parses the JSON and displays it in tree form with 
+syntax highlighting.  I can also highly recommend <a href="https://www.getpostman.com/">Postman</a> as a way to easily send customized GET and POST requests (i.e. set header fields) and analyze the responses.</p><p>Get to know the correct format and terms for a search as well as the JSON data that is returned.</p><p>For example, here is an object that is returned by searching for “lobsters”:</p>
+					<pre class="scroll-600 language-json"><code class=" language-json"><span class="token punctuation">{</span>
+<span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"gif"</span><span class="token punctuation">,</span>
+<span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"EUHMAueGvjBsc"</span><span class="token punctuation">,</span>
+<span class="token property">"slug"</span><span class="token operator">:</span> <span class="token string">"illustration-lobster-jeremy-sengly-EUHMAueGvjBsc"</span><span class="token punctuation">,</span>
+<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://giphy.com/gifs/illustration-lobster-jeremy-sengly-EUHMAueGvjBsc"</span><span class="token punctuation">,</span>
+<span class="token property">"bitly_gif_url"</span><span class="token operator">:</span> <span class="token string">"https://gph.is/16RNDY2"</span><span class="token punctuation">,</span>
+<span class="token property">"bitly_url"</span><span class="token operator">:</span> <span class="token string">"https://gph.is/16RNDY2"</span><span class="token punctuation">,</span>
+<span class="token property">"embed_url"</span><span class="token operator">:</span> <span class="token string">"https://giphy.com/embed/EUHMAueGvjBsc"</span><span class="token punctuation">,</span>
+<span class="token property">"username"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+<span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"https://jeremysengly.tumblr.com/post/63657884240/bibs-on-bibs-on-bibs"</span><span class="token punctuation">,</span>
+<span class="token property">"rating"</span><span class="token operator">:</span> <span class="token string">"g"</span><span class="token punctuation">,</span>
+<span class="token property">"content_url"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+<span class="token property">"source_tld"</span><span class="token operator">:</span> <span class="token string">"jeremysengly.tumblr.com"</span><span class="token punctuation">,</span>
+<span class="token property">"source_post_url"</span><span class="token operator">:</span> <span class="token string">"https://jeremysengly.tumblr.com/post/63657884240/bibs-on-bibs-on-bibs"</span><span class="token punctuation">,</span>
+<span class="token property">"is_indexable"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+<span class="token property">"import_datetime"</span><span class="token operator">:</span> <span class="token string">"2013-10-10 17:58:36"</span><span class="token punctuation">,</span>
+<span class="token property">"trending_datetime"</span><span class="token operator">:</span> <span class="token string">"1970-01-01 00:00:00"</span><span class="token punctuation">,</span>
+<span class="token property">"images"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"fixed_height_still"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/200_s.gif"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"200"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"200"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"original_still"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/giphy_s.gif"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"500"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"500"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"fixed_width"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/200w.gif"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"200"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"200"</span><span class="token punctuation">,</span>
+	<span class="token property">"size"</span><span class="token operator">:</span> <span class="token string">"223339"</span><span class="token punctuation">,</span>
+	<span class="token property">"mp4"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/200w.mp4"</span><span class="token punctuation">,</span>
+	<span class="token property">"mp4_size"</span><span class="token operator">:</span> <span class="token string">"82739"</span><span class="token punctuation">,</span>
+	<span class="token property">"webp"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/200w.webp"</span><span class="token punctuation">,</span>
+	<span class="token property">"webp_size"</span><span class="token operator">:</span> <span class="token string">"227028"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"fixed_height_small_still"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/100_s.gif"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"100"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"100"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"fixed_height_downsampled"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/200_d.gif"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"200"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"200"</span><span class="token punctuation">,</span>
+	<span class="token property">"size"</span><span class="token operator">:</span> <span class="token string">"65267"</span><span class="token punctuation">,</span>
+	<span class="token property">"webp"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/200_d.webp"</span><span class="token punctuation">,</span>
+	<span class="token property">"webp_size"</span><span class="token operator">:</span> <span class="token string">"52044"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"preview"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"256"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"256"</span><span class="token punctuation">,</span>
+	<span class="token property">"mp4"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/giphy-preview.mp4"</span><span class="token punctuation">,</span>
+	<span class="token property">"mp4_size"</span><span class="token operator">:</span> <span class="token string">"36667"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"fixed_height_small"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/100.gif"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"100"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"100"</span><span class="token punctuation">,</span>
+	<span class="token property">"size"</span><span class="token operator">:</span> <span class="token string">"83413"</span><span class="token punctuation">,</span>
+	<span class="token property">"mp4"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/100.mp4"</span><span class="token punctuation">,</span>
+	<span class="token property">"mp4_size"</span><span class="token operator">:</span> <span class="token string">"31414"</span><span class="token punctuation">,</span>
+	<span class="token property">"webp"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/100.webp"</span><span class="token punctuation">,</span>
+	<span class="token property">"webp_size"</span><span class="token operator">:</span> <span class="token string">"92126"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"downsized_still"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/giphy-downsized_s.gif"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"500"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"500"</span><span class="token punctuation">,</span>
+	<span class="token property">"size"</span><span class="token operator">:</span> <span class="token string">"50600"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"downsized"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/giphy-downsized.gif"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"500"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"500"</span><span class="token punctuation">,</span>
+	<span class="token property">"size"</span><span class="token operator">:</span> <span class="token string">"619459"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"downsized_large"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/giphy.gif"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"500"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"500"</span><span class="token punctuation">,</span>
+	<span class="token property">"size"</span><span class="token operator">:</span> <span class="token string">"619459"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"fixed_width_small_still"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/100w_s.gif"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"100"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"100"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"preview_webp"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/giphy-preview.webp"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"138"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"138"</span><span class="token punctuation">,</span>
+	<span class="token property">"size"</span><span class="token operator">:</span> <span class="token string">"47982"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"fixed_width_still"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/200w_s.gif"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"200"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"200"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"fixed_width_small"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/100w.gif"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"100"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"100"</span><span class="token punctuation">,</span>
+	<span class="token property">"size"</span><span class="token operator">:</span> <span class="token string">"83413"</span><span class="token punctuation">,</span>
+	<span class="token property">"mp4"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/100w.mp4"</span><span class="token punctuation">,</span>
+	<span class="token property">"mp4_size"</span><span class="token operator">:</span> <span class="token string">"31414"</span><span class="token punctuation">,</span>
+	<span class="token property">"webp"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/100w.webp"</span><span class="token punctuation">,</span>
+	<span class="token property">"webp_size"</span><span class="token operator">:</span> <span class="token string">"92126"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"downsized_small"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"500"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"500"</span><span class="token punctuation">,</span>
+	<span class="token property">"mp4"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/giphy-downsized-small.mp4"</span><span class="token punctuation">,</span>
+	<span class="token property">"mp4_size"</span><span class="token operator">:</span> <span class="token string">"153987"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"fixed_width_downsampled"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/200w_d.gif"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"200"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"200"</span><span class="token punctuation">,</span>
+	<span class="token property">"size"</span><span class="token operator">:</span> <span class="token string">"65267"</span><span class="token punctuation">,</span>
+	<span class="token property">"webp"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/200w_d.webp"</span><span class="token punctuation">,</span>
+	<span class="token property">"webp_size"</span><span class="token operator">:</span> <span class="token string">"52044"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"downsized_medium"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/giphy.gif"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"500"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"500"</span><span class="token punctuation">,</span>
+	<span class="token property">"size"</span><span class="token operator">:</span> <span class="token string">"619459"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"original"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/giphy.gif"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"500"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"500"</span><span class="token punctuation">,</span>
+	<span class="token property">"size"</span><span class="token operator">:</span> <span class="token string">"619459"</span><span class="token punctuation">,</span>
+	<span class="token property">"frames"</span><span class="token operator">:</span> <span class="token string">"30"</span><span class="token punctuation">,</span>
+	<span class="token property">"mp4"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/giphy.mp4"</span><span class="token punctuation">,</span>
+	<span class="token property">"mp4_size"</span><span class="token operator">:</span> <span class="token string">"223632"</span><span class="token punctuation">,</span>
+	<span class="token property">"webp"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/giphy.webp"</span><span class="token punctuation">,</span>
+	<span class="token property">"webp_size"</span><span class="token operator">:</span> <span class="token string">"841142"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"fixed_height"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/200.gif"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"200"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"200"</span><span class="token punctuation">,</span>
+	<span class="token property">"size"</span><span class="token operator">:</span> <span class="token string">"223339"</span><span class="token punctuation">,</span>
+	<span class="token property">"mp4"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/200.mp4"</span><span class="token punctuation">,</span>
+	<span class="token property">"mp4_size"</span><span class="token operator">:</span> <span class="token string">"82739"</span><span class="token punctuation">,</span>
+	<span class="token property">"webp"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/200.webp"</span><span class="token punctuation">,</span>
+	<span class="token property">"webp_size"</span><span class="token operator">:</span> <span class="token string">"227028"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"looping"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"mp4"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/giphy-loop.mp4"</span><span class="token punctuation">,</span>
+	<span class="token property">"mp4_size"</span><span class="token operator">:</span> <span class="token string">"846719"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"original_mp4"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"480"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"480"</span><span class="token punctuation">,</span>
+	<span class="token property">"mp4"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/giphy.mp4"</span><span class="token punctuation">,</span>
+	<span class="token property">"mp4_size"</span><span class="token operator">:</span> <span class="token string">"223632"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"preview_gif"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media3.giphy.com/media/EUHMAueGvjBsc/giphy-preview.gif"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"119"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"119"</span><span class="token punctuation">,</span>
+	<span class="token property">"size"</span><span class="token operator">:</span> <span class="token string">"49163"</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token property">"480w_still"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://media2.giphy.com/media/EUHMAueGvjBsc/480w_s.jpg"</span><span class="token punctuation">,</span>
+	<span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"480"</span><span class="token punctuation">,</span>
+	<span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"480"</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"illustration jeremy sengly GIF"</span>
+<span class="token punctuation">}</span></code></pre>	
+					<p>You get an array of objects, each of which represents a gif.  
+Inside is id, title, rating, source, and URL's for many versions of the 
+image.  Remember, this is what you get <em>at your server</em>.  You'll use C# to parse this, extract what's needed and build a <code>JsonResult</code> to send to your client.</p>	
+					</li>
+                    
+                        <li>Now here's the plan.
+                           <ol type="a">
+                               <li>The user enters a search word or phrase and clicks the search button.</li>
+                               <li>You have previously registered a Javascript callback function on the button in order to run custom Javascript code.</li>
+                               <li>Your code makes an AJAX call to a controller action method, passing it the search term(s).</li>
+                               <li>Your action method assembles a GET 
+request (using your API key) and sends it off to Giphy's servers.  You 
+receive a JSON response to your server containing matches to the search.</li>
+                               <li>Using this, extract and assemble 
+whatever data is needed in order for your client Javascript to construct
+ the resulting page for your user that displays the matching Gifs in a 
+grid.  You send this data from the action method to the client as a <code>JsonResult</code> object, which is then processed by your Javascript code to modify the DOM and display the images.</li>
+							   <li>Other than the initial page load of an empty search box, all communication between the client and your server must be via JSON.</li>
+							   <li>If the user then types in another search query and hits return, you do all this over again <strong>and the page never reloads</strong> -- it's dynamic.</li>
+                               <li>For the AJAX call, use jQuery's <a href="http://api.jquery.com/jquery.ajax/">ajax</a> method.</li>
+                               <li>Your controller action method for handling the AJAX request needs to use a custom route (in <samp>AppStart/RouteConfig.cs</samp> ) with an API feel.  i.e. <samp>~/search/giphy?q=cute+cat</samp></li>
+						   </ol>
+						   <figure>
+								<img src="HW%207_files/hw7f2.png" alt="Wireframe of initial design" width="600">
+								<figcaption>Figure 2: After clicking the search button, or hitting enter, the user sees matching images displayed below.</figcaption>
+						</figure>
+						</li>
+                            
+						<li>Now add a little static content and CSS magic to the page to 
+make it look nicer.  How about a header or header image?  CSS to style 
+the search results? </li>
+						<li>Add additional features to the search.  Add radio buttons, 
+check boxes or buttons, etc. to provide the user with some options for 
+their search.  Search by rating?  (Hmmm, if you do this maybe don't put 
+the R-rated search results in your Portfolio.)  Search results only 
+return static gifs, or to prefer animated gifs, ... something 
+interesting or useful. Whatever it is it needs to involve <strong>both</strong> client and serverside processing.</li>
+						<li>Add a database to your project to keep a log of search 
+requests.  Make a table that will hold information about requests made 
+to your server.  When a request comes in, add an entry to the table with
+ information about the request.  You should log things like date/time, 
+what the request was, the IP address of the requestor and the client's 
+browser agent type.</li>
+						<li>And as usual, write it all up in your Portfolio.  This one 
+definitely needs screenshots of your application in use.  Also show your
+ logging results.</li>
+					</ol>
+				</div>
+				<p></p>
+			</div>
+		</div>
+	</div>
+	<script src="HW%207_files/jquery.js"></script>
+	<script src="HW%207_files/bootstrap.js"></script>
+	<script src="HW%207_files/prism.js"></script>
+
+</body></html>

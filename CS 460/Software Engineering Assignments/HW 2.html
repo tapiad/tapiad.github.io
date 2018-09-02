@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HW 2</title>
+	<link href="HW%202_files/bootstrap.css" rel="stylesheet">
+	<link href="HW%202_files/site.css" rel="stylesheet">
+	<link href="HW%202_files/assignments.css" rel="stylesheet">
+</head>
+<body>
+	<div class="page-header">
+		<h1 class="text-center">Homework <small>Two</small></h1>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="objectives">
+					<h4>Primary Objectives:</h4>
+					<ol>
+						<li>Learn Javascript</li>
+						<li>Learn jQuery</li>
+						<li>Understand the DOM and how to select and modify it</li>
+						<li>Learn how to create HTML forms</li>
+						<li>Learn how to respond to events</li>
+						<!--li>Understand HTTP <code>GET</code> and <code>POST</code></li-->
+						<li>Demonstrate using feature branches in Git: <code>branch</code>, <code>checkout</code>, <code>merge</code></li>
+					</ol>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="requirements">
+					<h4>Overall Requirements:</h4>
+					<ul class="list-unstyled">
+						<li>HTML, CSS (with Bootstrap), Javascript and jQuery <strong>only</strong> -- no backend</li>
+						<li>Includes multiple form elements of different types</li>
+						<li>In response to user input and action (clicking on a button, selecting a radio button, ...):</li>
+						<li>
+							<ul>
+								<li>Use jQuery to modify one or more elements on a page</li>
+								<li>Use jQuery to add new elements to the page, one of which must be a list or table with multiple child elements</li>
+							</ul>
+						</li>
+						<li>Do something useful or interesting</li>
+						<li>Use one Git feature branch for all work, merging it back into master when all finished.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p class="user-story paper">
+					"As a software engineering student I want a dynamic webpage that 
+does something useful so I can show off my Javascript and jQuery skills.
+  Specifically, I want a nice looking webpage that uses text inputs, 
+radio buttons, drop-downs, or whatever to take information from the 
+user, do some calculations with Javascript and return the answer to the 
+user by modifying and adding to what's on the page."
+				</p>
+				<div class="questions">
+					<h4>Questions/Tasks:</h4>
+					<ol>
+						<li>Create a new folder in your Git repository, preferably named <samp>HW2</samp>.  Create a new feature branch for your work on this homework, check it out and proceed.  Create an <samp>index.html</samp> and stylesheet (e.g. <samp>styles.css</samp>)
+ directly in that folder.  Write your CSS in this stylesheet file.  You 
+can write the Javascript directly in the html file if you want.</li>
+						<li><p>Think for a bit about what you'd like to do.  You need to 
+take input from the user, do some calculation and then provide the 
+output/answer back to the user by modifying elements on the page and 
+adding new elements.</p>  <p>Here's an example that is too easy: a page 
+that lets the user convert a temperature in Celsius to Fahrenheit.  In 
+this example you'd need a text input for the Celsius temperature, a 
+"Convert" button and a location for the output like a paragraph element 
+with "Answer: " text.  When the button is pressed, your Javascript 
+callback function is executed which uses jQuery to retrieve the 
+temperature, plain Javascript to calculate the correct temperature in 
+Fahrenheit and then jQuery to change the text in that paragraph element.</p> <p>This
+ example, however, isn't good enough because it only uses two form 
+elements and doesn't create a list or table element.  (There's another 
+example linked from the main class page that is a little closer.  It 
+generates a table but only uses one input element, doesn't use Bootstrap
+ and can be broken -- try a date that is clearly out of range.)</p>
+						<p>Do something fun, not too complicated, and interesting.</p></li>
+						<li>Create a wireframe mockup of your page to help you with the 
+design.  A good idea is to overlay with the rows and columns of your 
+selected Bootstrap grid, and plan for how it will look when the page is 
+resized.  Label it with with the <code>container</code>, <code>row</code>, and column classed elements to visualize your layout.</li>
+						<li>Create your working page, remembering to style it nicely and 
+to use Bootstrap for your layout.  Recall that you'll need a minimum of 2
+ files: <samp>index.html</samp> and <samp>styles.css</samp> for example and a <samp>*.js</samp> file if you feel like putting your javascript in a separate file also. </li>
+						<li>Commit and push your work frequently on your feature branch 
+but don't merge until you are happy with it and have tested it 
+thoroughly.  For example, it should not fail if you're expecting a 
+number and the user types in an arbitrary string.  A feature branch 
+should continue until the feature is finished <b>and tested</b> before merging into  any main release branch.</li>
+						<li>Finally, merge your feature branch back into master and push to your remote repository.</li>
+						<li>Everything goes into your Portfolio: html + javascript, css, 
+nicely commented of course, a screenshot of the rendered webpage, your 
+wireframe mockup, the working page and any notes you've generated. (You 
+are keeping notes of what you're learning, right?)</li>
+					</ol>
+				</div>
+				<div class="payoff">
+                    <h3>Important</h3>
+					<p>Now is the time to learn the correct workflow using Git.  Don't 
+execute Git commands without thinking about them.  When you're just 
+starting out it is very easy to get things into an unpleasant state.  As
+ long as you correctly added and committed your work in the past it is 
+always possible to fix it.  I'm just suggesting to go slow and double 
+check your commands before hitting enter.
+					</p><p>  We're requiring you to use Git from the command line for a
+ reason.  By typing in the raw commands yourself you're learning exactly
+ what you're asking Git to do.  If you use Git from a GUI then you're 
+just clicking buttons and don't really know what's going on.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="HW%202_files/jquery.js"></script>
+	<script src="HW%202_files/bootstrap.js"></script>
+
+</body></html>

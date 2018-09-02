@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HW 5</title>
+	<link href="HW%205_files/bootstrap.css" rel="stylesheet">
+	<link href="HW%205_files/site.css" rel="stylesheet">
+	<link href="HW%205_files/assignments.css" rel="stylesheet">
+</head>
+<body>
+	<div class="page-header">
+		<h1 class="text-center">Homework <small>Five</small></h1>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="objectives">
+					<h4>Primary Objectives:</h4>
+					<ol>
+						<li>Learn more ASP.NET MVC 5</li>
+						<li>Be able to write a MVC web application <strong>that uses a simple one-table local database</strong></li>
+						<li>Be able to write a model class and build a strongly typed view that uses it</li>
+						<li>Be able to write a model class that is backed by an Entity 
+Framework context and a local database, and then create a view to use it
+ in a web page</li>
+						<li>Use Razor to build a table</li>
+						<li>Be able to use NuGet to find and install packages</li>
+						<li>Begin learning Transact-SQL</li>
+						<li>Be able to write a T-SQL script to create a table and populate it with seed data</li>
+						<li>Learn to use C# language features: properties, lambda functions, object initializers</li>
+					</ol>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="requirements">
+					<h4>Overall Requirements:</h4>
+					<ul class="list-unstyled">
+						<li>Use a <em>Data Access Layer</em> (DAL) folder for your <code>DbContext</code> subclass</li>
+						<li>Use data annotations in your model to set display characteristics and other model parameter requirements</li>
+						<li>Include form validation -- no yellow error pages for missing or incorrect form data</li>
+						<li>You must write scripts to manage your database (<code>up.sql</code> and <code>down.sql</code>, both in <code>App_Data</code>).  An example will be found in the lecture repository.  These should be included in your Git repository.</li>
+						<li>Your database (<code>something.mdf</code> and <code>something_log.ldf</code> if using LocalDB) should <strong>not</strong> be tracked by Git.  These files should be ignored and only generated and populated from the script when needed.</li>
+						<li>Write the model and db context classes yourself -- no EF code generation allowed.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p class="user-story paper">
+					"As a student in CS 460 I want to build a database-backed web 
+application using ASP.NET MVC 5 so I can learn how to create and use a 
+local database for persistent storage in my web app.  I also want to 
+show how I can write T-SQL to create and populate a simple database in 
+order to be ready for more complicated databases coming soon."
+				</p>
+				<div class="questions">
+					<h4>Questions/Tasks:</h4>
+					<ol>
+						<li>Begin by creating a new empty MVC project.  Make sure it has Visual Studio's <code>.gitignore</code>
+ file so it will correctly ignore all the temporary build files as well 
+as built binary files.  Create a simple home landing page that will 
+serve as the home page for this app.  Put links here for pages you 
+create later.</li>
+                        <li>When you move you're supposed to tell the DMV about your new address using <a href="http://www.oregon.gov/ODOT/Forms/DMV/6438fill.pdf">this form</a>
+ (for Oregon anyway).   We want to make our own online version of this 
+form.  We want two pages: one to view all current requests for change of
+ address and another page to create a new request, i.e. a minimally 
+functional online version of this form.  The following questions suggest
+ how you should go about this. <figure class="figure pull-right"><img src="HW%205_files/DMV_Change_address_form.PNG" alt="Change of address form image" class="img-fluid" width="400"><figcaption class="figure-caption">Oregon DMV change of address form</figcaption></figure></li>
+                        <li>Include everything you see in the form 
+except the signature and voter information check box.  You only need to 
+have one address instead of having both new residence and new mailing 
+address.  In the form there is just a single line for city, state and 
+zip, but in your form you should break these apart into separate fields.
+  Go ahead and leave the name as a single field if you like.  With that I
+ count 9 fields.</li>
+						<li><p><strong>Start with the data model:</strong>  Design and 
+create the database, which will have only a single table that uses an 
+integer primary key.  Use the scripts from the example in lecture to 
+create the database and populate it with a few example entries.  This 
+means you'll have one script to create the table and populate it with at
+ least 5 entries (<code>up.sql</code>) and a separate script to clear it all away (<code>down.sql</code>).  Both of these need to be in your <code>App_Data</code> folder and need to be in your Git repository.</p><p>You
+ can create the database using SQL Server, SQL Server Express or 
+LocalDB.  The first two of these require a separate installation.  
+LocalDB comes with Visual Studio, provided you installed the data 
+storage and processing workload when installing VS, and can be accessed 
+through the Server Explorer tab.  For now the database is local to your 
+machine.  Anyone wanting to duplicate your project from your Git 
+repository would have to manually create the database, run your up 
+script on it and then edit the connection string.</p></li>
+						<li><strong>Create the model class and the database context class</strong>:
+ Manually write the model class and the db context class.  The model 
+should go in the Models folder while the context class should go in a 
+new folder called DAL, for Data Access Layer.  This is a common pattern 
+to use when separating the data layer from your data processing layer.</li>
+						<li><strong>Connect to the database:</strong> Add the correct connection string to <code>Web.config</code></li>
+						<li><strong>Create controller and action methods</strong>.  Use the GET-POST-Redirect pattern for the create functionality (aka <a href="https://en.wikipedia.org/wiki/Post/Redirect/Get">Post/Redirect/Get</a>)</li>
+						<li><p><strong>Create strongly typed views</strong>. Then write 
+Razor code to create UI as you wish.  You'll need a minimum of two 
+pages: one to fill out and submit a new address change request and 
+another page to view all requests (show them in a table).  The look and 
+feel of the site is up to you.</p>  <p>You should write the views 
+yourself for maximum learning and understanding.  Sure, take a look at 
+some scaffolded code as examples but then write it yourself.  Plus, the 
+scaffolded views look pretty dismal.</p></li>
+						<li>Demo your site: fill out the form, click a button to submit, 
+then be taken to either a thank you page or a page showing all current 
+requests, including the one just entered.  The very first time you 
+should see the 5 examples that you seeded your db with, and then the 
+requests will just build up as you enter new ones.  </li>
+						<li>Lastly, put it all in your Portfolio as usual.  We need 
+screenshots to be able to tell if it's working.  Now that we're into 
+ASP.NET MVC there is a lot more code in your project.  We don't want it 
+all though; for your Portfolio, only include the code you write.  Just 
+include it as snippets, with some nice explanations in between!</li>
+					</ol>
+				</div>
+				<p></p>
+			</div>
+		</div>
+	</div>
+	<script src="HW%205_files/jquery.js"></script>
+	<script src="HW%205_files/bootstrap.js"></script>
+
+</body></html>
