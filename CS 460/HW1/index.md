@@ -5,9 +5,12 @@ layout: default
 
 * Visit my GitHub [here](https://github.com/tapiad).
 
-* Visit my [Portfolio](https://tapiad.github.io). 
+* Back to [Portfolio](https://tapiad.github.io). 
 
-* Link to Homework 1 [assignment](http://www.wou.edu/~morses/classes/cs46x/assignments/HW1.html).
+* Link to [Homework 1 Assignment](../Software Engineering Assignments/HW 1.html).
+
+* Completed Web-site Here at [CS460 HW1 Webpage](website).
+
 
 ### Homework 1
 
