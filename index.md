@@ -28,3 +28,11 @@ As a Senior at Western Oregon University we are to create this Portfolio. We wil
 8. [Homework 9](CS 460/HW9): MVC app 6, Cloud deployment
 
 ### Software Engineering II (CS 461)
+
+
+### Senior Projects
+* Group Project — [College Companion](https://collegecompanionapp.azurewebsites.net/Home/Index) 
+A co-developer of a website application using Visual Studio. Delivered information by consuming 3rd party API's and handled our version control system. Scrum was our software development life cycle. 
+
+* Individual Project — [Alpha Ramble](https://bitbucket.org/daniel_tapia/alpharamble/src/master) 
+Developed a mobile application using Qt with V-Play Engine framework. Not knowing the environment, I managed to connect an API to the mobile application. Using QML and JavaScript, I handled the data to the user’s preference.
