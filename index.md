@@ -1,4 +1,4 @@
-# **Daniel Tapia**
+## **Daniel Tapia**
 
 <!-- Please visit my [GitHub Page](https://github.com/tapiad)! -->
 
