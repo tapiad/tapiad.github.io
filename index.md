@@ -31,4 +31,7 @@ As a Senior at Western Oregon University we are to create this Portfolio. We wil
 *Developed a mobile application using Qt with V-Play Engine framework. Not knowing the environment, I managed to connect an API to the mobile application. Using QML and JavaScript, I handled the data to the user’s preference.*
 
 
-<!-- ### Software Engineering II (CS 461) -->
+### Personal Project
+* **BlueBox** — [BlueBox](https://github.com/tapiad/Personal-Projects)
+
+*BlueBox is a web application of capable of providing information about Movies. It will give you information about upcoming movies, movies that are now playing. Provide popular movies and along with top rated movies. You will be able to watch movie trailers and more!*
